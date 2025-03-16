@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoIntegradorAPI.Context;
+using ProjetoIntegradorAPI.Models;
+using ProjetoIntegradorAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IUserRepository,UserRepository>();
 
 builder.Services.AddDbContext<ApplicationDataContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))

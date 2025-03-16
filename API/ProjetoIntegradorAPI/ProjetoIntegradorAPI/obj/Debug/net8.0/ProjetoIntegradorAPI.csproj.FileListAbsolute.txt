@@ -170,3 +170,4 @@ C:\Users\Pichau\OneDrive\Área de Trabalho\ProjetoIntegrador\API\ProjetoIntegrad
 C:\Users\Pichau\OneDrive\Área de Trabalho\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\obj\Debug\net8.0\ProjetoIntegradorAPI.pdb
 C:\Users\Pichau\OneDrive\Área de Trabalho\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\obj\Debug\net8.0\ProjetoIntegradorAPI.genruntimeconfig.cache
 C:\Users\Pichau\OneDrive\Área de Trabalho\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\obj\Debug\net8.0\ref\ProjetoIntegradorAPI.dll
+C:\Users\Pichau\OneDrive\Área de Trabalho\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\obj\Debug\net8.0\ProjetoIntegradorAPI.sourcelink.json

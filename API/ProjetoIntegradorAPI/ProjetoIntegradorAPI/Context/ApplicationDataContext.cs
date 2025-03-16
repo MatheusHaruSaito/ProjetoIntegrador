@@ -8,6 +8,6 @@ namespace ProjetoIntegradorAPI.Context
         public ApplicationDataContext(DbContextOptions<ApplicationDataContext> options) : base(options)
         {
         }
-        DbSet<User> User { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }
