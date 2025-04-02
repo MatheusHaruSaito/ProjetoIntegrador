@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "postUserDto",
-        "Type": "ProjetoIntegradorAPI.DTOs.PostUserDto",
+        "Type": "ProjetoIntegradorAPI.DTOs.UserDto.PostUserDto",
         "IsRequired": true
       }
     ],

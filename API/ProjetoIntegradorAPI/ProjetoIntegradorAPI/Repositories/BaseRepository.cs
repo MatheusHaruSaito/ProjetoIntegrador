@@ -49,10 +49,7 @@ namespace ProjetoIntegradorAPI.Repositories
         public async Task<T> Update(T UpdateEntity)
         {
             _applicationDataContext.Set<T>().Update(UpdateEntity);
-            if (await _applicationDataContext.SaveChangesAsync() > 0)
-            {
-                return null;
-            }
+            await _applicationDataContext.SaveChangesAsync();
             return UpdateEntity;
         }
     }

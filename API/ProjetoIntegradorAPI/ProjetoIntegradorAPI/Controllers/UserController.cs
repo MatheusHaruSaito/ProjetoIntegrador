@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjetoIntegradorAPI.Context;
-using ProjetoIntegradorAPI.DTOs.User;
+using ProjetoIntegradorAPI.DTOs.UserDto;
 using ProjetoIntegradorAPI.Models;
 using ProjetoIntegradorAPI.Repositories;
 
