@@ -55,7 +55,7 @@
     "Parameters": [
       {
         "Name": "UpdateUser",
-        "Type": "ProjetoIntegradorAPI.Models.User",
+        "Type": "ProjetoIntegradorAPI.DTOs.UserDto.PutUserDto",
         "IsRequired": true
       }
     ],
@@ -99,9 +99,9 @@
   },
   {
     "ContainingType": "ProjetoIntegradorAPI.Controllers.UserController",
-    "Method": "DeleteUser",
+    "Method": "TriggerUserActive",
     "RelativePath": "api/User/{Id}",
-    "HttpMethod": "DELETE",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [

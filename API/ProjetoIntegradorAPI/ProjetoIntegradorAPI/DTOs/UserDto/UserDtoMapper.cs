@@ -8,11 +8,21 @@ namespace ProjetoIntegradorAPI.DTOs.UserDto
         {
             User user = new()
             {
-                Type = postUserDto.Type,
                 Name = postUserDto.Name,
                 Password = postUserDto.Password,
                 Email = postUserDto.Email,
-                IsActive = postUserDto.IsActive,
+            };
+            return user;
+        }
+        public static User PutUserDtoToUser(this PutUserDto putUserDto)
+        {
+            User user = new()
+            {
+                Type = putUserDto.Type,
+                Name = putUserDto.Name,
+                Password = putUserDto.Password,
+                Email = putUserDto.Email,
+                updateDate = DateTime.UtcNow,
             };
             return user;
         }

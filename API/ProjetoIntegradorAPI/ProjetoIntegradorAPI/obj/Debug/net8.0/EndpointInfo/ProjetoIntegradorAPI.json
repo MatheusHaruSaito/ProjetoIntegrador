@@ -96,17 +96,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/PutUserDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/PutUserDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/PutUserDto"
               }
             }
           }
@@ -174,7 +174,7 @@
           }
         }
       },
-      "delete": {
+      "put": {
         "tags": [
           "User"
         ],
@@ -219,6 +219,24 @@
       "PostUserDto": {
         "type": "object",
         "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PutUserDto": {
+        "type": "object",
+        "properties": {
           "type": {
             "$ref": "#/components/schemas/UserTypeEnum"
           },
@@ -233,9 +251,6 @@
           "email": {
             "type": "string",
             "nullable": true
-          },
-          "isActive": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false

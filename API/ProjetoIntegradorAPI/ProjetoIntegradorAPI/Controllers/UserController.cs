@@ -49,23 +49,17 @@ namespace ProjetoIntegradorAPI.Controllers
             return Ok(user);
         }
 
-        [HttpDelete("{Id}")]
+        [HttpPut("{Id}")]
 
-        public async Task<ActionResult<User>> DeleteUser(Guid Id)
+        public async Task<ActionResult<User>> TriggerUserActive(Guid Id)
         {
-            var user = await _userRepository.Delete(Id);
-            if(user == null)
-            {
-                return BadRequest();
-            }
-            return Ok(user);
+            bool IsUserActive = await _userRepository.UserTriggerActive(Id);
+            return Ok(IsUserActive);
         }
-        //Create a Dto for this later
         [HttpPut]
-        public async Task<ActionResult<User>> UpdateUser(User UpdateUser)
+        public async Task<ActionResult<User>> UpdateUser(PutUserDto UpdateUser)
         {
-            UpdateUser.updateDate = DateTime.Now;
-            var user = await _userRepository.Update(UpdateUser);
+            var user = await _userRepository.Update(UpdateUser.PutUserDtoToUser());
             if(user == null)
             {
                 return BadRequest();
