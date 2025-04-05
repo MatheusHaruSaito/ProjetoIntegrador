@@ -18,11 +18,10 @@ namespace ProjetoIntegradorAPI.DTOs.UserDto
         {
             User user = new()
             {
-                Type = putUserDto.Type,
+                Role = putUserDto.Role,
                 Name = putUserDto.Name,
                 Password = putUserDto.Password,
                 Email = putUserDto.Email,
-                updateDate = DateTime.UtcNow,
             };
             return user;
         }

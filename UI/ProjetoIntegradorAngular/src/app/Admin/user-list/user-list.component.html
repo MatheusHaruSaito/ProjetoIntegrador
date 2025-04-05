@@ -1,0 +1,37 @@
+<!-- alguem deixa isso mais bonito XD -->
+<div class="container mt-5">
+<h1 style="text-align: center;padding-top: 5%;">Listar Usuarios</h1>
+
+<input type="text" class="form-control" placeholder="Buscar">
+<table class="table table-hover table-bordered  mt-5">
+    <thead class="table table-dark">
+        <tr>
+            <th>IsActive</th>
+            <th>Id</th>
+            <th>Role</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Email</th>
+            <th>creationDate</th>
+            <th>updateDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(users.length >0){
+            @for(user of users; track $index){
+                <tr>
+                    <th>{{user.isActive?"Verde":"Vermlho"}}</th>
+                    <th>{{user.id}}</th>
+                    <th>{{user.role}}</th>
+                    <th>{{user.name}}</th>
+                    <th>{{user.password}}</th>
+                    <th>{{user.email}}</th>
+                    <th>{{user.creationDate}}</th>
+                    <th>{{user.updateDate}}</th>
+                </tr>
+            }
+        }
+    </tbody>
+    
+</table>
+</div>

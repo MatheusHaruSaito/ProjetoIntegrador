@@ -18,7 +18,7 @@ namespace ProjetoIntegradorAPI.Repositories
                 return false;
             }
             user.IsActive = !user.IsActive;
-            user.updateDate = DateTime.UtcNow;
+            user.UpdateDate = DateTime.UtcNow;
 
             _applicationDataContext.Update(user);
 
@@ -28,18 +28,16 @@ namespace ProjetoIntegradorAPI.Repositories
         public override async Task<User> AddAsync(User user)
         {
             user.Id = Guid.NewGuid();
-            user.creationDate = DateTime.UtcNow;
-            user.updateDate = user.creationDate;
+            user.CreationDate = DateTime.UtcNow;
+            user.UpdateDate = user.CreationDate;
             user.IsActive = true;
 
-            await _applicationDataContext.User.AddAsync(user);
-
-            if (await _applicationDataContext.SaveChangesAsync() > 0)
-            {
-                return null;
-            }
-
-            return user;
+            return await base.AddAsync(user);
+        }
+        public override Task<User> Update(User UpdateEntity)
+        {
+            UpdateEntity.UpdateDate = DateTime.UtcNow;
+            return base.Update(UpdateEntity);
         }
     }
 }

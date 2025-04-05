@@ -28,6 +28,9 @@ namespace ProjetoIntegradorAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -43,13 +46,10 @@ namespace ProjetoIntegradorAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Type")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("creationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("updateDate")
+                    b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

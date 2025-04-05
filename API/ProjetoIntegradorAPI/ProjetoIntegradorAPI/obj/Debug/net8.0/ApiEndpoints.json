@@ -47,32 +47,6 @@
   },
   {
     "ContainingType": "ProjetoIntegradorAPI.Controllers.UserController",
-    "Method": "UpdateUser",
-    "RelativePath": "api/User",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "UpdateUser",
-        "Type": "ProjetoIntegradorAPI.DTOs.UserDto.PutUserDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "ProjetoIntegradorAPI.Models.User",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ProjetoIntegradorAPI.Controllers.UserController",
     "Method": "GetUserById",
     "RelativePath": "api/User/{Id}",
     "HttpMethod": "GET",
@@ -99,8 +73,39 @@
   },
   {
     "ContainingType": "ProjetoIntegradorAPI.Controllers.UserController",
-    "Method": "TriggerUserActive",
+    "Method": "UpdateUser",
     "RelativePath": "api/User/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UpdateUser",
+        "Type": "ProjetoIntegradorAPI.DTOs.UserDto.PutUserDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ProjetoIntegradorAPI.Models.User",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProjetoIntegradorAPI.Controllers.UserController",
+    "Method": "TriggerUserActive",
+    "RelativePath": "api/User/TriggerUserActive/{Id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

@@ -49,14 +49,14 @@ namespace ProjetoIntegradorAPI.Controllers
             return Ok(user);
         }
 
-        [HttpPut("{Id}")]
+        [HttpPut("TriggerUserActive/{Id}")]
 
         public async Task<ActionResult<User>> TriggerUserActive(Guid Id)
         {
             bool IsUserActive = await _userRepository.UserTriggerActive(Id);
             return Ok(IsUserActive);
         }
-        [HttpPut]
+        [HttpPut("{Id}")]
         public async Task<ActionResult<User>> UpdateUser(PutUserDto UpdateUser)
         {
             var user = await _userRepository.Update(UpdateUser.PutUserDtoToUser());

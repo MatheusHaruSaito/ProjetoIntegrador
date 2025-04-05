@@ -1,6 +1,6 @@
 ﻿namespace ProjetoIntegradorAPI.Models
 {
-    public enum UserTypeEnum
+    public enum UserRoleEnum
     {
         Default,
         Administrator,

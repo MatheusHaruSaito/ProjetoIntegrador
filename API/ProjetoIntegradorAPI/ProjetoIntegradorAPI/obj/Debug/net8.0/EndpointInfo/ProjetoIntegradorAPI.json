@@ -87,10 +87,60 @@
             }
           }
         }
+      }
+    },
+    "/api/User/{Id}": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
       },
       "put": {
         "tags": [
           "User"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {
@@ -135,45 +185,7 @@
         }
       }
     },
-    "/api/User/{Id}": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "parameters": [
-          {
-            "name": "Id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
-          }
-        }
-      },
+    "/api/User/TriggerUserActive/{Id}": {
       "put": {
         "tags": [
           "User"
@@ -237,8 +249,8 @@
       "PutUserDto": {
         "type": "object",
         "properties": {
-          "type": {
-            "$ref": "#/components/schemas/UserTypeEnum"
+          "role": {
+            "$ref": "#/components/schemas/UserRoleEnum"
           },
           "name": {
             "type": "string",
@@ -262,8 +274,8 @@
             "type": "string",
             "format": "uuid"
           },
-          "type": {
-            "$ref": "#/components/schemas/UserTypeEnum"
+          "role": {
+            "$ref": "#/components/schemas/UserRoleEnum"
           },
           "name": {
             "type": "string",
@@ -291,7 +303,7 @@
         },
         "additionalProperties": false
       },
-      "UserTypeEnum": {
+      "UserRoleEnum": {
         "enum": [
           0,
           1,

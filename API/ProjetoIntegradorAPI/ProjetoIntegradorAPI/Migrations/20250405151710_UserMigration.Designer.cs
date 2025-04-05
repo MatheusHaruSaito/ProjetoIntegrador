@@ -12,8 +12,8 @@ using ProjetoIntegradorAPI.Context;
 namespace ProjetoIntegradorAPI.Migrations
 {
     [DbContext(typeof(ApplicationDataContext))]
-    [Migration("20250316020323_first-migration")]
-    partial class firstmigration
+    [Migration("20250405151710_UserMigration")]
+    partial class UserMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,9 @@ namespace ProjetoIntegradorAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -46,13 +49,10 @@ namespace ProjetoIntegradorAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Type")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("creationDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("updateDate")
+                    b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
