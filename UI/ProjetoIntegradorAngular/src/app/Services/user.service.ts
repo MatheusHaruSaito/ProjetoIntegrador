@@ -16,4 +16,7 @@ export class UserService {
   GetUsers() : Observable<User[]>{
     return this.http.get<User[]>(this.ApiUrl)
   }
+  TriggerUserActive(id:string): Observable<boolean>{
+    return this.http.put<boolean>(`${this.ApiUrl}/TriggerUserActive/${id}`,'');
+  }
 }
