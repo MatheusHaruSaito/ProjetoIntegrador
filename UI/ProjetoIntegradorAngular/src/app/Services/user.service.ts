@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { PostUserDto } from '../models/PostUserDto';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,8 @@ export class UserService {
   }
   TriggerUserActive(id:string): Observable<boolean>{
     return this.http.put<boolean>(`${this.ApiUrl}/TriggerUserActive/${id}`,'');
+  }
+  PostUser(PostUser:PostUserDto) :Observable <User>{
+    return this.http.post<User>(this.ApiUrl,PostUser);
   }
 }
