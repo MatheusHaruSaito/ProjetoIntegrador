@@ -1,0 +1,278 @@
+/* ==================== ESTILOS GLOBAIS ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* ==================== PALETA DE CORES ==================== */
+:root {
+    --rosa-primario: #d41e76;
+    --rosa-secundario: #e78aba;
+    --rosa-claro: #f8e1ed;
+    --branco: #ffffff;
+    --cinza-claro: #f1f5f9;
+    --texto: #333333;
+    --cinza-texto: #6d6d6d;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==================== CABEÇALHO ==================== */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--rosa-primario);
+}
+
+header {
+    background-color: var(--branco);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--rosa-secundario);
+    border-bottom: 2px solid var(--rosa-secundario);
+}
+
+nav ul li a.active {
+    color: var(--rosa-primario);
+    border-bottom: 2px solid var(--rosa-primario);
+    font-weight: 600;
+}
+
+/* ==================== BOTÕES ==================== */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Botões da seção hero */
+.btn-outline {
+    border: 2px solid var(--rosa-primario);
+    color: var(--rosa-primario);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--rosa-claro);
+    transform: translateY(-2px);
+
+}
+
+/* Botões de login/cadastro */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-login {
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-login-outline {
+    border: 2px solid var(--rosa-primario);
+    color: var(--rosa-primario);
+}
+
+.btn-login-solid {
+    background-color: var(--rosa-primario);
+    color: white;
+    border: 2px solid var(--rosa-primario);
+}
+
+.btn-login-outline:hover {
+    background-color: var(--rosa-claro);
+    transform: translateY(-2px);
+
+}
+
+.btn-login-solid:hover {
+    background-color: var(--rosa-secundario);
+    transform: translateY(-2px);
+}
+
+/* ==================== SEÇÃO HERO==================== */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--branco);
+    color: var(--texto);
+    padding: 100px 0 60px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 2rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ==================== SEÇÃO VALORES ==================== */
+.values {
+    background-color: #f9f9f9;
+    padding: 5rem 0;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--texto);
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    color: var(--cinza-texto);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    background-color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 2.5rem;
+    color: var(--rosa-primario);
+    margin-bottom: 1rem;
+}
+
+/* ==================== CHAMADA PARA AÇÃO ==================== */
+.cta {
+    padding: 4rem 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.cta h2 {
+    color: var(--texto);
+    margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+    background-color: var(--rosa-primario);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+}
+
+.btn-cta:hover {
+    background-color: var(--rosa-primario);
+    transform: translateY(-2px);
+}
+
+/* ==================== RODAPÉ ==================== */
+footer {
+    background-color: var(--texto);
+    color: var(--branco);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.footer-links a {
+    color: var(--branco);
+    text-decoration: none;
+}

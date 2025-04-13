@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar Usuário</title>
-    <link rel="stylesheet" href="Style.css">
+    <title>Cadastrar Usuário - UNOLINK</title>
+    <link rel="stylesheet" href="register.component.css">
+    <link rel="shortcut icon" type="imagex/png" href="../../../images/unolink_icon.png">
 </head>
 <body>
     <div class="form-container">
         <h1>Cadastrar Usuário</h1>
         <form id="form-cadastro" (ngSubmit)="Register()">
-            
             <input type="text" id="nome" placeholder="Nome" required>
             <input type="email" id="email" placeholder="Email" required>
             <input type="password" id="senha" placeholder="Senha" required>
             <input type="password" id="confirmar-senha" placeholder="Confirmar senha" required>
+            
             <button type="submit" class="btn-cadastrar">Cadastrar</button>
             <button type="button" class="btn-voltar" onclick="window.history.back()">Voltar</button>
         </form>

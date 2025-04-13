@@ -1,6 +1,109 @@
-<div class="container mt-5" >
-    <!-- Esta sera a pagina inicial -->
-     
-    <!-- Um botão temporario para acessar a aba de admin mais facilmente -->
-    <button class="btn btn-warning" [routerLink]="['/Admin-UserList']">Botão temporario</button>
-</div>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNOLINK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="home.component.css">
+    <link rel="shortcut icon" type="imagex/png" href="../../../images/unolink_icon.png">
+
+</head>
+<body>
+    <!-- ==================== CABEÇALHO ==================== -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo"><img 
+                    src="../../../images/unolink_logo.png" alt="UNOLINK" width="389" height="62" loading="lazy"></div>
+                    
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active">Início</a></li>
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="#">Benefícios</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="auth-buttons">
+                    <a href="#" class="btn-login btn-login-outline">Entrar</a>
+                    <a href="../register/register.component.html" class="btn-login btn-login-solid">Cadastrar</a>
+                    <button class="btn btn-warning" [routerLink]="['/Admin-UserList']">Botão temporario</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ==================== SEÇÃO HERO ==================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Conectando pessoas que querem ajudar com quem precisa</h1>
+                <p>Junte-se a uma comunidade solidária onde cada conexão pode transformar vidas. Seja para oferecer ou receber ajuda, você está no lugar certo.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-outline">Quero Ajudar</a>
+                    <a href="#" class="btn btn-outline">Sou uma ONG</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== SEÇÃO VALORES ==================== -->
+    <section class="values">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nossa Missão</h2>
+                <p>Facilitamos conexões que geram impacto social real</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Solidariedade</h3>
+                    <p>Promovemos a cultura da ajuda mútua e da generosidade</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Conexões</h3>
+                    <p>Ligamos pessoas com vontade de ajudar a quem precisa</p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Confiança</h3>
+                    <p>Todos os membros passam por verificação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- ==================== CHAMADA PARA AÇÃO ==================== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Pronto para fazer parte dessa rede do bem?</h2>
+            <a href="#" class="btn btn-login-solid">Comece Agora</a>
+        </div>
+    </section>
+    
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer>
+        <div class="container">
+            <p>UNOLINK</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Contato</a>
+            </div>
+            <p>&copy; 2025 UNOLINK. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
