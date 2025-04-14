@@ -1,21 +1,26 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 import { PostUserDto } from '../../models/PostUserDto';
+import { RegisterFormComponent } from "../register-form/register-form.component";
 
 @Component({
   selector: 'app-register',
-  imports: [FormsModule, RouterModule],
+  imports: [RouterModule, RegisterFormComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  constructor(private userService : UserService) {}
- Register(user : PostUserDto): void{
-  this.userService.PostUser(user).subscribe((response) => {
-    console.log(response);
+
+
+  constructor(private userService: UserService, private router : Router) {
+    
   }
- }
- 
+  PostUser(user: PostUserDto){
+    this.userService.PostUser(user).subscribe(response =>{
+      console.log(response);
+      this.router.navigate(['/']);
+
+    });
+  }
 }

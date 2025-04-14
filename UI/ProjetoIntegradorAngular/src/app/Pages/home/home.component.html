@@ -1,22 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNOLINK</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="home.component.css">
-    <link rel="shortcut icon" type="imagex/png" href="../../../images/unolink_icon.png">
 
-</head>
-<body>
     <!-- ==================== CABEÇALHO ==================== -->
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo"><img 
-                    src="../../../images/unolink_logo.png" alt="UNOLINK" width="389" height="62" loading="lazy"></div>
-                    
+                <!-- <div class="logo">
+                    <img src="../../../images/unolink_logo.png" alt="UNOLINK" width="389" height="62" loading="lazy">
+                </div> -->
                 <nav>
                     <ul>
                         <li><a href="#" class="active">Início</a></li>
@@ -28,7 +17,7 @@
                 
                 <div class="auth-buttons">
                     <a href="#" class="btn-login btn-login-outline">Entrar</a>
-                    <a href="../register/register.component.html" class="btn-login btn-login-solid">Cadastrar</a>
+                    <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
                     <button class="btn btn-warning" [routerLink]="['/Admin-UserList']">Botão temporario</button>
                 </div>
             </div>
@@ -105,5 +94,3 @@
             <p>&copy; 2025 UNOLINK. Todos os direitos reservados.</p>
         </div>
     </footer>
-</body>
-</html>
