@@ -1,0 +1,67 @@
+.register-form {
+    
+}
+
+.form-container {
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    border-top: 4px solid var(--rosa-primario)
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background-color: var(--branco);
+    color: #333;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--rosa-primario);
+    box-shadow: 0 0 0 2px rgba(212, 30, 118, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-cadastrar {
+    background-color: var(--rosa-primario);
+    color: var(--branco);
+    margin-bottom: 10px;
+}
+
+.btn-cadastrar:hover {
+    background-color: var(--rosa-secundario);
+}
+
+.btn-voltar {
+    background-color: var(--branco);
+    color: var(--rosa-primario);
+    border: 1px solid var(--rosa-primario);
+}
+
+.btn-voltar:hover {
+    background-color: var(--rosa-claro);
+}

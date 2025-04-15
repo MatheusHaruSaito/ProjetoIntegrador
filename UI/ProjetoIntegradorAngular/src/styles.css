@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+/* ==================== ESTILOS GLOBAIS ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+/* ==================== PALETA DE CORES ==================== */
+:root {
+    --rosa-primario: #d41e76;
+    --rosa-secundario: #e78aba;
+    --rosa-claro: #f8e1ed;
+    --branco: #ffffff;
+    --cinza-claro: #f1f5f9;
+    --texto: #333333;
+    --cinza-texto: #6d6d6d;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
