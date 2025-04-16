@@ -1,0 +1,103 @@
+
+
+/* ==================== CABEÇALHO ==================== */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--rosa-primario);
+}
+
+header {
+    background-color: var(--branco);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--texto);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--rosa-secundario);
+    border-bottom: 2px solid var(--rosa-secundario);
+}
+
+nav ul li a.active {
+    color: var(--rosa-primario);
+    border-bottom: 2px solid var(--rosa-primario);
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Botões de login/cadastro */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn-login {
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn-login-outline {
+    border: 2px solid var(--rosa-primario);
+    color: var(--rosa-primario);
+}
+
+.btn-login-solid {
+    background-color: var(--rosa-primario);
+    color: white;
+    border: 2px solid var(--rosa-primario);
+}
+
+.btn-login-outline:hover {
+    background-color: var(--rosa-claro);
+    transform: translateY(-2px);
+
+}
+
+.btn-login-solid:hover {
+    background-color: var(--rosa-secundario);
+    transform: translateY(-2px);
+}
+
