@@ -2,11 +2,12 @@
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <img src="images\unolinklogo.png" alt="UNOLINK" width="389" height="62" loading="lazy">
+                <img src="images/unolinklogo.png" alt="UNOLINK" width="300" height="50" loading="lazy">
             </div>
-            <nav>
+            
+            <nav class="main-nav">
                 <ul>
-                    <li><a href="#" class="active">Início</a></li>
+                    <li><a href="#">Início</a></li>
                     <li><a href="#">ONGS</a></li>
                     <li><a href="#">Como Ajudar</a></li>
                     <li><a href="#">Sobre Nós</a></li>
@@ -16,7 +17,6 @@
             <div class="auth-buttons">
                 <a href="#" class="btn-login btn-login-outline">Entrar</a>
                 <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
-                <button class="btn btn-warning" [routerLink]="['/Admin-UserList']">Botão temporario</button>
             </div>
         </div>
     </div>

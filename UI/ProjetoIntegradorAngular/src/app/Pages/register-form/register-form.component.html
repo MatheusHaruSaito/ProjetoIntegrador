@@ -1,15 +1,37 @@
 <div class="register-form">
-
-<div class="form-container">
-    <h1>Cadastrar Usuário</h1>
-    <form id="form-cadastro" [formGroup]="userForm" (ngSubmit)="Register()" >
-        <input type="text" id="nome" placeholder="Nome" required formControlName="name">
-        <input type="email" id="email" placeholder="Email" required formControlName="email">
-        <input type="password" id="senha" placeholder="Senha" required formControlName="password">
-        <input type="password" id="confirmar-senha" formControlName="ConfirmPassword" placeholder="Confirmar senha" required>
+    <div class="form-container">
+      <div class="logo-container">
+        <img src="images/unolinkicon.png" alt="UNOLINK" class="form-logo">
+      </div>
+      <h1>Cadastrar Usuário</h1>
+      <form id="form-cadastro" [formGroup]="userForm" (ngSubmit)="Register()">
+        <div class="input-group">
+          <i class="fas fa-user"></i>
+          <input type="text" id="nome" placeholder="Nome completo" required formControlName="name">
+        </div>
         
-        <button type="submit" class="btn-cadastrar">Cadastrar</button>
-        <button type="button" class="btn-voltar" [routerLink]="['/']" >Voltar</button>
-    </form>
-</div>  
-</div>
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" placeholder="Email" required formControlName="email">
+        </div>
+        
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="senha" placeholder="Senha" required formControlName="password">
+        </div>
+        
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="confirmar-senha" placeholder="Confirmar senha" required formControlName="ConfirmPassword">
+        </div>
+        
+        <button type="submit" class="btn btn-primario">
+          <i class="fas fa-user-plus"></i> Cadastrar
+        </button>
+        
+        <button type="button" class="btn btn-secundario" [routerLink]="['/']">
+          <i class="fas fa-arrow-left"></i> Voltar
+        </button>
+      </form>
+    </div>
+  </div>

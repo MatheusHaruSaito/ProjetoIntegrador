@@ -69,6 +69,7 @@
     color: var(--texto);
     padding: 100px 0 60px;
     position: relative;
+    padding-top: calc(var(--navbar-height) + 20px); 
 }
 
 .hero-content {
@@ -193,3 +194,19 @@ footer {
     color: var(--branco);
     text-decoration: none;
 }
+
+/* Adicionar no home.component.css */
+@media (max-width: 768px) {
+    .hero-content {
+      padding: 0 1rem;
+    }
+    
+    .btn-group {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
