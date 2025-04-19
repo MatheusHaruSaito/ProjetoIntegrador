@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 import { PostUserDto } from '../../models/PostUserDto';
 
@@ -14,19 +14,48 @@ import { PostUserDto } from '../../models/PostUserDto';
 export class RegisterFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<PostUserDto>();
   userForm!: FormGroup;
-  constructor(private userService : UserService) {}
+  user!: PostUserDto;
+
+  constructor(private userService : UserService, private router: Router) {}
   ngOnInit(): void {
     this.userForm = new FormGroup({
-      name: new FormControl(""),
-      password: new FormControl(""),
-      email: new FormControl("")
+      name: new FormControl("",Validators.required),
+      password: new FormControl("",Validators.required),
+      email: new FormControl("",[Validators.required,Validators.required]),
+      ConfirmPassword: new FormControl("",Validators.required)
     })
   }
-
  Register(): void{
+  
+  this.user = this.userForm.value;
 
-  this.onSubmit.emit(this.userForm.value);
+  if(this.user.name == ""){
+    this.AlertError("Name is Empty");
+  }
+  else if(this.user.email == ""){
+    this.AlertError("Email is Empty");
+  }
+  else if(this.user.password == ""){
+    this.AlertError("Pasword is Empty");
+  }
+  else{
+    this.userService.PostUser(this.user).subscribe({
+      next: respose =>{
+        this.router.navigate(['/']);
+      },
+      error: error =>{
 
+        this.AlertError(error.error);
+      }
+    });
+}
+  
  }
+ PostUser(user: PostUserDto){
+
+}
+AlertError(message: string){
+  window.alert(message);
+}
  
 }

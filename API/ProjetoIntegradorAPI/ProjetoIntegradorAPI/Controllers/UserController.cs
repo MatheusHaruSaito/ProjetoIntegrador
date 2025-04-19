@@ -20,19 +20,19 @@ namespace ProjetoIntegradorAPI.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(PostUserDto postUserDto)
         {
-            var user = postUserDto.PostUserDtoToUser();
-            if(user == null)
+            
+            var user = await _userRepository.AddAsync(postUserDto.PostUserDtoToUser());
+            if (user is null)
             {
-                return NotFound();
+                return BadRequest("User with this Email/Username Already Existis");
             }
-            await _userRepository.AddAsync(user);
             return Ok(user);
         }
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetAllUser()
         {
             var users = await _userRepository.GetAllAsync();
-            if(users == null)
+            if(users is null)
             {
                 return NotFound();
             }
@@ -42,7 +42,7 @@ namespace ProjetoIntegradorAPI.Controllers
         public async Task<ActionResult<User>> GetUserById(Guid Id)
         {
             var user = await _userRepository.GetByIdAsync(Id);
-            if(user == null)
+            if(user is null)
             {
                 return NotFound();
             }
@@ -60,7 +60,7 @@ namespace ProjetoIntegradorAPI.Controllers
         public async Task<ActionResult<User>> UpdateUser(PutUserDto UpdateUser)
         {
             var user = await _userRepository.Update(UpdateUser.PutUserDtoToUser());
-            if(user == null)
+            if(user is null)
             {
                 return BadRequest();
             }

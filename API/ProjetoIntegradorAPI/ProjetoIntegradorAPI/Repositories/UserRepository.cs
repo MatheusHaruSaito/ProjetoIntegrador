@@ -1,4 +1,6 @@
-﻿using ProjetoIntegradorAPI.Context;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using ProjetoIntegradorAPI.Context;
 using ProjetoIntegradorAPI.Models;
 
 namespace ProjetoIntegradorAPI.Repositories
@@ -25,10 +27,14 @@ namespace ProjetoIntegradorAPI.Repositories
             await _applicationDataContext.SaveChangesAsync();
             return user.IsActive;
         }
-        public override async Task<User> AddAsync(User user)
+        public override async Task<User?> AddAsync(User user)
         {
+            if (await _applicationDataContext.User.AnyAsync(u => u.Email == user.Email)){
+                return null;
+            }
             user.Id = Guid.NewGuid();
             user.CreationDate = DateTime.UtcNow;
+            user.Password = new PasswordHasher<User>().HashPassword(user,user.Password);
             user.UpdateDate = user.CreationDate;
             user.IsActive = true;
 

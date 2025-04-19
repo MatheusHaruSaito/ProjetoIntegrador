@@ -6,7 +6,7 @@ using ProjetoIntegradorAPI.Context;
 
 namespace ProjetoIntegradorAPI.Repositories
 {
-    public class BaseRepository<T> : IBaseRepository<T> where T: class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
         protected readonly ApplicationDataContext _applicationDataContext;
         public BaseRepository(ApplicationDataContext applicationDataContext)
@@ -14,7 +14,7 @@ namespace ProjetoIntegradorAPI.Repositories
             _applicationDataContext = applicationDataContext;
         }
 
-        public virtual async Task<T> Delete(Guid Id)
+        public virtual async Task<T?> Delete(Guid Id)
         {
             T DeleteEntity = await GetByIdAsync(Id);
             _applicationDataContext.Set<T>().Remove(DeleteEntity);
@@ -25,28 +25,28 @@ namespace ProjetoIntegradorAPI.Repositories
             return null;
         }
 
-        public virtual async Task<IEnumerable<T>> GetAllAsync()
+        public virtual async Task<IEnumerable<T>?> GetAllAsync()
         {
             return await _applicationDataContext.Set<T>().ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(Guid Id)
+        public virtual async Task<T?> GetByIdAsync(Guid Id)
         {
             return await _applicationDataContext.Set<T>().FindAsync(Id) ;
         }
 
-        public virtual async Task<T> AddAsync(T PostEntity)
+        public virtual async Task<T?> AddAsync(T PostEntity)
         {
             await _applicationDataContext.Set<T>().AddAsync(PostEntity);
             if(await _applicationDataContext.SaveChangesAsync() > 0)
             {
-                return null;
+                return PostEntity;
             }
              
-            return PostEntity;
+            return null;
         }
 
-        public virtual async Task<T> Update(T UpdateEntity)
+        public virtual async Task<T?> Update(T UpdateEntity)
         {
             _applicationDataContext.Set<T>().Update(UpdateEntity);
             await _applicationDataContext.SaveChangesAsync();
