@@ -1,212 +1,261 @@
 /* ==================== BOTÕES ==================== */
 .btn {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 /* Botões da seção hero */
 .btn-outline {
-    border: 2px solid var(--rosa-primario);
-    color: var(--rosa-primario);
-    background: transparent;
+  border: 2px solid var(--rosa-primario);
+  color: var(--rosa-primario);
+  background: transparent;
 }
 
 .btn-outline:hover {
-    background-color: var(--rosa-claro);
-    transform: translateY(-2px);
-
+  background-color: var(--rosa-claro);
+  transform: translateY(-2px);
 }
 
 /* Botões de login/cadastro */
 .auth-buttons {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .btn-login {
-    padding: 0.5rem 1.2rem;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-align: center;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .btn-login-outline {
-    border: 2px solid var(--rosa-primario);
-    color: var(--rosa-primario);
+  border: 2px solid var(--rosa-primario);
+  color: var(--rosa-primario);
 }
 
 .btn-login-solid {
-    background-color: var(--rosa-primario);
-    color: white;
-    border: 2px solid var(--rosa-primario);
+  background-color: var(--rosa-primario);
+  color: white;
+  border: 2px solid var(--rosa-primario);
 }
 
 .btn-login-outline:hover {
-    background-color: var(--rosa-claro);
-    transform: translateY(-2px);
-
+  background-color: var(--rosa-claro);
+  transform: translateY(-2px);
 }
 
 .btn-login-solid:hover {
-    background-color: var(--rosa-secundario);
-    transform: translateY(-2px);
+  background-color: var(--rosa-secundario);
+  transform: translateY(-2px);
 }
 
 /* ==================== SEÇÃO HERO==================== */
 .hero {
-    min-height: 80vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--branco);
-    color: var(--texto);
-    padding: 100px 0 60px;
-    position: relative;
-    padding-top: calc(var(--navbar-height) + 20px); 
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--branco);
+  color: var(--texto);
+  padding: 100px 0 60px;
+  position: relative;
+  padding-top: calc(var(--navbar-height) + 20px);
 }
 
 .hero-content {
-    max-width: 600px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    text-align: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
 }
 
 .hero h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 .hero p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 2rem;
 }
 
 .btn-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* ==================== SEÇÃO VALORES ==================== */
 .values {
-    background-color: #f9f9f9;
-    padding: 5rem 0;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+  background-color: #f9f9f9;
+  padding: 5rem 0;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .section-title {
-    text-align: center;
-    margin-bottom: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 .section-title h2 {
-    font-size: 2.2rem;
-    color: var(--texto);
-    margin-bottom: 1rem;
+  font-size: 2.2rem;
+  color: var(--texto);
+  margin-bottom: 1rem;
 }
 
 .section-title p {
-    color: var(--cinza-texto);
-    max-width: 700px;
-    margin: 0 auto;
+  color: var(--cinza-texto);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .value-item {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-    background-color: white;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  background-color: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
 }
 
 .value-item:hover {
-    transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 .value-icon {
-    font-size: 2.5rem;
-    color: var(--rosa-primario);
-    margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--rosa-primario);
+  margin-bottom: 1rem;
+}
+
+/* ==================== ONGS ==================== */
+.ongs-section {
+  background-color: var(--branco);
+  padding: 4rem 0;
+  border-top: 1px solid var(--cinza-claro);
+  border-bottom: 1px solid var(--cinza-claro);
+}
+
+.cardgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--branco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--rosa-primario);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card h3 {
+  color: var(--rosa-primario);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--cinza-texto);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* ==================== CHAMADA PARA AÇÃO ==================== */
 .cta {
-    padding: 4rem 0;
-    background-color: #f9f9f9;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
-    text-align: center;
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: center;
 }
 
 .cta h2 {
-    color: var(--texto);
-    margin-bottom: 1.5rem;
+  color: var(--texto);
+  margin-bottom: 1.5rem;
 }
 
 .btn-cta {
-    background-color: var(--rosa-primario);
-    color: white;
-    border: none;
-    padding: 0.8rem 2rem;
+  background-color: var(--rosa-primario);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
 }
 
 .btn-cta:hover {
-    background-color: var(--rosa-primario);
-    transform: translateY(-2px);
+  background-color: var(--rosa-primario);
+  transform: translateY(-2px);
 }
 
 /* ==================== RODAPÉ ==================== */
 footer {
-    background-color: var(--texto);
-    color: var(--branco);
-    padding: 2rem 0;
-    text-align: center;
+  background-color: var(--texto);
+  color: var(--branco);
+  padding: 2rem 0;
+  text-align: center;
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 1.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
 }
 
 .footer-links a {
-    color: var(--branco);
-    text-decoration: none;
+  color: var(--branco);
+  text-decoration: none;
 }
 
-/* Adicionar no home.component.css */
+/* ==================== RESPONSIVIDADE (melhora isso aqui depois) ==================== */
 @media (max-width: 768px) {
-    .hero-content {
-      padding: 0 1rem;
-    }
-    
-    .btn-group {
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-    
-    .values-grid {
-      grid-template-columns: 1fr;
-    }
+  .hero-content {
+    padding: 0 1rem;
   }
+
+  .btn-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
