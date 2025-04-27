@@ -1,5 +1,129 @@
 [
   {
+    "ContainingType": "ProjetoIntegradorAPI.Controllers.OngTicketController",
+    "Method": "PostAsync",
+    "RelativePath": "api/OngTicket",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "postOngTicket",
+        "Type": "ProjetoIntegradorAPI.DTOs.OngTicketDto.PostOngTicketDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ProjetoIntegradorAPI.Models.OngTicket",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProjetoIntegradorAPI.Controllers.OngTicketController",
+    "Method": "GetAll",
+    "RelativePath": "api/OngTicket",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ProjetoIntegradorAPI.Models.OngTicket, ProjetoIntegradorAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProjetoIntegradorAPI.Controllers.OngTicketController",
+    "Method": "Get",
+    "RelativePath": "api/OngTicket/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ProjetoIntegradorAPI.Models.OngTicket",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProjetoIntegradorAPI.Controllers.OngTicketController",
+    "Method": "AcceptTicket",
+    "RelativePath": "api/OngTicket/AcceptTicket/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ProjetoIntegradorAPI.Models.OngTicket",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ProjetoIntegradorAPI.Controllers.OngTicketController",
+    "Method": "DeclineTicket",
+    "RelativePath": "api/OngTicket/Decline/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ProjetoIntegradorAPI.Models.OngTicket",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ProjetoIntegradorAPI.Controllers.UserController",
     "Method": "PostUser",
     "RelativePath": "api/User",

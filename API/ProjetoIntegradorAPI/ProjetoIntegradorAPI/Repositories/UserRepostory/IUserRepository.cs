@@ -1,6 +1,6 @@
 ﻿using ProjetoIntegradorAPI.Models;
 
-namespace ProjetoIntegradorAPI.Repositories
+namespace ProjetoIntegradorAPI.Repositories.UserRepostory
 {
     public interface IUserRepository : IBaseRepository<User>
     {

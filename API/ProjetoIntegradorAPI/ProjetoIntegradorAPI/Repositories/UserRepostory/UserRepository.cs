@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoIntegradorAPI.Context;
 using ProjetoIntegradorAPI.Models;
 
-namespace ProjetoIntegradorAPI.Repositories
+namespace ProjetoIntegradorAPI.Repositories.UserRepostory
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {

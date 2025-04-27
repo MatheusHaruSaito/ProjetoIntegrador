@@ -9,5 +9,6 @@ namespace ProjetoIntegradorAPI.Context
         {
         }
         public DbSet<User> User { get; set; }
+        public DbSet<OngTicket> OngTicket { get; set; }
     }
 }

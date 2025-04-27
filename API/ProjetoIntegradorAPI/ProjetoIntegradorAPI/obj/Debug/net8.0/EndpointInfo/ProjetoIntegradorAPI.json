@@ -5,6 +5,210 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/OngTicket": {
+      "post": {
+        "tags": [
+          "OngTicket"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostOngTicketDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostOngTicketDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PostOngTicketDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "OngTicket"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OngTicket"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OngTicket"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/OngTicket"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OngTicket/{Id}": {
+      "get": {
+        "tags": [
+          "OngTicket"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OngTicket/AcceptTicket/{Id}": {
+      "put": {
+        "tags": [
+          "OngTicket"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/OngTicket/Decline/{Id}": {
+      "put": {
+        "tags": [
+          "OngTicket"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OngTicket"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/User": {
       "post": {
         "tags": [
@@ -228,6 +432,72 @@
   },
   "components": {
     "schemas": {
+      "OngTicket": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "reviwed": {
+            "type": "boolean"
+          },
+          "accpeted": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "cnpj": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PostOngTicketDto": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "cnpj": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "PostUserDto": {
         "type": "object",
         "properties": {
@@ -244,6 +514,14 @@
             "nullable": true
           },
           "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
             "type": "string",
             "nullable": true
           }
@@ -272,6 +550,11 @@
         "additionalProperties": false
       },
       "User": {
+        "required": [
+          "email",
+          "name",
+          "password"
+        ],
         "type": "object",
         "properties": {
           "id": {
@@ -290,6 +573,14 @@
             "nullable": true
           },
           "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "cep": {
             "type": "string",
             "nullable": true
           },

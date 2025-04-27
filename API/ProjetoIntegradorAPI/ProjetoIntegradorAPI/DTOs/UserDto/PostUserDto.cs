@@ -9,5 +9,8 @@ namespace ProjetoIntegradorAPI.DTOs.UserDto
         public string ConfirmPassword { get; set; }
 
         public string Email { get; set; }
+        public string Cep { get; set; }
+        public string Description { get; set; }
+
     }
 }

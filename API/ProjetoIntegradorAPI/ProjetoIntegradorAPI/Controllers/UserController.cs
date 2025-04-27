@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoIntegradorAPI.Context;
 using ProjetoIntegradorAPI.DTOs.UserDto;
 using ProjetoIntegradorAPI.Models;
-using ProjetoIntegradorAPI.Repositories;
+using ProjetoIntegradorAPI.Repositories.UserRepostory;
 
 namespace ProjetoIntegradorAPI.Controllers
 {

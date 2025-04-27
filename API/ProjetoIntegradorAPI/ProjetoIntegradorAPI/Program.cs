@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoIntegradorAPI.Context;
 using ProjetoIntegradorAPI.Models;
-using ProjetoIntegradorAPI.Repositories;
+using ProjetoIntegradorAPI.Repositories.OngTicketRepository;
+using ProjetoIntegradorAPI.Repositories.UserRepostory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IUserRepository,UserRepository>();
+builder.Services.AddScoped<IOngTicketRepository, OngTicketRepository>();
 builder.Services.AddCors();
 builder.Services.AddDbContext<ApplicationDataContext>(o =>
     o.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
