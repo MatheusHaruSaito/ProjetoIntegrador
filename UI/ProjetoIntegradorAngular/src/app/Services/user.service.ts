@@ -10,7 +10,7 @@ import { PostUserDto } from '../models/PostUserDto';
 })
 export class UserService {
 
-  ApiUrl = environment.ApiUrl;
+  ApiUrl = environment.ApiUrlUser;
 
   constructor(private http: HttpClient) { }
 

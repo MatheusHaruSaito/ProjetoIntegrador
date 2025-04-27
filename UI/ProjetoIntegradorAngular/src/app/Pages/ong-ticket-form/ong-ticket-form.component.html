@@ -1,0 +1,11 @@
+<br><br><br><br>
+<div>
+    <form [formGroup]="OngTicketForm" (ngSubmit)="submit()">
+        Name:<input type="text" formControlName="Name"><br>
+        Description:<input type="text" formControlName="Description"><br>
+        Email:<input type="text" formControlName="Email"><br>
+        Cep:<input type="text" formControlName="Cep"><br>
+        Cnpj:<input type="text" formControlName="Cnpj"><br>
+        <input type="submit" value="Enviar Ticket">
+    </form>
+</div>
