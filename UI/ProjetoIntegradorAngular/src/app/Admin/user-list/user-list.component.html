@@ -1,61 +1,58 @@
-<div class="container">
-<h1 style="text-align: center;padding-top: 5%;">Listar Usuarios</h1>
+<div class="admin-page">
+    <div class="container">
+        <h1>Listar Usuários</h1>
 
-<input type="text" id="SerchBar" placeholder="Buscar" (input)="Search($event)">
-<table class="table table-hover table-bordered  mt-5">
-    <thead class="table table-dark">
-        <tr>
-            <th>IsActive</th>
-            <th>Id</th>
-            <th>Role</th>
-            <th>Name</th>
-            <th>Password</th>
-            <th>Email</th>
-            <th>creationDate</th>
-            <th>updateDate</th>
-        </tr>
-    </thead>
-    <tbody>
-        @if(users.length >0){
-            @for(user of users; track $index){
+        <input type="text" id="SearchBar" placeholder="Buscar usuários..." (input)="Search($event)">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>ID</th>
+                    <th>Tipo</th>
+                    <th>Nome</th>
+                    <th>Senha</th>
+                    <th>Email</th>
+                    <th>Criação</th>
+                    <th>Atualização</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(users.length >0) {
+                @for(user of users; track $index) {
                 <tr>
                     <td>
-                    @if(user.isActive)
-                    {
+                        @if(user.isActive) {
                         <button class="btn btn-success" (click)="TriggerUserActive(user.id)">Ativo</button>
-                    }
-                    @else   
-                    {
-                        <button class="btn btn-danger" (click)="TriggerUserActive(user.id)">Desativo</button>
-                    }</td>
+                        }
+                        @else {
+                        <button class="btn btn-danger" (click)="TriggerUserActive(user.id)">Inativo</button>
+                        }
+                    </td>
                     <td>{{user.id}}</td>
-                    <td>@switch(user.role)
-                        {
-                            @case (0) {
-                                Default
-                            }
-                            @case (1){
-                                Administrator
-                            }
-                            @case (2) {
-                                Ong
-                            }
+                    <td>
+                        @switch(user.role) {
+                        @case (0) { <span class="role-default">Padrão</span> }
+                        @case (1) { <span class="role-admin">Admin</span> }
+                        @case (2) { <span class="role-ong">ONG</span> }
                         }
                     </td>
                     <td>{{user.name}}</td>
-                    <td>{{user.password}}</td>
+                    <td class="password-cell">{{user.password}}</td>
                     <td>{{user.email}}</td>
-                    <td>{{user.creationDate}}</td>
-                    <td>{{user.updateDate}}</td>
+                    <td>{{user.creationDate | date: 'short'}}</td>
+                    <td>{{user.updateDate | date: 'short'}}</td>
                 </tr>
-            }
-        }
-        @else {
-            <tr>
-                <td colspan="8" style="text-align: center;"><h3>Nenhum Usuario Encontrado</h3></td>
-            </tr>
-        }
-    </tbody>
-    
-</table>
+                }
+                }
+                @else {
+                <tr>
+                    <td colspan="8" class="no-users">
+                        <h3>Nenhum Usuário Encontrado</h3>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>
