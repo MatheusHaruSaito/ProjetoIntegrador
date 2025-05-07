@@ -15,14 +15,14 @@ namespace ProjetoIntegradorAPI.Migrations
                 name: "Cep",
                 table: "User",
                 type: "nvarchar(max)",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.AddColumn<string>(
                 name: "Description",
                 table: "User",
                 type: "nvarchar(max)",
-                nullable: false,
+                nullable: true,
                 defaultValue: "");
 
             migrationBuilder.CreateTable(
