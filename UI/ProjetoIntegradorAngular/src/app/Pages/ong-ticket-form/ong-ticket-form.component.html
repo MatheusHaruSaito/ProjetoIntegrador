@@ -1,11 +1,44 @@
-<br><br><br><br>
-<div>
-    <form [formGroup]="OngTicketForm" (ngSubmit)="submit()">
-        Name:<input type="text" formControlName="Name"><br>
-        Description:<input type="text" formControlName="Description"><br>
-        Email:<input type="text" formControlName="Email"><br>
-        Cep:<input type="text" formControlName="Cep"><br>
-        Cnpj:<input type="text" formControlName="Cnpj"><br>
-        <input type="submit" value="Enviar Ticket">
-    </form>
-</div>
+<div class="register-form">
+    <div class="form-container">
+      <div class="logo-container">
+        <img src="images/unolinkicon.png" alt="UNOLINK" class="form-logo">
+      </div>
+      <h1>Registrar ONG</h1>
+      <form [formGroup]="OngTicketForm" (ngSubmit)="submit()">
+  
+        <div class="input-group">
+          <i class="fas fa-building"></i>
+          <input type="text" placeholder="Nome da ONG" formControlName="Name" required>
+        </div>
+  
+        <div class="input-group">
+          <i class="fas fa-align-left"></i>
+          <input type="text" placeholder="Descrição" formControlName="Description" required>
+        </div>
+  
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Email" formControlName="Email" required>
+        </div>
+  
+        <div class="input-group">
+          <i class="fas fa-map-marker-alt"></i>
+          <input type="text" placeholder="CEP" formControlName="Cep" required>
+        </div>
+  
+        <div class="input-group">
+          <i class="fas fa-id-card"></i>
+          <input type="text" placeholder="CNPJ" formControlName="Cnpj" required>
+        </div>
+  
+        <button type="submit" class="btn btn-primario">
+          <i class="fas fa-paper-plane"></i> Enviar Ticket
+        </button>
+  
+        <button type="button" class="btn btn-secundario" [routerLink]="['/']">
+          <i class="fas fa-arrow-left"></i> Voltar
+        </button>
+      </form>
+    </div>
+  </div>
+  

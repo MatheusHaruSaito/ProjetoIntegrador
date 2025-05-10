@@ -58,7 +58,7 @@
   transform: translateY(-2px);
 }
 
-/* ==================== SEÇÃO HERO==================== */
+/* ==================== SEÇÃO HERO ==================== */
 .hero {
   min-height: 80vh;
   display: flex;
@@ -257,5 +257,32 @@ footer {
 
   .values-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 450px) {
+  h1 {
+      font-size: 1.8rem;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+
+  h3 {
+      font-size: 1.2rem;
+  }
+
+  p {
+      font-size: 1.7rem;
+      line-height: 1.8;
+  }
+
+  .btn {
+      font-size: 1rem;
+  }
+
+  .card-content p {
+      font-size: 0.95rem;
   }
 }

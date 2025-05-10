@@ -1,12 +1,22 @@
-
 /* ==================== FORMULÁRIO ==================== */
+.register-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 80px 20px 20px; /* Aumente o topo conforme a altura da navbar */
+    background-color: var(--cinza-fundo); /* opcional */
+    box-sizing: border-box;
+}
+
+
 .form-container {
     background-color: var(--branco);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
-    width: 100%;
+    width: 90%;
     max-width: 400px;
     border-top: 4px solid var(--rosa-primario);
 }
@@ -96,3 +106,26 @@ input:focus {
 .btn-secundario:hover {
     background-color: var(--rosa-claro);
 }
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 600px) {
+    .register-form {
+      padding-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
