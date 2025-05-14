@@ -23,13 +23,13 @@ namespace ProjetoIntegradorAPI.Repositories.OngTicketRepository
             ongTicket.Reviwed = true;
 
 
-            _userRepository.AddAsync(new User
+            await _userRepository.AddAsync(new User
             {
                 Name = ongTicket.Name,
                 Email = ongTicket.Email,
                 Password = GenerateUserRandomPassword(5),
                 Cep = ongTicket.Cep,
-                Role = UserRoleEnum.Administrator,
+                Role = UserRoleEnum.Ong,
             });
             _applicationDataContext.OngTicket.Update(ongTicket);
             await _applicationDataContext.SaveChangesAsync();

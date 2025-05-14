@@ -27,7 +27,7 @@ export class OngTicketFormComponent implements OnInit {
   OngTicketForm! : FormGroup;
 
   submit(){
-    window.alert("test");
+    window.alert("Solicitação Enviada com Sucesso");
     this.ongTicketService.PostOngTicket(this.OngTicketForm.value).subscribe({
       next: response =>{
         this.router.navigate(['/'])

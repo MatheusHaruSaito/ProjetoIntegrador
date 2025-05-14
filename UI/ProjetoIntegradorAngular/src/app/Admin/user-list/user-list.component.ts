@@ -34,7 +34,8 @@ export class UserListComponent implements OnInit {
     const value = target.value.toLowerCase();
     console.log(value);
     this.users = this.Allusers.filter(user =>{
-      return user.name.toLowerCase().includes(value);
+      return user.name.toLowerCase().includes(value)||
+              user.role == Number(value);
     })
   }
 
