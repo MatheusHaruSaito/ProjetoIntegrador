@@ -1,0 +1,29 @@
+<br>br
+<br><br><br><br><br><br><br>
+@if (ongTicketList.length > 0) {
+    @for (ticket of ongTicketList; track $index) {
+        @if(!ticket.reviwed){
+            <div class="TicketContainer">
+                <div>           
+                     <label for="TicketId">Id: {{ticket.id}}</label><br>
+                    <label for="TicketName">Nome: {{ticket.name}}</label><br>
+                    <label for="TicketEmail">Email: {{ticket.email}}</label><br>
+                    <label for="TicketCep">Cep: {{ticket.cep}}</label><br>
+                    <label for="Ticketcnpj">Cnpj: {{ticket.cnpj}}</label><br>
+                    <label for="TicketexpirationDate">Expiration Date: {{ticket.expirationDate | date}}</label><br>
+                </div>
+                <div class="TicketDescription">
+                    <label for="TicketDescription">{{ticket.description}}</label><br>
+                </div>
+                <div class="TicketButtons">
+                    <button type="button"  (click)="AceeptTicket(ticket.id)">Aceitar</button>
+                    <button type="button" (click)="DeclineTicket(ticket.id)"  >Negar</button>
+                </div>
+            </div>
+            <br>
+        }
+
+    }
+}
+
+  

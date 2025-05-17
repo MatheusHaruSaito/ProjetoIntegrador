@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "fK/9qo2PDu7QypFvcTdWSEJtuWq/ZiUzKbyBZmqRtkM=",
+  "Hash": "jVAIe1PjIn+HSAYW2LE9Mlqf5ieO5RL5lknIexCCBmY=",
   "Source": "ProjetoIntegradorAPI",
   "BasePath": "_content/ProjetoIntegradorAPI",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

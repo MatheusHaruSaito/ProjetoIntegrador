@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../models/user';
 import { PostUserDto } from '../models/PostUserDto';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +23,5 @@ export class UserService {
   PostUser(PostUser:PostUserDto) :Observable <User>{
     return this.http.post<User>(this.ApiUrl,PostUser);
   }
+  
 }

@@ -1,0 +1,23 @@
+.TicketContainer{
+    border: 1px solid rgb(43, 40, 40);
+    background-color: var(--rosa-claro);
+    width: 50%;
+    display:grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
+}
+.TicketDescription{
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    background-color: var(--cinza-claro);
+}
+.TicketButtons{
+    display: flex;
+    justify-content: flex-end; 
+    align-items: flex-end;
+    padding: 10px;
+}
+.TicketButtons button{
+    width: 50%;
+}
