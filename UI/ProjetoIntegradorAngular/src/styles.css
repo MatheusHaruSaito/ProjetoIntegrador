@@ -25,7 +25,7 @@ body {
     --cinza-claro: #f1f5f9;
     --texto: #333333;
     --cinza-texto: #6d6d6d;
-    --navbar-height: 80px; /* isso aqui é pra tentar deixar a navbar arrumada sem sobrepor as coisas de baixo (não tenho certeza se tá funcionando pq n sei fazer uma responsividade boa KKKK*/
+    --navbar-height: 80px;
 }
 
 .container {
