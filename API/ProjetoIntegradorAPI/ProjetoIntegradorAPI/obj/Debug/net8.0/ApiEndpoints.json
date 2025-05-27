@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "ProjetoIntegradorAPI.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginUser",
+        "Type": "ProjetoIntegradorAPI.DTOs.UserDto.LoginUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ProjetoIntegradorAPI.Controllers.OngTicketController",
     "Method": "PostAsync",
     "RelativePath": "api/OngTicket",

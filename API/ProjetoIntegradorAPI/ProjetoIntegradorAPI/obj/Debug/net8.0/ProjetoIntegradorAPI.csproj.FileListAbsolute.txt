@@ -1032,3 +1032,4 @@ C:\projetoIntegrador\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegrado
 C:\projetoIntegrador\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\obj\Debug\net8.0\ProjetoIntegradorAPI.pdb
 C:\projetoIntegrador\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\obj\Debug\net8.0\ProjetoIntegradorAPI.genruntimeconfig.cache
 C:\projetoIntegrador\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\obj\Debug\net8.0\ref\ProjetoIntegradorAPI.dll
+C:\Users\Pichau\OneDrive\Área de Trabalho\PI\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
