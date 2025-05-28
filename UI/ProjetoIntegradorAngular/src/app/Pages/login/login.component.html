@@ -1,0 +1,28 @@
+<div class="register-form">
+  <div class="form-container">
+    <div class="logo-container">
+      <img src="images/unolinkicon.png" alt="UNOLINK" class="form-logo">
+    </div>
+    <h1>Entrar</h1>
+    <form id="form-cadastro" (ngSubmit)="[]">
+      
+      <div class="input-group">
+        <i class="fas fa-envelope"></i>
+        <input type="email" id="email" placeholder="Email" required formControlName="email">
+      </div>
+
+      <div class="input-group">
+        <i class="fas fa-lock"></i>
+        <input type="password" id="senha" placeholder="Senha" required formControlName="password">
+      </div>
+
+      <button type="submit" class="btn btn-primario">
+        <i class="fas fa-user-plus"></i> Entrar
+      </button>
+
+      <button type="button" class="btn btn-secundario" [routerLink]="['/']">
+        <i class="fas fa-arrow-left"></i> Voltar
+      </button>
+    </form>
+  </div>
+</div>
