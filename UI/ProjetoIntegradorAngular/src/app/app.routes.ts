@@ -4,11 +4,12 @@ import { HomeComponent } from './Pages/home/home.component';
 import { RegisterComponent } from './Pages/register/register.component';
 import { OngTicketFormComponent } from './Pages/ong-ticket-form/ong-ticket-form.component';
 import {LoginComponent} from './Pages/login/login.component';
+import { authGuard } from './auth.guard';
 
 export const routes: Routes = [
-    {path:'Admin-UserList',component: UserListComponent},
+    {path:'Admin-UserList',component: UserListComponent,canActivate: [authGuard]},
     {path:'',component:HomeComponent},
     {path:'Register',component:RegisterComponent},
-    {path:'OngTicketForm',component:OngTicketFormComponent},
+    {path:'OngTicketForm',component:OngTicketFormComponent,},
     {path:'Login',component:LoginComponent}
 ];
