@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
               this.authService.GetUserFromToken(localStorage.getItem("JWT_TOKEN")).subscribe({
               next: r =>{
               window.alert("Logou como "+r[1].value);
+              window.location.reload();
               }
            })
           this.router.navigate(['/']);

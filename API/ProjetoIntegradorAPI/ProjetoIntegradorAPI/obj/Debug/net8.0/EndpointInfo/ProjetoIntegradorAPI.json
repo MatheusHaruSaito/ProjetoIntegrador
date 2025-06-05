@@ -74,17 +74,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/JwtSecurityToken"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Claim"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JwtSecurityToken"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Claim"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JwtSecurityToken"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Claim"
+                  }
                 }
               }
             }
@@ -609,199 +618,6 @@
         },
         "additionalProperties": false
       },
-      "CryptoProviderCache": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "CryptoProviderFactory": {
-        "type": "object",
-        "properties": {
-          "cryptoProviderCache": {
-            "$ref": "#/components/schemas/CryptoProviderCache"
-          },
-          "customCryptoProvider": {
-            "$ref": "#/components/schemas/ICryptoProvider"
-          },
-          "cacheSignatureProviders": {
-            "type": "boolean",
-            "default": true
-          },
-          "signatureProviderObjectPoolCacheSize": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
-      "EncryptingCredentials": {
-        "type": "object",
-        "properties": {
-          "alg": {
-            "type": "string",
-            "nullable": true
-          },
-          "enc": {
-            "type": "string",
-            "nullable": true
-          },
-          "keyExchangePublicKey": {
-            "$ref": "#/components/schemas/SecurityKey"
-          },
-          "cryptoProviderFactory": {
-            "$ref": "#/components/schemas/CryptoProviderFactory"
-          },
-          "setDefaultCtyClaim": {
-            "type": "boolean"
-          },
-          "key": {
-            "$ref": "#/components/schemas/SecurityKey"
-          }
-        },
-        "additionalProperties": false
-      },
-      "ICryptoProvider": {
-        "type": "object",
-        "additionalProperties": false
-      },
-      "JwtSecurityToken": {
-        "type": "object",
-        "properties": {
-          "actor": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "audiences": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "claims": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Claim"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "encodedHeader": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "encodedPayload": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "header": {
-            "type": "object",
-            "additionalProperties": { },
-            "nullable": true,
-            "readOnly": true
-          },
-          "id": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "issuer": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "payload": {
-            "type": "object",
-            "additionalProperties": { },
-            "nullable": true,
-            "readOnly": true
-          },
-          "innerToken": {
-            "$ref": "#/components/schemas/JwtSecurityToken"
-          },
-          "rawAuthenticationTag": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawCiphertext": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawData": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawEncryptedKey": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawInitializationVector": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawHeader": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawPayload": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "rawSignature": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "securityKey": {
-            "$ref": "#/components/schemas/SecurityKey"
-          },
-          "signatureAlgorithm": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "signingCredentials": {
-            "$ref": "#/components/schemas/SigningCredentials"
-          },
-          "encryptingCredentials": {
-            "$ref": "#/components/schemas/EncryptingCredentials"
-          },
-          "signingKey": {
-            "$ref": "#/components/schemas/SecurityKey"
-          },
-          "subject": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "validFrom": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "validTo": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          },
-          "issuedAt": {
-            "type": "string",
-            "format": "date-time",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
       "LoginUserDto": {
         "type": "object",
         "properties": {
@@ -929,43 +745,6 @@
           "email": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "SecurityKey": {
-        "type": "object",
-        "properties": {
-          "keySize": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "SigningCredentials": {
-        "type": "object",
-        "properties": {
-          "algorithm": {
-            "type": "string",
-            "nullable": true
-          },
-          "digest": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "cryptoProviderFactory": {
-            "$ref": "#/components/schemas/CryptoProviderFactory"
-          },
-          "key": {
-            "$ref": "#/components/schemas/SecurityKey"
-          },
-          "kid": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
           }
         },
         "additionalProperties": false

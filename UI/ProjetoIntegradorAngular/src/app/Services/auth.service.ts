@@ -29,13 +29,13 @@ export class AuthService {
     localStorage.setItem(this.JWT_Token,jwt);
   }
 
-  logout(){
+  Logout():void{
     localStorage.removeItem(this.JWT_Token);
     this.isAuthenticatedSubject.next(false);
   }
-GetUserFromToken(jwt: string | null): Observable<any> {
-  return this.http.get<any>(`${this.ApiUrl}/${jwt}`);
-}
+  GetUserFromToken(jwt: string | null): Observable<any> {
+    return this.http.get<any>(`${this.ApiUrl}/${jwt}`);
+  }
   isLoggedIn(){
     return !!localStorage.getItem(this.JWT_Token);
   }

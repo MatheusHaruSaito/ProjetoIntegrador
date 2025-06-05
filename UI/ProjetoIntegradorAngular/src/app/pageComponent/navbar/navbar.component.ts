@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { AuthService } from '../../Services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,10 +10,26 @@ import { RouterModule } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 
-export class NavbarComponent {
-  isMenuOpen = false;
+export class NavbarComponent implements OnInit {
 
+  constructor(private authService: AuthService) {
+    
+  }
+  ngOnInit(): void {
+    this.checkLogin();
+  }
+  isMenuOpen = false;
+  isLogged:boolean = false;
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  checkLogin(){
+    this.isLogged = this.authService.isLoggedIn();
+  }
+  logout(){
+    this.authService.Logout();
+    window.alert("Usuario Deslogado");
+    window.location.reload();
+  }
+  
 }

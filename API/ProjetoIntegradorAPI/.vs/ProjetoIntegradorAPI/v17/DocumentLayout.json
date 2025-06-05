@@ -147,7 +147,7 @@
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAASwCkAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAIA5wBoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T11:48:49.512Z",
               "EditorCaption": ""
@@ -162,8 +162,7 @@
               "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAqwDEAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:23:51.245Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T13:23:51.245Z"
             },
             {
               "$type": "Document",
@@ -175,8 +174,7 @@
               "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:52:02.142Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T11:52:02.142Z"
             },
             {
               "$type": "Document",
@@ -188,8 +186,7 @@
               "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\OngTicket.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T11:43:37.437Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-27T11:43:37.437Z"
             },
             {
               "$type": "Document",
@@ -201,8 +198,7 @@
               "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T11:44:36.933Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-19T11:44:36.933Z"
             },
             {
               "$type": "Document",
@@ -214,8 +210,7 @@
               "RelativeToolTip": "ProjetoIntegradorAPI\\Services\\TokenService.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAASwBwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:14:57.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T11:14:57.261Z"
             },
             {
               "$type": "Document",
@@ -227,8 +222,7 @@
               "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:51:50.553Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T11:51:50.553Z"
             },
             {
               "$type": "Document",
@@ -240,8 +234,7 @@
               "RelativeToolTip": "ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:11:16.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T11:11:16.469Z"
             },
             {
               "$type": "Document",

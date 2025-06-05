@@ -6,6 +6,7 @@ using ProjetoIntegradorAPI.DTOs.UserDto;
 using ProjetoIntegradorAPI.Repositories.AuthRepository;
 using ProjetoIntegradorAPI.Services;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace ProjetoIntegradorAPI.Controllers
 {
@@ -35,7 +36,7 @@ namespace ProjetoIntegradorAPI.Controllers
             }
         }
         [HttpGet("{jwt}")]
-        public  ActionResult<JwtSecurityToken> GetUserFromToken(string jwt)
+        public  ActionResult<IEnumerable<Claim>> GetUserFromToken(string jwt)
         {
             JwtSecurityToken token = _authRepository.GetLoggedUser(jwt);
             return Ok(token.Claims);
