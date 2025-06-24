@@ -12,10 +12,10 @@
 
             <nav class="main-nav" [ngClass]="{ 'active': isMenuOpen }">
                 <ul>
-                    <li><a href="#">Início</a></li>
+                    <li><a [routerLink]="['/']">Início</a></li>
                     <li><a href="#">ONGS</a></li>
                     <li><a href="#">Como Ajudar</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
                 </ul>
 
                 <div class="auth-buttons">
