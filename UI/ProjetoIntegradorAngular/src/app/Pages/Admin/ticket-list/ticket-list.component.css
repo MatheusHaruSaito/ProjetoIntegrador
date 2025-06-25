@@ -1,0 +1,127 @@
+.page-title {
+    color: var(--texto);
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--rosa-primario);
+}
+
+.ticket-page{
+    padding: 6rem;
+}
+
+.ticket-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.ticket-card {
+  background-color: var(--branco);
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid var(--rosa-primario);
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ticket-subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--cinza-texto);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cinza-claro);
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--texto);
+  background-color: var(--branco);
+  resize: none;
+}
+
+.input-group textarea {
+  min-height: 80px;
+  max-height: 200px;
+}
+
+.ticket-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn i {
+  font-size: 16px;
+}
+
+.btn-primario {
+  background-color: var(--rosa-primario);
+  color: var(--branco);
+}
+
+.btn-primario:hover {
+  background-color: #c2185b;
+}
+
+.btn-secundario {
+  background-color: #f0f0f0;
+  color: var(--texto);
+}
+
+.btn-secundario:hover {
+  background-color: #d6d6d6;
+}

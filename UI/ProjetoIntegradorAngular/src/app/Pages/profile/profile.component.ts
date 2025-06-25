@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-profile',
   imports: [RouterModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  templateUrl: './profile.component.html',
+  styleUrl: './profile.component.css'
 })
-export class HomeComponent {
+export class ProfileComponent {
 
   toggleTheme() {
     const root = document.documentElement;
@@ -29,5 +29,5 @@ export class HomeComponent {
       document.documentElement.classList.add('dark-theme');
     }
   }
-
+  
 }

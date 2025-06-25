@@ -1,11 +1,11 @@
 export interface OngTicket{
-    Id: string;
-    Reviwed: boolean;
-    Accpeted: boolean;
-    Description: string;
-    Name: string;
-    Email: string;
-    Cep: string;
-    Cnpj: string;
-    ExpirationDate : Date;
+    id: string;
+    reviwed: boolean;
+    accpeted: boolean;
+    description: string;
+    name: string;
+    email: string;
+    cep: string;
+    cnpj: string;
+    expirationDate : Date;
 }

@@ -17,13 +17,21 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjetoIntegradorAPI
 build_property.RootNamespace = ProjetoIntegradorAPI
+<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\Pichau\OneDrive\Área de Trabalho\PI\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\
+=======
+build_property.ProjectDir = C:\ProjetoIntegrador\projeto\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI\
+>>>>>>> origin/TicketList
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+<<<<<<< HEAD
 build_property.MSBuildProjectDirectory = C:\Users\Pichau\OneDrive\Área de Trabalho\PI\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI
+=======
+build_property.MSBuildProjectDirectory = C:\ProjetoIntegrador\projeto\ProjetoIntegrador\API\ProjetoIntegradorAPI\ProjetoIntegradorAPI
+>>>>>>> origin/TicketList
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
