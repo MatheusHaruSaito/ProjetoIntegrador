@@ -50,6 +50,8 @@ export class RegisterComponent implements OnInit {
       }
     });
   }
+
+  
 }
 
 AlertError(message: string){

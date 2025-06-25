@@ -98,10 +98,10 @@
 
 /* ==================== SEÇÃO VALORES ==================== */
 .values {
-  background-color: #f9f9f9;
+  background-color: var(--cinza-menu);
   padding: 5rem 0;
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
 }
 
 .section-title {
@@ -133,12 +133,19 @@
   padding: 2rem;
   border-radius: 8px;
   transition: transform 0.3s ease;
-  background-color: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  background-color: var(--branco);
 }
 
 .value-item:hover {
   transform: translateY(-5px);
+}
+
+.value-item h3{
+  color: var(--letra);
+}
+.value-item p{
+  color: var(--texto);
 }
 
 .value-icon {
@@ -147,12 +154,13 @@
   margin-bottom: 1rem;
 }
 
+
 /* ==================== ONGS ==================== */
 .ongs-section {
   background-color: var(--branco);
   padding: 4rem 0;
-  border-top: 1px solid var(--cinza-claro);
-  border-bottom: 1px solid var(--cinza-claro);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
 }
 
 .cardgrid {
@@ -201,9 +209,9 @@
 /* ==================== CHAMADA PARA AÇÃO ==================== */
 .cta {
   padding: 4rem 0;
-  background-color: #f9f9f9;
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  background-color: var(--branco);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
   text-align: center;
 }
 
@@ -226,8 +234,8 @@
 
 /* ==================== RODAPÉ ==================== */
 footer {
-  background-color: var(--texto);
-  color: var(--branco);
+  background-color: #333333;
+  color: white;
   padding: 2rem 0;
   text-align: center;
 }
@@ -240,7 +248,7 @@ footer {
 }
 
 .footer-links a {
-  color: var(--branco);
+  color: white;
   text-decoration: none;
 }
 
