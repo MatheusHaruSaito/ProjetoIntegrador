@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { LoginUser } from '../models/LoginUser';
+import { jwtDecode } from "jwt-decode";
 @Injectable({
   providedIn: 'root'
 })
@@ -32,8 +33,19 @@ export class AuthService {
     localStorage.removeItem(this.JWT_Token);
     this.isAuthenticatedSubject.next(false);
   }
-  GetUserFromToken(jwt: string | null): Observable<any> {
-    return this.http.get<any>(`${this.ApiUrl}/${jwt}`);
+  GetUserFromToken(jwt: string | null){
+     var token = localStorage.getItem(this.JWT_Token)!
+    // var payloadBase64 = token.split(".")[1];
+    // var payloadJson = atob(payloadBase64);
+    // var payload = JSON.parse(payloadJson);
+    // console.log(payload.email);
+
+    var decodedToken: any = jwtDecode(token)
+    const userDetail ={
+      email: decodedToken.email,
+      name: decodedToken.unique_name,
+    }
+    return userDetail;
   }
   isLoggedIn(){
     return !!localStorage.getItem(this.JWT_Token);

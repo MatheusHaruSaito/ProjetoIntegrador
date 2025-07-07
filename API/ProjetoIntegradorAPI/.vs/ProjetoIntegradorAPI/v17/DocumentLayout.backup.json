@@ -1,208 +1,129 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "WorkspaceRootPath": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\",
+  "WorkspaceRootPath": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\authrepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\authrepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\authrepository\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\authrepository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\authrepository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\authrepository\\authrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\ongticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\ongticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\controllers\\ongticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\ongticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\ongticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\models\\ongticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\userdto\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\configuration\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\configuration\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\configuration\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\userdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\userdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\userdto\\userdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\services\\roleclaimextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\services\\roleclaimextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\services\\roleclaimextention.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\projetointegradorapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\projetointegradorapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\projetointegradorapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ongticketrepository\\ongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ongticketrepository\\ongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\ongticketrepository\\ongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\userrepostory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\userrepostory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\userrepostory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\userrepostory\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\userrepostory\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\userrepostory\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\20250427140104_ongtickettable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\20250427140104_ongtickettable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\migrations\\20250427140104_ongtickettable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\applicationdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\applicationdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\migrations\\applicationdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\20250405151710_usermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\20250405151710_usermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\migrations\\20250405151710_usermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ongticketrepository\\iongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ongticketrepository\\iongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\ongticketrepository\\iongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-  "WorkspaceRootPath": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> origin/TicketList
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\ongticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\controllers\\ongticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ongticketrepository\\ongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\ongticketrepository\\ongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\userrepostory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\userrepostory\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\userrepostory\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\userrepostory\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\userdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\userdto\\userdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\20250427140104_ongtickettable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\migrations\\20250427140104_ongtickettable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\applicationdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\migrations\\applicationdatacontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\migrations\\20250405151710_usermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\migrations\\20250405151710_usermigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\ongticketrepository\\iongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\ongticketrepository\\iongticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\ongticketdto\\postongticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\ongticketdto\\postongticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\ongticketdto\\postongticketdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\context\\applicationdatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\ongticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\models\\ongticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\context\\applicationdatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> origin/TicketList
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\context\\applicationdatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\context\\applicationdatacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\ongticketdto\\ongticketdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\ongticketdto\\ongticketdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\ongticketdto\\ongticketdtomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\postuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\postuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\userdto\\postuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\userroleenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\models\\userroleenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\models\\userroleenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-<<<<<<< HEAD
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\pi\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\putuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-=======
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\userdto\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\putuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
->>>>>>> origin/TicketList
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\dtos\\userdto\\putuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\dtos\\userdto\\putuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\projetointegrador\\projeto\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\projetointegradorapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "AbsoluteMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|c:\\users\\pichau\\onedrive\\\u00E1rea de trabalho\\uno\\projetointegrador\\api\\projetointegradorapi\\projetointegradorapi\\projetointegradorapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{C953BD21-6A4B-40CE-861E-77E8A525007A}|ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj|solutionrelative:projetointegradorapi\\projetointegradorapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
@@ -216,670 +137,389 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-<<<<<<< HEAD
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAIA5wCUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAhwBoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:48:49.512Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OngTicketController.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAqwDEAAABJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:23:51.245Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:52:02.142Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OngTicket.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T11:43:37.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginUserDto.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T11:44:36.933Z"
+              "WhenOpened": "2025-07-04T10:46:45.89Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\TokenService.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Services\\TokenService.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\TokenService.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Services\\TokenService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAASwBwAAAAmAAAAAAAAAA==",
+              "Title": "AuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\AuthRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:14:57.261Z"
+              "WhenOpened": "2025-07-04T10:46:46.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IAuthRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAYAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "OngTicket.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\OngTicket.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\OngTicket.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\OngTicket.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\OngTicket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:51:50.553Z"
-=======
-          "SelectedChildIndex": 3,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OngTicketController.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowC8AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:23:51.245Z",
-              "EditorCaption": ""
->>>>>>> origin/TicketList
+              "WhenOpened": "2025-07-04T10:46:46.136Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-<<<<<<< HEAD
-              "Title": "Configuration.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABbAAAAAAAAAA==",
+              "Title": "LoginUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:11:16.469Z"
-=======
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T12:18:35.936Z"
->>>>>>> origin/TicketList
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UserDtoMapper.cs",
-<<<<<<< HEAD
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
-=======
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
->>>>>>> origin/TicketList
-              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T10:34:05.868Z"
-            },
-            {
-              "$type": "Document",
-<<<<<<< HEAD
-              "DocumentIndex": 16,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T12:18:35.936Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Program.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Program.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T01:34:45.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RoleClaimExtention.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T11:20:59.192Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProjetoIntegradorAPI.csproj",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-05-25T12:20:10.461Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\appsettings.json",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-16T01:47:02.01Z"
-=======
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\appsettings.json",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\appsettings.json",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-16T01:47:02.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-04T10:46:46.138Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "OngTicketRepository.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBsAAAAmAAAAAAAAAA==",
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\TokenService.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Services\\TokenService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAASwBwAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:19:23.086Z"
+              "WhenOpened": "2025-07-04T10:46:46.14Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "20250427140104_OngTicketTable.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA8AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "IAuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\AuthRepository\\IAuthRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T14:01:05.026Z"
+              "WhenOpened": "2025-07-04T10:46:46.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Configuration\\Configuration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T10:46:46.146Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\appsettings.json",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-04T10:46:46.397Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\User.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\User.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\User.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "OngTicketController.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\OngTicketController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAqwDEAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:02:44.9Z"
+              "WhenOpened": "2025-07-04T10:46:46.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\UserController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowBoAAAAQAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "UserDtoMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\UserDtoMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T01:28:51.74Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T11:23:16.788Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T10:39:13.072Z",
-              "EditorCaption": ""
->>>>>>> origin/TicketList
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ApplicationDataContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T18:57:17.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "20250405151710_UserMigration.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T15:17:10.773Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Program.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Program.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Program.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T01:34:45.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-<<<<<<< HEAD
-              "Title": "OngTicketRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:19:23.086Z"
-=======
-              "Title": "IOngTicketRepository.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAYAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:17:53.479Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "OngTicketDtoMapper.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:38:29.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAIwBEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T10:42:24.961Z"
->>>>>>> origin/TicketList
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-<<<<<<< HEAD
-              "Title": "20250427140104_OngTicketTable.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA8AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T14:01:05.026Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\User.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\User.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T13:02:44.9Z"
-=======
-              "Title": "ApplicationDataContext.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T01:32:52.841Z"
+              "WhenOpened": "2025-07-04T10:46:46.148Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 16,
-              "Title": "OngTicket.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\OngTicket.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T11:43:37.437Z"
->>>>>>> origin/TicketList
+              "WhenOpened": "2025-07-04T10:46:46.15Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Program.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Program.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T10:46:46.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RoleClaimExtention.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Services\\RoleClaimExtention.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T10:46:46.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProjetoIntegradorAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-04T10:46:46.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OngTicketRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\OngTicketRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20250427140104_OngTicketTable.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Migrations\\20250427140104_OngTicketTable.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\User.cs",
+              "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-<<<<<<< HEAD
               "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\UserRepostory\\UserRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwB0AAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T11:23:16.788Z"
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "ApplicationDataContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Migrations\\ApplicationDataContextModelSnapshot.cs",
               "ViewState": "AgIAADcAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-07T18:57:17.456Z"
-=======
-              "Title": "PostOngTicketDto.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:31:58.209Z"
->>>>>>> origin/TicketList
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 19,
-<<<<<<< HEAD
               "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Controllers\\UserController.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Controllers\\UserController.cs",
               "ViewState": "AgIAACwAAAAAAAAAAAAIwBoAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T01:28:51.74Z"
-=======
-              "Title": "PostUserDto.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T09:56:14.246Z"
->>>>>>> origin/TicketList
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-<<<<<<< HEAD
               "Title": "20250405151710_UserMigration.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Migrations\\20250405151710_UserMigration.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T15:17:10.773Z"
-=======
-              "Title": "UserRoleEnum.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T02:01:19.478Z"
->>>>>>> origin/TicketList
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-<<<<<<< HEAD
               "Title": "IOngTicketRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\OngTicketRepository\\IOngTicketRepository.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwAYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:17:53.479Z"
+              "WhenOpened": "2025-07-04T10:46:46.413Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "OngTicketDtoMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\OngTicketDtoMapper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:38:29.809Z"
-=======
-              "Title": "LoginUserDto.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\LoginUserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-19T11:44:36.933Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "PutUserDto.cs",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T11:21:15.235Z"
->>>>>>> origin/TicketList
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-<<<<<<< HEAD
               "Title": "IBaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\IBaseRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T10:39:13.072Z"
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "BaseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Repositories\\BaseRepository.cs",
               "ViewState": "AgIAACMAAAAAAAAAAAAIwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T10:42:24.961Z"
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "ApplicationDataContext.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Context\\ApplicationDataContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T01:32:52.841Z"
-=======
-              "Title": "ProjetoIntegradorAPI.http",
-              "DocumentMoniker": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
-              "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
-              "ToolTip": "C:\\ProjetoIntegrador\\projeto\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
-              "RelativeToolTip": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-04-06T13:49:01.217Z"
->>>>>>> origin/TicketList
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "PostOngTicketDto.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\OngTicketDto\\PostOngTicketDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-27T13:31:58.209Z"
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
               "Title": "PostUserDto.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PostUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T09:56:14.246Z"
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 28,
               "Title": "UserRoleEnum.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\Models\\UserRoleEnum.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T02:01:19.478Z"
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
               "Title": "PutUserDto.cs",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
               "RelativeToolTip": "ProjetoIntegradorAPI\\DTOs\\UserDto\\PutUserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T11:21:15.235Z"
+              "WhenOpened": "2025-07-04T10:46:46.429Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 30,
               "Title": "ProjetoIntegradorAPI.http",
-              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
+              "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
               "RelativeDocumentMoniker": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
-              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\PI\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
+              "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\uNO\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
               "RelativeToolTip": "ProjetoIntegradorAPI\\ProjetoIntegradorAPI.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-04-06T13:49:01.217Z"
+              "WhenOpened": "2025-07-04T10:46:46.444Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 31,
               "Title": "20250316015344_first-migration.cs",
               "DocumentMoniker": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250316015344_first-migration.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250316015344_first-migration.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250316015344_first-migration.cs",
               "ToolTip": "C:\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250316015344_first-migration.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Users\\Pichau\\OneDrive\\\u00C1rea de Trabalho\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250316015344_first-migration.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\ProjetoIntegrador\\API\\ProjetoIntegradorAPI\\ProjetoIntegradorAPI\\Migrations\\20250316015344_first-migration.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-16T01:53:44.907Z"
             }
