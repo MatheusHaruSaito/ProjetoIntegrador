@@ -24,10 +24,14 @@ export class NavbarComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
   checkLogin(){
-    this.isLogged = this.authService.isLoggedIn();
-    if(this.isLogged){
-      this.User = this.authService.GetUserFromToken(localStorage.getItem("JWT_TOKEN"))
+    
+    this.authService.isLoggedIn().subscribe(IsAuth=>{
+      this.isLogged = IsAuth
+      if(IsAuth){
+      this.User = this.authService.GetUserFromJwtToken()
     }
+    });
+
   }
   logout(){
     this.authService.Logout();

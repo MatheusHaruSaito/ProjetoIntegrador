@@ -12,10 +12,11 @@ export class AuthService {
   private loggedUser?: string;
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   private readonly ApiUrl = environment.ApiUrlAuth;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   LogIn(user: LoginUser): Observable<any> {
-    return this.http.post(this.ApiUrl + `/Login`, user).pipe(
+    return this.http.post(this.ApiUrl, user).pipe(
       tap(res => this.doLoginUser(user.email,res))
     );
   }
@@ -28,18 +29,18 @@ export class AuthService {
   private storeJwtToken(jwt:string){
     localStorage.setItem(this.JWT_Token,jwt);
   }
-
+  private getJwtToken(): string | null {
+  if (typeof window !== 'undefined' && window.localStorage) {
+    return localStorage.getItem('JWT_TOKEN');
+  }
+  return null;
+}
   Logout():void{
     localStorage.removeItem(this.JWT_Token);
     this.isAuthenticatedSubject.next(false);
   }
-  GetUserFromToken(jwt: string | null){
-     var token = localStorage.getItem(this.JWT_Token)!
-    // var payloadBase64 = token.split(".")[1];
-    // var payloadJson = atob(payloadBase64);
-    // var payload = JSON.parse(payloadJson);
-    // console.log(payload.email);
-
+  GetUserFromJwtToken(){
+     var token = this.getJwtToken()!
     var decodedToken: any = jwtDecode(token)
     const userDetail ={
       email: decodedToken.email,
@@ -47,7 +48,8 @@ export class AuthService {
     }
     return userDetail;
   }
-  isLoggedIn(){
-    return !!localStorage.getItem(this.JWT_Token);
+  isLoggedIn(): Observable<boolean>{
+    this.isAuthenticatedSubject.next(!!this.getJwtToken())
+    return this.isAuthenticatedSubject.asObservable()
   }
 }

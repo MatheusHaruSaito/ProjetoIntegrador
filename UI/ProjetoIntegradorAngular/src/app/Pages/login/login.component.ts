@@ -26,18 +26,19 @@ export class LoginComponent implements OnInit {
     this.userLogin = this.LoginForm.value;
     this.authService.LogIn(this.userLogin).subscribe({
         next: response =>{
-               console.log("logado")
-              var user =this.authService.GetUserFromToken(localStorage.getItem("JWT_TOKEN"))
-              window.alert("Logou como "+user.email);
-              window.location.reload();
+          console.log("logado")
           this.router.navigate(['/']);
+          
         },
         error: err =>{
-          console.log("Algo deu errado")
+          console.log("Algo deu errado: ",err)
         }
       }
     )
   }
-
+  ShowUserInfo(){
+     var user =this.authService.GetUserFromJwtToken()
+              window.alert("Logou como "+user.email);
+  }
 
 }

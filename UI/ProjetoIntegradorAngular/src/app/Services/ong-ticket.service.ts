@@ -19,9 +19,9 @@ export class OngTicketService {
     return this.http.get<OngTicket[]>(this.ApiUrl);
   };
   AcceptTicket(id:string):Observable<OngTicket>{
-    return this.http.put<OngTicket>(`${this.ApiUrl}/AcceptTicket/${id}`,'')
+    return this.http.put<OngTicket>(`${this.ApiUrl}/${id}/accept`,'')
   }
   DeclineTicket(id:string):Observable<OngTicket>{
-    return this.http.put<OngTicket>(`${this.ApiUrl}/Decline/${id}`,'')
+    return this.http.put<OngTicket>(`${this.ApiUrl}/${id}/decline/`,'')
   }
 }

@@ -7,7 +7,7 @@
         @if (!ticket.reviwed) {
           <div class="ticket-card">
             <h2 class="ticket-subtitle"><i class="fas fa-table-list"></i> Solicitação de ONG</h2>
-
+            reviwed: {{ticket.reviwed}}
             <div class="input-group">
               <label><i class="fas fa-id-badge"></i>ID do Ticket</label>
               <input type="text" [value]="ticket.id" disabled>
@@ -36,7 +36,7 @@
 
             <div class="input-group">
               <label><i class="fas fa-calendar-alt"></i> Data de Expiração</label>
-              <input type="text" [value]="ticket.expirationDate | date:'dd/MM/yyyy'" disabled>
+              <input type="text" [value]="ticket.expirationDate" disabled>
             </div>
 
             <div class="input-group description-group">

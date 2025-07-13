@@ -8,18 +8,21 @@ import { OngTicketService } from '../../../Services/ong-ticket.service';
   selector: 'app-ticket-list',
   imports: [CommonModule],
   templateUrl: './ticket-list.component.html',
-  styleUrl: './ticket-list.component.css'
+ styleUrls: ['./ticket-list.component.css']
 })
 export class TicketListComponent implements OnInit {
   ongTicketList: OngTicket[] =[];
   constructor(private ongTicketService: OngTicketService){}
   ngOnInit(): void {
-    this.ongTicketService.GetOngTicketList().subscribe({
-      next: response=>{
-        this.ongTicketList = response;
-        console.log(response)
-      }
-    });
+  this.ongTicketService.GetOngTicketList().subscribe({
+    next: response => {
+      this.ongTicketList = response;
+      console.log('Resposta recebida:', response);
+    },
+    error: err => {
+      console.error('Erro na requisição:', err);
+    }
+  });
   }
   AceeptTicket(id:string):void{
     this.ongTicketService.AcceptTicket(id).subscribe({
