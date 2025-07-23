@@ -2,8 +2,10 @@
     <div class="container">
         <div class="header-content">
             <div class="logo">
-                <img src="/images/unolinklogo.png" alt="UNOLINK logo completa" class="logo-full" width="310" height="50" loading="lazy">
-                <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
+                <a routerLink="/">
+                    <img src="/images/unolinklogo.png" alt="UNOLINK logo completa" class="logo-full" width="310" height="50" loading="lazy">
+                    <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
+                </a>
             </div>
 
             <button class="menu-toggle" (click)="toggleMenu()">
@@ -14,7 +16,7 @@
                 <ul>
                     <li><a [routerLink]="['/']">Início</a></li>
                     <li><a href="#">ONGS</a></li>
-                    <li><a href="#">Como Ajudar</a></li>
+                    <li><a [routerLink]="['/HowToHelp']">Como Ajudar</a></li>
                     <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
                 </ul>
 

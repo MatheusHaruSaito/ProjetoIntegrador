@@ -6,10 +6,10 @@ import { OngTicketFormComponent } from './Pages/ong-ticket-form/ong-ticket-form.
 import { TicketListComponent } from './Pages/Admin/ticket-list/ticket-list.component';
 import { ProfileComponent } from './Pages/profile/profile.component';
 import { FeedbackComponent } from './Pages/feedback/feedback.component';
-
 import { LoginComponent } from './Pages/login/login.component';
 import { authGuard } from './auth.guard';
-import { AboutUsComponent } from './Pages/about-us/about-us.component';       
+import { AboutUsComponent } from './Pages/about-us/about-us.component';      
+import { HowToHelpComponent } from './Pages/how-to-help/how-to-help.component';
 
 export const routes: Routes = [
     {path:'Admin-UserList',component: UserListComponent,canActivate: [authGuard]},
@@ -21,4 +21,5 @@ export const routes: Routes = [
     {path:'AboutUs',component:AboutUsComponent},
     {path:'Profile',component:ProfileComponent},
     {path:'Feedback', component: FeedbackComponent},
+    {path:'HowToHelp', component: HowToHelpComponent},
 ];

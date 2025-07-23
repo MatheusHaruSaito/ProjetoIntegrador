@@ -112,26 +112,6 @@
     line-height: 1.5;
 }
 
-/* ==================== RODAPÉ ==================== */
-footer {
-  background-color: var(--texto);
-  color: var(--branco);
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 1.5rem 0;
-}
-
-.footer-links a {
-  color: var(--branco);
-  text-decoration: none;
-}
-
 /* ==================== RESPONSIVIDADE ==================== */
 @media (max-width: 768px) {
     .story-content {
