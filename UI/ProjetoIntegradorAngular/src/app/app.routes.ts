@@ -10,6 +10,7 @@ import { LoginComponent } from './Pages/login/login.component';
 import { authGuard } from './auth.guard';
 import { AboutUsComponent } from './Pages/about-us/about-us.component';      
 import { HowToHelpComponent } from './Pages/how-to-help/how-to-help.component';
+import { ONGsListComponent } from './Pages/ongs-list/ongs-list.component';
 
 export const routes: Routes = [
     {path:'Admin-UserList',component: UserListComponent,canActivate: [authGuard]},
@@ -22,4 +23,5 @@ export const routes: Routes = [
     {path:'Profile',component:ProfileComponent},
     {path:'Feedback', component: FeedbackComponent},
     {path:'HowToHelp', component: HowToHelpComponent},
+    {path:'ONGSList', component: ONGsListComponent}
 ];
