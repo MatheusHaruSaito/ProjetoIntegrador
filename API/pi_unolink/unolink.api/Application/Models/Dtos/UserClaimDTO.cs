@@ -7,6 +7,6 @@ namespace unolink.api.Application.Models.Dtos
         public Guid Id { get; set; }
         public string Email { get; set; }
         public string Name { get; set; }
-        public UserRoleEnum Role { get; set; }
+        public IList<string> Role { get; set; }
     }
 }

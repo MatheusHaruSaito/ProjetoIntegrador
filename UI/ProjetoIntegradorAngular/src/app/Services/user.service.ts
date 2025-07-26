@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { PostUserDto } from '../models/PostUserDto';
 import { User } from '../models/user';
+import { UserProfile } from '../models/UserProfile';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,7 @@ export class UserService {
   PostUser(PostUser:PostUserDto) :Observable <User>{
     return this.http.post<User>(this.ApiUrl,PostUser);
   }
-  
+    GetProfileInfo(email:String): Observable<UserProfile>{
+    return this.http.get<UserProfile>(`${this.ApiUrl}/Profile/${email}`)
+  }
 }

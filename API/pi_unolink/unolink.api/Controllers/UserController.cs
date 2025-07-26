@@ -80,6 +80,17 @@ namespace unolink.api.Controllers
 
             return Ok(result);
         }
+        [HttpGet("Profile/{email}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetProfileInfo(string email)
+        {
+            var data = await _userService.GetByEmail(email);
+
+            if (data is null) return NotFound();
+
+            return Ok(data.ToProfileViewModel());
+        }
 
     }
 }

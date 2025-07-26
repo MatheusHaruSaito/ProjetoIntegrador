@@ -12,10 +12,12 @@ namespace unolink.api.Application.Services.UserService
 {
     public class UserService : IUserService
     {
+        private readonly UserManager<User> _userManager;
         private readonly IUserRepository _userRepository;
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, UserManager<User> userManager)
         {
             _userRepository = userRepository;
+            _userManager = userManager;
         }
         public async Task<bool> Add(CreateUserRequest request)
         {
@@ -24,11 +26,11 @@ namespace unolink.api.Application.Services.UserService
             {
                 return false;
             }
-
-            var user = new User(request.Role, request.Name, request.Email,
+            
+            var user = new User(request.Name, request.Email,
             " ", request.Description, request.Cep);
-
-            user.Password =  new PasswordHasher<User>().HashPassword(user, request.Password);
+            await _userManager.AddToRoleAsync(user, "Default");
+            user.PasswordHash =  new PasswordHasher<User>().HashPassword(user, request.Password);
 
             _userRepository.Add(user);
 
@@ -42,10 +44,10 @@ namespace unolink.api.Application.Services.UserService
             var userDto = data.Select(x => new UserDTO
             {
                 Id = x.Id,
-                Role = x.Role,
-                Name = x.Name,
+                Role = _userManager.GetRolesAsync(x).Result,
+                Name = x.UserName,
                 Email = x.Email,
-                Password = x.Password,
+                Password = x.PasswordHash,
                 Description = x.Description,
                 Cep = x.Cep,
                 IsActive = x.IsActive,
@@ -65,10 +67,10 @@ namespace unolink.api.Application.Services.UserService
             var userDto = new UserDTO
             {
                 Id = user.Id,
-                Role = user.Role,
-                Name = user.Name,
+                Role = _userManager.GetRolesAsync(user).Result,
+                Name = user.UserName,
                 Email = user.Email,
-                Password = user.Password,
+                Password = user.PasswordHash,
                 Description = user.Description,
                 Cep = user.Cep,
                 IsActive = user.IsActive,
@@ -85,10 +87,10 @@ namespace unolink.api.Application.Services.UserService
             var userDto = new UserDTO
             {
                 Id = user.Id,
-                Role = user.Role,
-                Name = user.Name,
+                Role = _userManager.GetRolesAsync(user).Result,
+                Name = user.UserName,
                 Email = user.Email,
-                Password = user.Password,
+                Password = user.PasswordHash,
                 Description = user.Description,
                 Cep = user.Cep,
                 IsActive = user.IsActive,
@@ -103,9 +105,9 @@ namespace unolink.api.Application.Services.UserService
 
             if (user is null) return false;
 
-            user.Update(request.Role, request.Name, request.Email, "");
+            user.Update(request.Name, request.Email, "");
 
-            user.Password =  new PasswordHasher<User>().HashPassword(user, request.Password);
+            user.PasswordHash =  new PasswordHasher<User>().HashPassword(user, request.Password);
 
             return await _userRepository.UnitOfWork.SaveEntitiesAsync();
 

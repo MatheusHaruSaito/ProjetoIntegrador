@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace unolink.api.Application.Services.OngTicketService
 {
     public class OngTicketService : IOngTicketService
     {
+        private readonly UserManager<User> _userManager;
         private readonly IOngTicketRepository _ongTicketRepository;
-        public OngTicketService(IOngTicketRepository ongTicketRepository)
+        public OngTicketService(IOngTicketRepository ongTicketRepository, UserManager<User> userManager)
         {
             _ongTicketRepository = ongTicketRepository;
+            _userManager = userManager;
         }
 
         public async Task<bool> AcceptTicket(Guid id)
@@ -24,11 +27,10 @@ namespace unolink.api.Application.Services.OngTicketService
 
             ong.AcceptedOng();
 
-            var user = new User(UserRoleEnum.Ong, ong.Name, ong.Email, "", ong.Description, ong.Cep);
-
+            var user = new User(ong.Name, ong.Email, "", ong.Description, ong.Cep);
             _ongTicketRepository.Update(ong);
             _ongTicketRepository.AddUser(user);
-
+            await _userManager.AddToRoleAsync(user, "Ong");
              return await _ongTicketRepository.UnitOfWork.SaveEntitiesAsync();
             
         }

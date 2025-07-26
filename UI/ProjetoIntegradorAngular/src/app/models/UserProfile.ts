@@ -1,8 +1,5 @@
-export interface User{
-    id:string;
-    role:string[]
+export interface UserProfile{
     name:string
-    password:string
     email:string
     description:string
     cep:string

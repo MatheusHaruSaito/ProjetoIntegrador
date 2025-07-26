@@ -22,8 +22,8 @@
 
                 <div class="auth-buttons">
                     @if(isLogged){
-                       
                     <button (click)="logout()" class="btn-login btn-login-solid">Logout</button>
+                                        <button [routerLink]="['/Profile']">Perfil</button>
                          {{User?.name}}
                     }@else {
                     <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>

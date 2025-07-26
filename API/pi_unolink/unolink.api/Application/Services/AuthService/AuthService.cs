@@ -1,4 +1,5 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -6,15 +7,18 @@ using unolink.api.Application.Models.Dtos;
 using unolink.api.Application.Models.Dtos.DtoExtension;
 using unolink.api.Application.Models.Request;
 using unolink.api.Application.Services.UserService;
+using unolink.domain.Models;
 
 namespace unolink.api.Application.Services.AuthService
 {
     public class AuthService : IAuthService
     {
+        private readonly UserManager<User> _userManager;
         private readonly IConfiguration _config;
         private readonly IUserService _userService;
-        public AuthService(IConfiguration config, IUserService userService)
+        public AuthService(IConfiguration config, IUserService userService, UserManager<User> userManager)
         {
+            _userManager = userManager;
             _config = config;
             _userService = userService;
         }

@@ -31,10 +31,15 @@
                     </td>
                     <td>{{user.id}}</td>
                     <td>
-                        @switch(user.role) {
-                        @case (0) { <span class="role-default">Padrão</span> }
-                        @case (1) { <span class="role-admin">Admin</span> }
-                        @case (2) { <span class="role-ong">ONG</span> }
+                        @if(user.role.includes("Admin")){
+                            <span class="role-admin">Admin</span>
+
+                        }
+                        @else if(user.role.includes("Ong")){
+                            <span class="role-ong">ONG</span> 
+                        }
+                        @else if(user.role.includes("Default")){
+                            <span class="role-default">Padrão</span>
                         }
                     </td>
                     <td>{{user.name}}</td>

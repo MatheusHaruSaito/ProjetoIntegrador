@@ -14,18 +14,15 @@ namespace unolink.infrastructure.Data
         {
             builder.ToTable(nameof(User));
 
-            builder.Property(x => x.Name)
+            builder.Property(x => x.UserName)
                 .HasMaxLength(256)
-                .IsRequired();
-
-            builder.Property(x => x.Role)
                 .IsRequired();
 
             builder.Property(x => x.Email)
                 .HasMaxLength(266)
                 .IsRequired();
 
-            builder.Property(x => x.Password)
+            builder.Property(x => x.PasswordHash)
                 .HasMaxLength(256)
                 .IsRequired();
 

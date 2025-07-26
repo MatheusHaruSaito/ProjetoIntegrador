@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using unolink.api.Application.Models.Dtos;
-    
+
 namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
 {
     public static class UserViewModelExtension
@@ -18,6 +18,18 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 Name = DTO.Name,
                 Email = DTO.Email,
                 Password = DTO.Password,
+                Description = DTO.Description,
+                Cep = DTO.Cep,
+                IsActive = DTO.IsActive,
+                CreationDate = DTO.CreationDate
+            };
+        }
+        public static UserProfileViewModel ToProfileViewModel(this UserDTO DTO)
+        {
+            return new UserProfileViewModel
+            {
+                Name = DTO.Name,
+                Email = DTO.Email,
                 Description = DTO.Description,
                 Cep = DTO.Cep,
                 IsActive = DTO.IsActive,

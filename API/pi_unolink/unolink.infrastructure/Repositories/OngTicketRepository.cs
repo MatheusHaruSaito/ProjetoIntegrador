@@ -23,7 +23,7 @@ namespace unolink.infrastructure.Repositories
 
         public void AddUser(User user)
         {
-            _context.User.Add(user);
+            _context.Users.Add(user);
         }
 
         public Task<OngTicket> DeclineTicket(Guid id)

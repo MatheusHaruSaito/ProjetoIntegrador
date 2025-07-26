@@ -7,31 +7,29 @@ using Microsoft.AspNetCore.Identity;
 
 namespace unolink.domain.Models
 {
-    public class User : BaseModel
+    public class User : IdentityUser<Guid>
     {
-        public UserRoleEnum Role { get; private set; }
-        public string Name { get; private set; }
-        public string Password { get; set; }
-        public string Email { get; private set; }
         public string Description { get; private set; }
         public string Cep { get; private set; }
-        public User(UserRoleEnum role, string name, string email, string password, string description, string cep)
+        public bool IsActive { get; set; } = true;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+        public User() { }
+        public User( string name, string email, string password, string description, string cep)
         {
             Id = Guid.NewGuid();
-            Role = role;
-            Name = name;
+            UserName = name;
             Email = email;
-            Password = password;
+            PasswordHash = password;
             Description = description;
             Cep = cep;
             IsActive = true;
         }
-        public void Update(UserRoleEnum role, string name, string email, string password)
+        public void Update( string name, string email, string password)
         {
-            Role = role;
-            Name = name;
+            UserName = name;
             Email = email;
-            Password = password;
+            PasswordHash = password;
         }
     }
 }

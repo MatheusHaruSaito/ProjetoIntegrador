@@ -9,6 +9,7 @@ using unolink.domain.Core.Interfaces;
 using unolink.domain.Models;
 using unolink.infrastructure.Context;
 using unolink.infrastructure.Repositories;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddIdentity<User, IdentityRole<Guid>>()
+    .AddRoles<IdentityRole<Guid>>()
+    .AddEntityFrameworkStores<ApplicationDataContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();
@@ -60,5 +65,35 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
+    var roles = new[] { "Admin","Ong","Default" };
+    
+    foreach(var role in roles)
+    {
+        if(! await roleManager.RoleExistsAsync(role))
+        {
+           await roleManager.CreateAsync(new IdentityRole<Guid>(role));
+        }
+    }
+}
 
-app.Run();
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+    string email = "SuperOngAdmin@Admin.com";
+    string password = "Admin123@AD";
+    if (await userManager.FindByEmailAsync(email) is null)
+    {
+        var user = new User();
+        user.Email = email;
+        user.UserName = email;
+
+        await userManager.CreateAsync(user, password);
+
+        await userManager.AddToRoleAsync(user, "Admin");
+    }
+}
+
+    app.Run();
