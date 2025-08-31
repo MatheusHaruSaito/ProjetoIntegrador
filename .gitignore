@@ -4,7 +4,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+api/pi_unolink/wwwroot/resources/*
 # Build Results
 [Bb]in/
 [Oo]bj/

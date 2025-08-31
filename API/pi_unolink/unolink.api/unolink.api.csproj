@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <StaticWebAssetsBasePath>wwwroot</StaticWebAssetsBasePath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,6 +31,7 @@
 
   <ItemGroup>
     <Folder Include="Application\Models\ViewModels\ViewModelExtension\" />
+    <Folder Include="wwwroot\Resources\" />
   </ItemGroup>
 
 </Project>

@@ -13,5 +13,7 @@ namespace unolink.api.Application.Models.Request
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string? ProfileImgPath { get; set; }
+        public IFormFile? ProfileImg { get; set; }
     }
 }

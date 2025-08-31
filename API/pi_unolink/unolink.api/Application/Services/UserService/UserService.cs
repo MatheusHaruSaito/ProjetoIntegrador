@@ -105,7 +105,7 @@ namespace unolink.api.Application.Services.UserService
 
             if (user is null) return false;
 
-            user.Update(request.Name, request.Email, "");
+            user.Update(request.Name, request.Email, "",request.ProfileImgPath);
 
             user.PasswordHash =  new PasswordHasher<User>().HashPassword(user, request.Password);
 

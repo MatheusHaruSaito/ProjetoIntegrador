@@ -10,6 +10,7 @@ using unolink.domain.Models;
 using unolink.infrastructure.Context;
 using unolink.infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
+using unolink.api.Application.Services.ImagesSevice;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,8 @@ builder.Services.AddScoped<IUserRoleService, UserRoleService>();
 builder.Services.AddScoped<IOngTicketRepository, OngTicketRepository>();
 builder.Services.AddScoped<IOngTicketService, OngTicketService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IFilesService, FilesService>();
+
 
 
 builder.Services.AddControllers();
@@ -64,6 +67,9 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+
+app.UseStaticFiles();
 
 using (var scope = app.Services.CreateScope())
 {

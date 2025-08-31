@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,8 @@ namespace unolink.domain.Models
         public string Cep { get; private set; }
         public bool IsActive { get; set; } = true;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        [AllowNull]
+        public string? ProfileImgPath { get; set; }
 
         public User() { }
         public User( string name, string email, string password, string description, string cep)
@@ -25,11 +28,13 @@ namespace unolink.domain.Models
             Cep = cep;
             IsActive = true;
         }
-        public void Update( string name, string email, string password)
+
+        public void Update( string name, string email, string password, string profileImgPath)
         {
             UserName = name;
             Email = email;
             PasswordHash = password;
+            ProfileImgPath = profileImgPath;
         }
     }
 }

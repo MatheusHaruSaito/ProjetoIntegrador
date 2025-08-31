@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using unolink.api.Application.Models.Request;
 using unolink.api.Application.Models.ViewModels;
 using unolink.api.Application.Models.ViewModels.ViewModelExtension;
+using unolink.api.Application.Services.ImagesSevice;
 using unolink.api.Application.Services.UserService;
 
 namespace unolink.api.Controllers
@@ -16,9 +17,11 @@ namespace unolink.api.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
-        public UserController(IUserService userService)
+        private readonly IFilesService _fileService;
+        public UserController(IUserService userService,IFilesService fileService)
         {
             _userService = userService;
+            _fileService = fileService;
         }
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK)]
@@ -26,7 +29,6 @@ namespace unolink.api.Controllers
         public async Task<IActionResult> Create(CreateUserRequest request)
         {
             var result = await _userService.Add(request);
-
             if (!result)
                 return BadRequest();
 
@@ -62,10 +64,14 @@ namespace unolink.api.Controllers
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> Update(UpdateUserRequest request)
         {
-            var result = await _userService.Update(request);
+            string baseUrl = $"{Request.Scheme}://{Request.Host}";
+            request.ProfileImgPath = await _fileService.AddImage(request.ProfileImg, baseUrl);
 
-            if (!result)
+            var result = await _userService.Update(request);
+            if (!result) { 
+                await _fileService.DeleteFile(request.ProfileImgPath);
                 return BadRequest();
+            }
 
             return Ok();
         }
