@@ -1,8 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserProfile } from '../../models/UserProfile';
 import { AuthService } from '../../Services/auth.service';
 import { UserService } from '../../Services/user.service';
+import { NgIf } from "../../../../node_modules/@angular/common/index";
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +11,25 @@ import { UserService } from '../../Services/user.service';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
+  ngOnInit(): void {
+       var LoggedUser = this.authService.GetUserFromJwtToken()
+    this.userService.GetProfileInfo(LoggedUser.email).subscribe({
+      next: res=>{
+        this.User = res,
+        console.log(res),
+    (document.getElementById("ProfileImage") as HTMLImageElement).src = res.profileImgPath
+
+      },
+      error: err=>{
+        console.log(err);
+      }
+    })
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-theme');
+    }
+  }
   User! : UserProfile
 
   authService = inject(AuthService);
@@ -27,22 +46,4 @@ export class ProfileComponent {
       localStorage.setItem('theme', 'dark');
     }
   }
-
-  
-  ngOnInit() {
-    var LoggedUser = this.authService.GetUserFromJwtToken()
-    this.userService.GetProfileInfo(LoggedUser.email).subscribe({
-      next: res=>{
-        this.User = res
-      },
-      error: err=>{
-        console.log(err);
-      }
-    })
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark-theme');
-    }
-  }
-  
 }

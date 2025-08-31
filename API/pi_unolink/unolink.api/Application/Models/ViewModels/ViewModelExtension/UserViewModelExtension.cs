@@ -21,7 +21,8 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 Description = DTO.Description,
                 Cep = DTO.Cep,
                 IsActive = DTO.IsActive,
-                CreationDate = DTO.CreationDate
+                CreationDate = DTO.CreationDate,
+                ProfileImgPath = DTO.ProfileImgPath,
             };
         }
         public static UserProfileViewModel ToProfileViewModel(this UserDTO DTO)
@@ -33,7 +34,9 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 Description = DTO.Description,
                 Cep = DTO.Cep,
                 IsActive = DTO.IsActive,
-                CreationDate = DTO.CreationDate
+                CreationDate = DTO.CreationDate,
+                ProfileImgPath = DTO.ProfileImgPath,
+
             };
         }
     }

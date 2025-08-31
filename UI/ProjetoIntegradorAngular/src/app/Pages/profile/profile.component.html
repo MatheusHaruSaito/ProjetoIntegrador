@@ -2,11 +2,11 @@
 
     <main class="profile">
         <div class="photo">
-            <img src="images/unolinkicon.png" alt="Foto de Perfil">
-            <button class="removePhoto">REMOVER FOTO</button>
+            <img id="ProfileImage" src="images/unolinkicon.png" alt="Foto de Perfil">
+            <button [routerLink]="['/EditProfile']" class="editProfile">Editar Perfil</button>
         </div>
         <div class="info"><br>
-            <h2>{{User.name}} <i class="fa-regular fa-pen-to-square" style="color: #d41e76;"></i></h2><br>
+            <h2 >{{User.name}} <i class="fa-regular fa-pen-to-square" style="color: #d41e76;"></i></h2><br>
             <p>{{User.description}}</p><br>
             <label class="notification">
                 <input type="checkbox" checked> RECEBER NOTIFICAÇÃO

@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { PostUserDto } from '../models/PostUserDto';
 import { User } from '../models/user';
 import { UserProfile } from '../models/UserProfile';
+import { UpdateUser } from '../models/UpdateUser';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,23 @@ export class UserService {
 
   GetUsers() : Observable<User[]>{
     return this.http.get<User[]>(this.ApiUrl)
+  }
+  GetUsersByEmail(email: string) : Observable<User>{
+    return this.http.get<User>(`${this.ApiUrl}/Email/${email}`)
+  }
+  UpdateUser(updateUser:UpdateUser): Observable<boolean>{
+    const formData = new FormData();
+
+    formData.append('id', updateUser.id)
+    formData.append('name', updateUser.name);
+    formData.append('email', updateUser.email);
+    formData.append('password', updateUser.password);
+    formData.append('description', updateUser.description);
+
+    if (updateUser.profileImg) {
+      formData.append('profileImg', updateUser.profileImg); // deve ser um File
+    }
+    return this.http.put<boolean>(this.ApiUrl,formData);
   }
   TriggerUserActive(id:string): Observable<boolean>{
     return this.http.put<boolean>(`${this.ApiUrl}/TriggerUserActive/${id}`,'');

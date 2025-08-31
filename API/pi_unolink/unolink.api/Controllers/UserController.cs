@@ -72,8 +72,7 @@ namespace unolink.api.Controllers
                 await _fileService.DeleteFile(request.ProfileImgPath);
                 return BadRequest();
             }
-
-            return Ok();
+                return Ok();
         }
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
@@ -96,6 +95,17 @@ namespace unolink.api.Controllers
             if (data is null) return NotFound();
 
             return Ok(data.ToProfileViewModel());
+        }
+        [HttpGet("Email/{email}")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            var data = await _userService.GetByEmail(email);
+
+            if (data is null) return NotFound();
+
+            return Ok(data.ToViewModel());
         }
 
     }

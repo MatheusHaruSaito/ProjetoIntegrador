@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using unolink.api.Application.Models.Dtos;
 using unolink.api.Application.Models.Request;
+using unolink.api.Application.Services.ImagesSevice;
 using unolink.domain.Core.Interfaces;
 using unolink.domain.Models;
 
@@ -14,10 +15,12 @@ namespace unolink.api.Application.Services.UserService
     {
         private readonly UserManager<User> _userManager;
         private readonly IUserRepository _userRepository;
-        public UserService(IUserRepository userRepository, UserManager<User> userManager)
+        private readonly IFilesService _fileService;
+        public UserService(IUserRepository userRepository, UserManager<User> userManager, IFilesService fileService)
         {
             _userRepository = userRepository;
             _userManager = userManager;
+            _fileService = fileService;
         }
         public async Task<bool> Add(CreateUserRequest request)
         {
@@ -51,7 +54,8 @@ namespace unolink.api.Application.Services.UserService
                 Description = x.Description,
                 Cep = x.Cep,
                 IsActive = x.IsActive,
-                CreationDate = x.CreatedAt.ToString("dd-MM-yyyy")    
+                CreationDate = x.CreatedAt.ToString("dd-MM-yyyy"),
+                ProfileImgPath = x.ProfileImgPath,
             }).ToList();
 
             return userDto;
@@ -74,7 +78,9 @@ namespace unolink.api.Application.Services.UserService
                 Description = user.Description,
                 Cep = user.Cep,
                 IsActive = user.IsActive,
-                CreationDate = user.CreatedAt.ToString("dd-MM-yyyy")
+                CreationDate = user.CreatedAt.ToString("dd-MM-yyyy"),
+                ProfileImgPath = user.ProfileImgPath,
+                
             };
             return userDto;
         }
@@ -94,7 +100,8 @@ namespace unolink.api.Application.Services.UserService
                 Description = user.Description,
                 Cep = user.Cep,
                 IsActive = user.IsActive,
-                CreationDate = user.CreatedAt.ToString("dd-MM-yyyy")
+                CreationDate = user.CreatedAt.ToString("dd-MM-yyyy"),
+                ProfileImgPath = user.ProfileImgPath,
             };
             return userDto;
         }
@@ -105,7 +112,9 @@ namespace unolink.api.Application.Services.UserService
 
             if (user is null) return false;
 
-            user.Update(request.Name, request.Email, "",request.ProfileImgPath);
+            await _fileService.DeleteFile(user.ProfileImgPath);
+
+            user.Update(request.Name, request.Email,request.Description, "",request.ProfileImgPath);
 
             user.PasswordHash =  new PasswordHasher<User>().HashPassword(user, request.Password);
 

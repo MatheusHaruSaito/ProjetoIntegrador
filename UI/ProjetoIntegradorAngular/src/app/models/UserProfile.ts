@@ -6,5 +6,5 @@ export interface UserProfile{
     isActive:boolean
     creationDate: Date
     updateDate: Date
-
+    profileImgPath: string
 }

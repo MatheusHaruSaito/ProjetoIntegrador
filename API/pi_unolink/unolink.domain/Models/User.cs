@@ -29,10 +29,11 @@ namespace unolink.domain.Models
             IsActive = true;
         }
 
-        public void Update( string name, string email, string password, string profileImgPath)
+        public void Update( string name, string email,string description, string password, string profileImgPath)
         {
             UserName = name;
             Email = email;
+            Description = description;
             PasswordHash = password;
             ProfileImgPath = profileImgPath;
         }
