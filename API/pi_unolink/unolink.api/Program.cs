@@ -11,6 +11,7 @@ using unolink.infrastructure.Context;
 using unolink.infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using unolink.api.Application.Services.ImagesSevice;
+using unolink.api.Application.Services.UserPostService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +27,8 @@ builder.Services.AddScoped<IOngTicketRepository, OngTicketRepository>();
 builder.Services.AddScoped<IOngTicketService, OngTicketService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IFilesService, FilesService>();
+builder.Services.AddScoped<IUserPostRepository, UserPostRepository>();
+builder.Services.AddScoped<IUserPostService, UserPostService>();
 
 
 

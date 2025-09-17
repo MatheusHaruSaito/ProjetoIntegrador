@@ -1,34 +1,35 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using unolink.api.Application.Models.Request;
 using unolink.api.Application.Models.ViewModels;
 using unolink.api.Application.Models.ViewModels.ViewModelExtension;
 using unolink.api.Application.Services.ImagesSevice;
-using unolink.api.Application.Services.UserService;
+using unolink.api.Application.Services.UserPostService;
 
 namespace unolink.api.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    [ApiController]
+    public class UserPostController : ControllerBase
     {
-        private readonly IUserService _userService;
+        private readonly IUserPostService _userPostService;
         private readonly IFilesService _fileService;
-        public UserController(IUserService userService,IFilesService fileService)
+
+        public UserPostController(IUserPostService userPostService, IFilesService filesService)
         {
-            _userService = userService;
-            _fileService = fileService;
+            _userPostService = userPostService;
+            _fileService = filesService;
         }
+
         [HttpPost]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> Create(CreateUserRequest request)
+        public async Task<IActionResult> Create(CreatePostRequest request)
         {
-            var result = await _userService.Add(request);
+            string baseUrl = $"{Request.Scheme}://{Request.Host}";
+
+            var result = await _userPostService.Add(request, baseUrl);
             if (!result)
                 return BadRequest();
 
@@ -39,7 +40,7 @@ namespace unolink.api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<IActionResult> GetAll()
         {
-            var data = await _userService.GetAll();
+            var data = await _userPostService.GetAll();
 
             if (!data.Any())
                 return NoContent();
@@ -53,7 +54,7 @@ namespace unolink.api.Controllers
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var data = await _userService.GetById(id);
+            var data = await _userPostService.GetById(id);
             if (data is null)
                 return NotFound();
 
@@ -62,50 +63,28 @@ namespace unolink.api.Controllers
         [HttpPut]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> Update(UpdateUserRequest request)
+        public async Task<IActionResult> Update(UpdateUserPostRequest request)
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
-            
-            var result = await _userService.Update(request, baseUrl);
-            if (!result) { 
-                await _fileService.DeleteFile(request.ProfileImgPath);
+
+            var result = await _userPostService.Update(request, baseUrl);
+            if (!result)
+            {
+                await _fileService.DeleteFile(request.PostImgPath);
                 return BadRequest();
             }
-                return Ok();
+            return Ok();
         }
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<IActionResult> UserDeactivate(Guid id)
         {
-            var result = await _userService.UserTriggerActive(id);
+            var result = await _userPostService.UseTriggerActive(id);
 
             if (!result) return NotFound();
 
             return Ok(result);
         }
-        [HttpGet("Profile/{email}")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetProfileInfo(string email)
-        {
-            var data = await _userService.GetByEmail(email);
-
-            if (data is null) return NotFound();
-
-            return Ok(data.ToProfileViewModel());
-        }
-        [HttpGet("Email/{email}")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetUserByEmail(string email)
-        {
-            var data = await _userService.GetByEmail(email);
-
-            if (data is null) return NotFound();
-
-            return Ok(data.ToViewModel());
-        }
-
     }
 }

@@ -106,8 +106,10 @@ namespace unolink.api.Application.Services.UserService
             return userDto;
         }
 
-        public async Task<bool> Update(UpdateUserRequest request)
+        public async Task<bool> Update(UpdateUserRequest request,string baseUrl)
         {
+            request.ProfileImgPath = await _fileService.AddImage(request.ProfileImg, baseUrl);
+
             var user = await _userRepository.GetById(request.Id);
 
             if (user is null) return false;

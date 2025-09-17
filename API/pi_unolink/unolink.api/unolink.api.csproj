@@ -30,7 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Models\ViewModels\ViewModelExtension\" />
     <Folder Include="wwwroot\Resources\" />
   </ItemGroup>
 
