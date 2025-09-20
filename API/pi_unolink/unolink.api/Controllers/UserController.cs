@@ -35,7 +35,7 @@ namespace unolink.api.Controllers
             return Ok();
         }
         [HttpGet]
-        [ProducesResponseType(typeof(List<UserViewModel>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(List<UserPostViewModel>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<IActionResult> GetAll()
         {

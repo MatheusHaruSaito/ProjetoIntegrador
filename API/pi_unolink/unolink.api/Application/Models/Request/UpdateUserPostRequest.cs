@@ -7,7 +7,7 @@
         public string Description { get; set; }
         public int Votes { get; set; }
         public DateTime UpdateTime { get; set; }
-        public string? PostImgPath { get; set; } = string.Empty;
+        public string? PostImgPath { get; set; }
         public IFormFile? PostImg { get; set; }
 
 
