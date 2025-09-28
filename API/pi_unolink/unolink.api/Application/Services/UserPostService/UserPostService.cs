@@ -43,7 +43,16 @@ namespace unolink.api.Application.Services.UserPostService
                 Votes = x.Votes,
                 CreatedAt = x.CreatedAt,
                 UpdateTime = x.UpdateTime,
-                PostImgPath = x.PostImgPath
+                PostImgPath = x.PostImgPath,
+                Comments = x.Comments?.Select(c => new PostCommentDTO
+                {
+                    Id = c.Id,
+                    IsActive = c.IsActive,
+                    CreatedAt = c.CreatedAt,
+                    UserId = c.UserId,
+                    Text = c.Text,
+                    Vote = c.Vote
+                })
             }).ToList();
             return userPostDTO;
         }
@@ -64,7 +73,16 @@ namespace unolink.api.Application.Services.UserPostService
                 Votes = userPost.Votes,
                 CreatedAt = userPost.CreatedAt,
                 UpdateTime = userPost.UpdateTime,
-                PostImgPath = userPost.PostImgPath
+                PostImgPath = userPost.PostImgPath,
+                Comments = userPost.Comments.Select(c => new PostCommentDTO
+                {
+                    Id = c.Id,
+                    IsActive = c.IsActive,
+                    CreatedAt = c.CreatedAt,
+                    UserId = c.UserId,
+                    Text = c.Text,
+                    Vote = c.Vote
+                })
             };
             return userPostDTO;
         }
@@ -91,5 +109,13 @@ namespace unolink.api.Application.Services.UserPostService
             userPost.UpdateTime = DateTime.UtcNow;
             return await _userPostRepostiory.UnitOfWork.SaveEntitiesAsync();
         }
+
+        public async Task<bool> Comment(PostCommentRequest request)
+        {
+            var comment = await _userPostRepostiory.Comment(request.PostId,request.UserId,request.Text);
+            if (comment is null) return false;
+            return true;
+        }
+
     }
 }

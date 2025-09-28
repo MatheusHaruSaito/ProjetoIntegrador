@@ -11,6 +11,6 @@ namespace unolink.domain.Core.Interfaces
     {
         Task<List<UserPost>> GetAll();
         Task<bool> UseTriggerActive(Guid id);
-
+        Task<PostComment> Comment(Guid postId,Guid userId, string text);
     }
 }

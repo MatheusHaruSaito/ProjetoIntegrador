@@ -14,7 +14,8 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 Votes = userPostDTO.Votes,
                 CreatedAt = userPostDTO.CreatedAt,
                 UpdateTime = userPostDTO.UpdateTime,
-                PostImgPath = userPostDTO.PostImgPath
+                PostImgPath = userPostDTO.PostImgPath,
+                Comments = userPostDTO.Comments
             };
         }
     }

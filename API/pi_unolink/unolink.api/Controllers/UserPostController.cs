@@ -75,6 +75,19 @@ namespace unolink.api.Controllers
             }
             return Ok();
         }
+
+        [HttpPut("Comment")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> Coment(PostCommentRequest request)
+        {
+            var result = await _userPostService.Comment(request);
+            if (!result)
+            {
+                return BadRequest("Failed To comment");
+            }
+            return Ok("Commented");
+        }
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]

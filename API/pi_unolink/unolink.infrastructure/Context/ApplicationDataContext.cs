@@ -14,6 +14,8 @@ namespace unolink.infrastructure.Context
         public ApplicationDataContext(DbContextOptions options) : base(options) { }
         public DbSet<OngTicket> OngTicket { get; set; }
         public DbSet<UserPost> UserPost { get; set; }
+        public DbSet<PostComment> PostComment { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -14,6 +14,7 @@ namespace unolink.infrastructure.Repositories
     {
         private readonly ApplicationDataContext _context = context;
         private readonly DbSet<UserPost> _entity = context.UserPost;
+
         public IUnitOfWork UnitOfWork => unitOfWork;
 
         public void Add(UserPost entity)
@@ -23,12 +24,12 @@ namespace unolink.infrastructure.Repositories
 
         public async Task<List<UserPost>> GetAll()
         {
-            return await _entity.ToListAsync();
+            return await _entity.Include(p => p.Comments).ToListAsync();
         }
 
         public async Task<UserPost> GetById(Guid id)
         {
-            return await _entity.FirstOrDefaultAsync(x => x.Id == id);
+            return await _entity.Include(p => p.Comments).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<bool> UseTriggerActive(Guid id)
@@ -45,5 +46,24 @@ namespace unolink.infrastructure.Repositories
         {
             _entity.Update(entity);
         }
+
+        public async Task<PostComment> Comment(Guid postId,Guid userId, string text)
+        {
+            var post = await _entity
+                .FirstOrDefaultAsync(x => x.Id == postId);
+
+
+            if (post is null)
+            {
+                return null;
+            }
+            var comment = new PostComment(post.Id,userId,text);
+            _context.PostComment.Add(comment);
+            post.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+            return comment;
+        }
+
+
     }
 }

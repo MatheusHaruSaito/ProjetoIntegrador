@@ -14,6 +14,7 @@ namespace unolink.domain.Models
         public int Votes { get; set; }
         public DateTime UpdateTime { get; set; }
         public string? PostImgPath { get; set; } = string.Empty;
+        public List<PostComment> Comments { get; set; } = new();
 
         public UserPost() { }
 

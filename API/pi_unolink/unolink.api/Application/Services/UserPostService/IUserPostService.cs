@@ -13,5 +13,7 @@ namespace unolink.api.Application.Services.UserPostService
         Task<bool> Add(CreatePostRequest request,string baseUrl);
         Task<UserPostDTO> GetById(Guid id);
         Task<bool> Update(UpdateUserPostRequest request, string baseUrl);
+        Task<bool> Comment(PostCommentRequest request);
+
     }
 }

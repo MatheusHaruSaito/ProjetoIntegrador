@@ -1,4 +1,7 @@
-﻿namespace unolink.api.Application.Models.ViewModels
+﻿using unolink.api.Application.Models.Dtos;
+using unolink.domain.Models;
+
+namespace unolink.api.Application.Models.ViewModels
 {
     public class UserPostViewModel
     {
@@ -10,5 +13,7 @@
         public DateTime CreatedAt { get; set; }
         public DateTime UpdateTime { get; set; }
         public string? PostImgPath { get; set; }
+        public IEnumerable<PostCommentDTO> Comments { get; set; }
+
     }
 }
