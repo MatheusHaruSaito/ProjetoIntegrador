@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { CreateUserPost } from '../models/CreateUserPost';
 import { ViewUserPost } from '../models/ViewUserPost';
 import { UpdateUserPost } from '../models/UpdateUserPost';
+import { CreateVoteRequest } from '../models/CreateVoteRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,8 @@ export class UserPostService {
   }
   ActivedTrigger(id: string): Observable<boolean>{
     return this.http.put<boolean>(`${this.apiUrl}/${id}`,'')
+  }
+  Vote(request: CreateVoteRequest): Observable<boolean>{
+    return this.http.put<boolean>(`${this.apiUrl}/Vote`,request)
   }
 }

@@ -99,5 +99,17 @@ namespace unolink.api.Controllers
 
             return Ok(result);
         }
+        [HttpPost("Vote")]
+
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> VotePost(CreateVoteRequest request)
+        {
+            var data = await _userPostService.Vote(request);
+
+            if (!data) return NotFound();
+
+            return Ok(data);
+        }
     }
 }

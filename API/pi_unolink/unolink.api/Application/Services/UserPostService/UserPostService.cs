@@ -34,13 +34,18 @@ namespace unolink.api.Application.Services.UserPostService
             {
                 return null;
             }
+
+            var postsId = data.Select(x => x.Id).ToList();
+            var votesCounts = await _userPostRepostiory.GetVotesCountByPostIdsAsync(postsId);
+            var votesDict = votesCounts.ToDictionary(vc => vc.PostId, vc => vc.Count);
+
             var userPostDTO = data.Select(x => new UserPostDTO
             {
                 Id = x.Id,
                 Title = x.Title,
                 Description = x.Description,
                 UserId = x.UserId,
-                Votes = x.Votes,
+                Votes = votesDict.TryGetValue(x.Id, out var count) ? count : 0,
                 CreatedAt = x.CreatedAt,
                 UpdateTime = x.UpdateTime,
                 PostImgPath = x.PostImgPath,
@@ -70,7 +75,7 @@ namespace unolink.api.Application.Services.UserPostService
                 Title = userPost.Title,
                 Description = userPost.Description,
                 UserId = userPost.UserId,
-                Votes = userPost.Votes,
+                Votes = await _userPostRepostiory.VoteCount(id),
                 CreatedAt = userPost.CreatedAt,
                 UpdateTime = userPost.UpdateTime,
                 PostImgPath = userPost.PostImgPath,
@@ -117,5 +122,9 @@ namespace unolink.api.Application.Services.UserPostService
             return true;
         }
 
+        public Task<bool> Vote(CreateVoteRequest request)
+        {
+            return _userPostRepostiory.Vote(request.PostId, request.UserId);
+        }
     }
 }

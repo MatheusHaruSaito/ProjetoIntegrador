@@ -16,7 +16,7 @@ namespace unolink.domain.Models
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         [AllowNull]
         public string? ProfileImgPath { get; set; }
-
+        public ICollection<PostVotes> VotedPosts { get; set; } = new List<PostVotes>();
         public User() { }
         public User( string name, string email, string password, string description, string cep)
         {

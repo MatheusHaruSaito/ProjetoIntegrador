@@ -12,5 +12,9 @@ namespace unolink.domain.Core.Interfaces
         Task<List<UserPost>> GetAll();
         Task<bool> UseTriggerActive(Guid id);
         Task<PostComment> Comment(Guid postId,Guid userId, string text);
+        Task<bool> Vote(Guid postId, Guid userId);
+        Task<int> VoteCount(Guid postId);
+        Task<List<(Guid PostId, int Count)>> GetVotesCountByPostIdsAsync(List<Guid> postIds);
+
     }
 }

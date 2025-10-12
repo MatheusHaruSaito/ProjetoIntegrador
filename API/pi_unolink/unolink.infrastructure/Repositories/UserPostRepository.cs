@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,10 @@ namespace unolink.infrastructure.Repositories
     {
         private readonly ApplicationDataContext _context = context;
         private readonly DbSet<UserPost> _entity = context.UserPost;
+        private readonly DbSet<User> _entityUser = context.Users;
+        private readonly DbSet<PostVotes> _entityVotes = context.PostVotes;
+
+
 
         public IUnitOfWork UnitOfWork => unitOfWork;
 
@@ -64,6 +69,47 @@ namespace unolink.infrastructure.Repositories
             return comment;
         }
 
+        public async Task<bool> Vote(Guid postId, Guid userId)
+        {
+            var data = await _entityVotes.FindAsync(userId,postId);
+            if(data is not null)
+            {
+                return false;
+            }
 
+            var post = await _entity.FirstOrDefaultAsync(x => x.Id == postId);
+            var user = await _entityUser.FirstOrDefaultAsync(x => x.Id == userId);
+
+            if(post is null || user is null)
+            {
+                return false;
+            }
+            var vote = new PostVotes
+            {
+                Post = post,
+                User = user,
+                CreatedAt = DateTime.UtcNow
+            };
+            _entityVotes.Add(vote);
+
+            await unitOfWork.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<int> VoteCount(Guid postId)
+        {
+            return await _entityVotes.CountAsync(x => x.PostId == postId);
+        }
+
+        public async Task<List<(Guid PostId, int Count)>> GetVotesCountByPostIdsAsync(List<Guid> postIds)
+        {
+            var result = await _context.PostVotes
+                .Where(v => postIds.Contains(v.PostId))
+                .GroupBy(v => v.PostId)
+                .Select(g => new { PostId = g.Key, Count = g.Count() })
+                .ToListAsync();
+
+            return result.Select(x => (x.PostId, x.Count)).ToList();
+        }
     }
 }
