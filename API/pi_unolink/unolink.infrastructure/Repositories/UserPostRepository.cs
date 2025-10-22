@@ -74,6 +74,8 @@ namespace unolink.infrastructure.Repositories
             var data = await _entityVotes.FindAsync(userId,postId);
             if(data is not null)
             {
+                _entityVotes.Remove(data);
+                await unitOfWork.SaveChangesAsync();
                 return false;
             }
 

@@ -107,9 +107,9 @@ namespace unolink.api.Controllers
         {
             var data = await _userPostService.Vote(request);
 
-            if (!data) return NotFound();
+            if (!data) return NotFound("Un Voted");
 
-            return Ok(data);
+            return Ok("Voted");
         }
     }
 }
