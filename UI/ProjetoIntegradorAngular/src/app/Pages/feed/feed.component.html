@@ -3,4 +3,11 @@
 <p>feed works!</p>
 @for (post of posts; track $index) {
   <div>{{ post.title }}</div>
+  <div>{{ post.description }}</div>
+  <div>{{ post.votes }}</div>
+  <div>{{ post.createdAt }}</div>
+<div>
+  <img [src]="post.postImgPath" alt="Imagem do post">
+
+</div>  
 }

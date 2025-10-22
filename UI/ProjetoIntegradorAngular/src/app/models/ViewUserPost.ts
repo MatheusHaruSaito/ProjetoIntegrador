@@ -4,7 +4,7 @@ export interface ViewUserPost{
     description: string
     userId: string
     votes: number,
-    createAt: Date,
+    createdAt: Date,
     updateTime: Date,
-    postImg?: string,
+    postImgPath?: string,
 }
