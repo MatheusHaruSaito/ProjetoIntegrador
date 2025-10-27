@@ -17,6 +17,7 @@ namespace unolink.domain.Models
         [AllowNull]
         public string? ProfileImgPath { get; set; }
         public ICollection<PostVotes> VotedPosts { get; set; } = new List<PostVotes>();
+        public ICollection<UserPost> UserPosts { get; set; } = new List<UserPost>();
         public User() { }
         public User( string name, string email, string password, string description, string cep)
         {

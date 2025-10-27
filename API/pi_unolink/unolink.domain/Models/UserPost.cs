@@ -11,6 +11,7 @@ namespace unolink.domain.Models
         public string Title { get; set; }
         public string Description { get; set; }
         public Guid UserId { get; set; }
+        public User User { get; set; }
         public virtual ICollection<PostVotes> Votes { get; set; }
         public DateTime UpdateTime { get; set; }
         public string? PostImgPath { get; set; } = string.Empty;

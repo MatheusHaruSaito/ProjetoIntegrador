@@ -27,12 +27,21 @@ namespace unolink.infrastructure.Context
 
                 eb.HasOne(pv => pv.User)
                     .WithMany(u => u.VotedPosts)
-                    .HasForeignKey(pv => pv.UserId);
+                    .HasForeignKey(pv => pv.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
 
                 eb.HasOne(pv => pv.Post)
                     .WithMany(v => v.Votes)
-                    .HasForeignKey(pv => pv.PostId);
-            });        
+                    .HasForeignKey(pv => pv.PostId)
+                    .OnDelete(DeleteBehavior.Cascade);
+            });
+            modelBuilder.Entity<UserPost>(eb =>
+            {
+                eb.HasOne(up => up.User)
+                    .WithMany(u => u.UserPosts)
+                    .HasForeignKey(up => up.UserId)
+                    .OnDelete(DeleteBehavior.Restrict);
+            });
         }
         
     }
