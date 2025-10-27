@@ -23,17 +23,22 @@ namespace unolink.infrastructure.Repositories
 
         public async Task<List<User>> GetAll()
         {
-            return await _entity.ToListAsync();
+            return await _entity
+                .ToListAsync();
         }
 
         public async Task<User?> GetByEmailAsync(string email)
         {
-            return await _entity.FirstOrDefaultAsync(x => x.Email == email);
+            return await _entity
+                .Include(u => u.UserPosts)
+                .FirstOrDefaultAsync(x => x.Email == email);
         }
 
         public async Task<User?> GetById(Guid id)
         {
-            return await _entity.FirstOrDefaultAsync(x => x.Id == id);
+            return await _entity
+                .Include(u => u.UserPosts)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public void Update(User entity)

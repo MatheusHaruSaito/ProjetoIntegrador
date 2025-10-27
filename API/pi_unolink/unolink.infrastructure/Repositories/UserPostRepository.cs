@@ -29,7 +29,10 @@ namespace unolink.infrastructure.Repositories
 
         public async Task<List<UserPost>> GetAll()
         {
-            return await _entity.Include(p => p.Comments).ToListAsync();
+            return await _entity
+                .Include(p => p.Comments)
+                .ToListAsync();
+
         }
 
         public async Task<UserPost> GetById(Guid id)

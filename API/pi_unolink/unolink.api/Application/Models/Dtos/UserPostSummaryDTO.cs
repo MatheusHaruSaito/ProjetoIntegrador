@@ -1,9 +1,6 @@
-﻿using unolink.api.Application.Models.Dtos;
-using unolink.domain.Models;
-
-namespace unolink.api.Application.Models.ViewModels
+﻿namespace unolink.api.Application.Models.Dtos
 {
-    public class UserPostViewModel
+    public class UserPostSummaryDTO
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
@@ -12,11 +9,9 @@ namespace unolink.api.Application.Models.ViewModels
         public DateTime CreatedAt { get; set; }
         public DateTime UpdateTime { get; set; }
         public string? PostImgPath { get; set; }
-        public IEnumerable<PostCommentDTO> Comments { get; set; }
+        public int CommentsCount { get; set; }
         public Guid UserId { get; set; }
-
         public string UserName { get; set; }
         public string? ProfileImgPath { get; set; }
-
     }
 }
