@@ -89,6 +89,7 @@ namespace unolink.api.Application.Services.UserService
                     PostImgPath = p.PostImgPath,
                     CreatedAt = p.CreatedAt,
                     UpdateTime = p.UpdateTime,
+                    UserId = p.UserId,
                     UserName = user.UserName,
                     ProfileImgPath = user.ProfileImgPath
                 }).ToList()
@@ -123,6 +124,7 @@ namespace unolink.api.Application.Services.UserService
                     PostImgPath = p.PostImgPath,
                     CreatedAt = p.CreatedAt,
                     UpdateTime = p.UpdateTime,
+                    UserId = p.UserId,
                     UserName = user.UserName,
                     ProfileImgPath = user.ProfileImgPath
                 }).ToList()
