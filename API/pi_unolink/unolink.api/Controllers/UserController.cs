@@ -84,12 +84,12 @@ namespace unolink.api.Controllers
 
             return Ok(result);
         }
-        [HttpGet("Profile/{email}")]
+        [HttpGet("Profile/{Id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetProfileInfo(string email)
+        public async Task<IActionResult> GetProfileInfo(Guid Id)
         {
-            var data = await _userService.GetByEmail(email);
+            var data = await _userService.GetById(Id);
 
             if (data is null) return NotFound();
 

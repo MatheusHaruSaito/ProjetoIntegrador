@@ -23,7 +23,9 @@
                 <div class="auth-buttons">
                     @if(isLogged){
                     <button (click)="logout()" class="btn-login btn-login-solid">Logout</button>
-                                        <button [routerLink]="['/Profile']">Perfil</button>
+                                        <button [routerLink]="['/Profile']"style="background-image: url(https://pbs.twimg.com/profile_images/1715145407523700736/e5s7W204_400x400.jpg);background-size: cover;background-repeat: no-repeat;" >Perfil
+                                        <!-- VOU DEIXAR ISSO AQUI ATÉ ALGUEM ARRUMAR O BOTÃO >:( -->
+                                        </button>
                          {{User?.name}}
                     }@else {
                     <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>

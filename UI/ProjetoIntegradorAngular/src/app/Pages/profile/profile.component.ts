@@ -4,6 +4,7 @@ import { UserProfile } from '../../models/UserProfile';
 import { AuthService } from '../../Services/auth.service';
 import { UserService } from '../../Services/user.service';
 import { NgIf } from "../../../../node_modules/@angular/common/index";
+import { ViewUserPost } from '../../models/ViewUserPost';
 
 @Component({
   selector: 'app-profile',
@@ -12,14 +13,21 @@ import { NgIf } from "../../../../node_modules/@angular/common/index";
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
+
+  User! : UserProfile
+  UserPosts?: ViewUserPost[]
+  authService = inject(AuthService);
+  userService = inject(UserService);
+
   ngOnInit(): void {
        var LoggedUser = this.authService.GetUserFromJwtToken()
-    this.userService.GetProfileInfo(LoggedUser.email).subscribe({
+       console.log(LoggedUser)
+    this.userService.GetProfileInfo(LoggedUser.id).subscribe({
       next: res=>{
         this.User = res,
+        this.UserPosts = this.User.userPosts
         console.log(res),
-    (document.getElementById("ProfileImage") as HTMLImageElement).src = res.profileImgPath
-
+        (document.getElementById("ProfileImage") as HTMLImageElement).src = res.profileImgPath
       },
       error: err=>{
         console.log(err);
@@ -30,10 +38,7 @@ export class ProfileComponent implements OnInit {
       document.documentElement.classList.add('dark-theme');
     }
   }
-  User! : UserProfile
 
-  authService = inject(AuthService);
-  userService = inject(UserService);
   toggleTheme() {
     const root = document.documentElement;
     const isDark = root.classList.contains('dark-theme');

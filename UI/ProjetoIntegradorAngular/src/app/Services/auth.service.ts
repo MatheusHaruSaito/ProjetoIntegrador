@@ -43,6 +43,7 @@ export class AuthService {
      var token = this.getJwtToken()!
     var decodedToken: any = jwtDecode(token)
     const userDetail ={
+      id: decodedToken.nameid,
       email: decodedToken.email,
       name: decodedToken.unique_name,
     }

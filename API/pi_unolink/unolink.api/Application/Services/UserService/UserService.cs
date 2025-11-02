@@ -80,6 +80,18 @@ namespace unolink.api.Application.Services.UserService
                 IsActive = user.IsActive,
                 CreationDate = user.CreatedAt.ToString("dd-MM-yyyy"),
                 ProfileImgPath = user.ProfileImgPath,
+                UserPosts = user.UserPosts?.Select(p => new UserPostSummaryDTO
+                {
+                    Id = p.Id,
+                    Title = p.Title,
+                    Description = p.Description,
+                    Votes = p.Votes?.Count ?? 0,
+                    PostImgPath = p.PostImgPath,
+                    CreatedAt = p.CreatedAt,
+                    UpdateTime = p.UpdateTime,
+                    UserName = user.UserName,
+                    ProfileImgPath = user.ProfileImgPath
+                }).ToList()
 
             };
             return userDto;

@@ -42,7 +42,10 @@ export class UserService {
   PostUser(PostUser:PostUserDto) :Observable <User>{
     return this.http.post<User>(this.ApiUrl,PostUser);
   }
-    GetProfileInfo(email:String): Observable<UserProfile>{
-    return this.http.get<UserProfile>(`${this.ApiUrl}/Profile/${email}`)
+  GetUserById(id:string): Observable<User>{
+    return this.http.get<User>(`${this.ApiUrl}/${id}`)
+  }
+  GetProfileInfo(id:String): Observable<UserProfile>{
+    return this.http.get<UserProfile>(`${this.ApiUrl}/Profile/${id}`)
   }
 }

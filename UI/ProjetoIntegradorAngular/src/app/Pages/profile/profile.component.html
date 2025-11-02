@@ -13,8 +13,12 @@
             </label><br>
             <button [routerLink]="['/Feedback']" id="feedbackBtn" class="btnFeedback"><i class="fa-solid fa-comments" style="color: var(--icon);"></i>  ENVIAR FEEDBACKS</button>
         </div>
+            @for(post of UserPosts; track $index){
+        {{post.title}}
+        {{post.description}}
+    }
     </main>
-
+    
     <aside class="menu">
         <h3>CONFIGURAÇÃO</h3>
         <ul>
@@ -25,5 +29,5 @@
         </ul>
         <div  class="exit"><i class="fas fa-sign-out-alt"></i>  SAIR</div>
     </aside>
-    
+
 </div>
