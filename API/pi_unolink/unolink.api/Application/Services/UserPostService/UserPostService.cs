@@ -49,6 +49,8 @@ namespace unolink.api.Application.Services.UserPostService
                 CreatedAt = x.CreatedAt,
                 UpdateTime = x.UpdateTime,
                 PostImgPath = x.PostImgPath,
+                ProfileImgPath = x.User.ProfileImgPath,
+                UserName = x.User.UserName,
                 Comments = x.Comments?.Select(c => new PostCommentDTO
                 {
                     Id = c.Id,
@@ -79,6 +81,8 @@ namespace unolink.api.Application.Services.UserPostService
                 CreatedAt = userPost.CreatedAt,
                 UpdateTime = userPost.UpdateTime,
                 PostImgPath = userPost.PostImgPath,
+                ProfileImgPath = userPost.User.ProfileImgPath,
+                UserName = userPost.User.UserName,
                 Comments = userPost.Comments.Select(c => new PostCommentDTO
                 {
                     Id = c.Id,

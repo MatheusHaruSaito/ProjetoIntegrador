@@ -30,6 +30,7 @@ namespace unolink.infrastructure.Repositories
         public async Task<List<UserPost>> GetAll()
         {
             return await _entity
+                .Include(p => p.User)
                 .Include(p => p.Comments)
                 .ToListAsync();
 

@@ -67,8 +67,8 @@ namespace unolink.api.Controllers
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
             
             var result = await _userService.Update(request, baseUrl);
-            if (!result) { 
-                await _fileService.DeleteFile(request.ProfileImgPath);
+            if (!result) {
+                if(request.ProfileImgPath != null) await _fileService.DeleteFile(request.ProfileImgPath);
                 return BadRequest();
             }
                 return Ok();

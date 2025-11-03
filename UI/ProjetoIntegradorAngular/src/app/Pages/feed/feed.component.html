@@ -1,13 +1,26 @@
-<br><br><br><br>
+<div class="feed-page container">
+  <h2 class="feed-title">Últimas Publicações</h2>
 
-<p>feed works!</p>
-@for (post of posts; track $index) {
-  <div>{{ post.title }}</div>
-  <div>{{ post.description }}</div>
-  <div>{{ post.votes }}</div>
-  <div>{{ post.createdAt }}</div>
-<div>
-  <img [src]="post.postImgPath" alt="Imagem do post">
+  <div class="feed-list">
+    @for (post of posts; track $index) {
+      <div class="post-card">
+        <div class="post-header">
+          <div class="post-user">
+            <img *ngIf="post.profileImgPath" [src]="post.profileImgPath" alt="Imagem do usuário" class="user-avatar">
+            <div class="user-info">
+              <h3>{{ post.userName }}</h3>
+              <p class="post-date">{{ post.createdAt | date:'short' }}</p>
+            </div>
+          </div>
+        </div>
 
-</div>  
-}
+        <div class="post-content">
+          <h4 class="post-title">{{ post.title }}</h4>
+          <p class="post-description">{{ post.description }}</p>
+
+          <img *ngIf="post.postImgPath" [src]="post.postImgPath" alt="Imagem do post" class="post-image">
+        </div>
+      </div>
+    }
+  </div>
+</div>

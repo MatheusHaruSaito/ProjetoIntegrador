@@ -9,6 +9,6 @@ export interface ViewUserPost{
     commentsCount: number,
     userId: string,
     userName: string,
-    ProfileImgPath: string,
+    profileImgPath: string,
 
 }

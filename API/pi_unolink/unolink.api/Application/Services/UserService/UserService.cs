@@ -139,8 +139,11 @@ namespace unolink.api.Application.Services.UserService
             var user = await _userRepository.GetById(request.Id);
 
             if (user is null) return false;
+            if (user.ProfileImgPath != null)
+            {
+                await _fileService.DeleteFile(user.ProfileImgPath);
+            }
 
-            await _fileService.DeleteFile(user.ProfileImgPath);
 
             user.Update(request.Name, request.Email,request.Description, "",request.ProfileImgPath);
 

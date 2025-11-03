@@ -1,0 +1,163 @@
+/* ==================== FEED ==================== */
+.feed-page {
+  margin-top: calc(var(--navbar-height) + 30px);
+  padding-bottom: 4rem;
+}
+
+.feed-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--texto);
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* ==================== POSTS ==================== */
+.feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.post-card {
+  background-color: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* ==================== CABEÇALHO ==================== */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.post-user {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rosa-primario);
+}
+
+.user-info h3 {
+  color: var(--letra);
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.post-date {
+  color: var(--cinza-texto);
+  font-size: 0.85rem;
+}
+
+/* ==================== CONTEÚDO ==================== */
+.post-content {
+  margin-bottom: 1rem;
+}
+
+.post-title {
+  color: var(--rosa-primario);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-description {
+  color: var(--texto);
+  line-height: 1.5;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid var(--borda);
+  max-height: 400px;
+}
+
+/* ==================== RODAPÉ DO POST ==================== */
+.post-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid var(--borda);
+  padding-top: 0.8rem;
+}
+
+.vote-section {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vote-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: var(--cinza-texto);
+}
+
+.vote-btn:hover {
+  transform: scale(1.1);
+}
+
+.upvote:hover {
+  color: var(--rosa-primario);
+}
+
+.downvote:hover {
+  color: #555;
+}
+
+.vote-count {
+  font-weight: 600;
+  color: var(--texto);
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+  .post-card {
+    padding: 1rem;
+  }
+
+  .feed-title {
+    font-size: 1.6rem;
+  }
+
+  .post-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post-description {
+    font-size: 0.95rem;
+  }
+
+  .vote-btn {
+    font-size: 1rem;
+  }
+}
