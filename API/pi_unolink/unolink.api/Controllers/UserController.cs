@@ -30,9 +30,9 @@ namespace unolink.api.Controllers
         {
             var result = await _userService.Add(request);
             if (!result)
-                return BadRequest();
+                return BadRequest("Usuario Ja Existente");
 
-            return Ok();
+            return Ok("Usuario cadastrado com sucesso!");
         }
         [HttpGet]
         [ProducesResponseType(typeof(List<UserViewModel>), (int)HttpStatusCode.OK)]

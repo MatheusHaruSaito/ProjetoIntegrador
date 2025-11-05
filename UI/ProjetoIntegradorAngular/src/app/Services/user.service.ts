@@ -37,7 +37,7 @@ export class UserService {
     return this.http.put<boolean>(this.ApiUrl,formData);
   }
   TriggerUserActive(id:string): Observable<boolean>{
-    return this.http.put<boolean>(`${this.ApiUrl}/TriggerUserActive/${id}`,'');
+    return this.http.put<boolean>(`${this.ApiUrl}/${id}`,'');
   }
   PostUser(PostUser:PostUserDto) :Observable <User>{
     return this.http.post<User>(this.ApiUrl,PostUser);
