@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 import { AuthService } from '../../Services/auth.service';
 import { UpdateUser } from '../../models/UpdateUser';
@@ -17,6 +17,7 @@ export class EditProfileComponent implements OnInit {
   userService= inject(UserService)
   authService = inject(AuthService);
   selectedFile: File | null = null;
+  route = inject(Router)
 ngOnInit(): void {
 
   var userEmail = this.authService.GetUserFromJwtToken().email;
@@ -53,6 +54,7 @@ onFileSelected(event: Event) {
           }
               console.log(updateUser)
         this.userService.UpdateUser(updateUser).subscribe();
+        this.route.navigate(["/Profile"]);
         }
       });
 

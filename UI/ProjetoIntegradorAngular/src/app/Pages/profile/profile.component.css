@@ -52,6 +52,7 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
+    border: 2px solid var(--rosa-primario);
     object-fit: cover;
     position: relative;
     left: 100px;

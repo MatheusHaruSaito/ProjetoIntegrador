@@ -1,40 +1,42 @@
 <header>
-    <div class="container">
-        <div class="header-content">
-            <div class="logo">
-                <a routerLink="/">
-                    <img src="/images/unolinklogo.png" alt="UNOLINK logo completa" class="logo-full" width="310" height="50" loading="lazy">
-                    <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
-                </a>
-            </div>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a routerLink="/">
+          <img src="/images/unolinklogo.png" alt="UNOLINK logo completa" class="logo-full" width="310" height="50" loading="lazy">
+          <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
+        </a>
+      </div>
 
-            <button class="menu-toggle" (click)="toggleMenu()">
-                <i class="fas fa-bars"></i>
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="main-nav" [ngClass]="{ 'active': isMenuOpen }">
+        <ul>
+          <li><a [routerLink]="['/']">Início</a></li>
+          <li><a [routerLink]="['/ONGSList']">ONGS</a></li>
+          <li><a [routerLink]="['/HowToHelp']">Como Ajudar</a></li>
+          <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
+        </ul>
+
+        <div class="auth-buttons">
+          @if(isLogged){
+            <button (click)="logout()" class="btn-login btn-login-solid">Logout</button>
+
+            <button 
+              class="profile-btn" 
+              [routerLink]="['/Profile']"
+              [ngStyle]="{
+                'background-image': 'url(' + (UserLogged?.profileImgPath || 'images/user-placeholder.png') + ')'
+              }">
             </button>
-
-            <nav class="main-nav" [ngClass]="{ 'active': isMenuOpen }">
-                <ul>
-                    <li><a [routerLink]="['/']">Início</a></li>
-                    <li><a [routerLink]="['/ONGSList']">ONGS</a></li>
-                    <li><a [routerLink]="['/HowToHelp']">Como Ajudar</a></li>
-                    <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
-                </ul>
-
-                <div class="auth-buttons">
-                    @if(isLogged){
-                    <button (click)="logout()" class="btn-login btn-login-solid">Logout</button>
-                                        <button [routerLink]="['/Profile']"style="background-image: url(https://pbs.twimg.com/profile_images/1715145407523700736/e5s7W204_400x400.jpg);background-size: cover;background-repeat: no-repeat;" >Perfil
-                                        <!-- VOU DEIXAR ISSO AQUI ATÉ ALGUEM ARRUMAR O BOTÃO >:( -->
-                                        </button>
-                         {{User?.name}}
-                    }@else {
-                    <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
-                    <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
-                    }
-
-
-                </div>
-            </nav>
+          } @else {
+            <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
+            <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
+          }
         </div>
+      </nav>
     </div>
+  </div>
 </header>

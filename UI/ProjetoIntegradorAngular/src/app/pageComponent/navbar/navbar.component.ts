@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, Inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
-import { ViewUser } from '../../models/ViewUser';
+import { UserService } from '../../Services/user.service';
+import { User } from '../../models/user';
 @Component({
   selector: 'app-navbar',
   imports: [RouterModule, CommonModule],
@@ -11,10 +12,12 @@ import { ViewUser } from '../../models/ViewUser';
 })
 
 export class NavbarComponent implements OnInit {
-   User?: ViewUser;
+   UserLogged?: User;
   constructor(private authService: AuthService) {
     
   }
+
+  userService = inject(UserService)
   ngOnInit(): void {
     this.checkLogin();
   }
@@ -28,9 +31,14 @@ export class NavbarComponent implements OnInit {
     this.authService.isLoggedIn().subscribe(IsAuth=>{
       this.isLogged = IsAuth
       if(IsAuth){
-      this.User = this.authService.GetUserFromJwtToken()
+      var userId = this.authService.GetUserFromJwtToken().id
+      this.userService.GetUserById(userId).subscribe({
+        next: response =>{
+          this.UserLogged = response
+        }
+      })
     }
-    });
+  });
 
   }
   logout(){
