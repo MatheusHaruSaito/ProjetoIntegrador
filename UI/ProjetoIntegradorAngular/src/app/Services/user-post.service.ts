@@ -30,6 +30,6 @@ export class UserPostService {
     return this.http.put<boolean>(`${this.apiUrl}/${id}`,'')
   }
   Vote(request: CreateVoteRequest): Observable<boolean>{
-    return this.http.put<boolean>(`${this.apiUrl}/Vote`,request)
+    return this.http.post<boolean>(`${this.apiUrl}/Vote`,request)
   }
 }
