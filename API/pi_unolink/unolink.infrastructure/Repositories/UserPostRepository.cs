@@ -38,7 +38,10 @@ namespace unolink.infrastructure.Repositories
 
         public async Task<UserPost> GetById(Guid id)
         {
-            return await _entity.Include(p => p.Comments).FirstOrDefaultAsync(x => x.Id == id);
+            return await _entity
+                .Include(p => p.User)
+                .Include(p => p.Votes)
+                .Include(p => p.Comments).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<bool> UseTriggerActive(Guid id)

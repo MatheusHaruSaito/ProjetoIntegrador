@@ -6,6 +6,7 @@ import { CreateUserPost } from '../models/CreateUserPost';
 import { ViewUserPost } from '../models/ViewUserPost';
 import { UpdateUserPost } from '../models/UpdateUserPost';
 import { CreateVoteRequest } from '../models/CreateVoteRequest';
+import { UserPost } from '../models/UserPost';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,8 @@ export class UserPostService {
   GetAll(): Observable<ViewUserPost[]>{
     return this.http.get<ViewUserPost[]>(this.apiUrl)
   }
-  GetById(id:string): Observable<ViewUserPost>{
-    return this.http.get<ViewUserPost>(`${this.apiUrl}/${id}`)
+  GetById(id:string): Observable<UserPost>{
+    return this.http.get<UserPost>(`${this.apiUrl}/${id}`)
   }
   Update(updatedPost: UpdateUserPost ): Observable<boolean>{
     return this.http.put<boolean>(this.apiUrl,updatedPost)
