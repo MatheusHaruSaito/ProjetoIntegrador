@@ -16,6 +16,7 @@ namespace unolink.infrastructure.Context
         public DbSet<UserPost> UserPost { get; set; }
         public DbSet<PostComment> PostComment { get; set; }
         public DbSet<PostVotes> PostVotes { get; set;}
+        public DbSet<CommentVotes> CommentVotes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -41,6 +42,22 @@ namespace unolink.infrastructure.Context
                     .WithMany(u => u.UserPosts)
                     .HasForeignKey(up => up.UserId)
                     .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            modelBuilder.Entity<CommentVotes>(eb =>
+            {
+                eb.HasKey(comVote => new { comVote.UserId, comVote.CommentId });
+
+                eb.HasOne(comVote => comVote.User)
+                    .WithMany() 
+                    .HasForeignKey(comVote => comVote.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                eb.HasOne(comVote => comVote.Comment)
+                    .WithMany()
+                    .HasForeignKey(comVote => comVote.CommentId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
             });
         }
         

@@ -111,5 +111,18 @@ namespace unolink.api.Controllers
 
             return Ok();
         }
+
+        [HttpPost("CommentVote")]
+
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        public async Task<IActionResult> CommentVote(CreateCommentVoteRequest request)
+        {
+            var data = await _userPostService.VoteComment(request);
+
+            if (!data) return NotFound();
+
+            return Ok();
+        }
     }
 }

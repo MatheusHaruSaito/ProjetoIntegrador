@@ -17,6 +17,9 @@ namespace unolink.infrastructure.Repositories
         private readonly DbSet<UserPost> _entity = context.UserPost;
         private readonly DbSet<User> _entityUser = context.Users;
         private readonly DbSet<PostVotes> _entityVotes = context.PostVotes;
+        private readonly DbSet<PostComment> _entityComments = context.PostComment;
+        private readonly DbSet<CommentVotes> _entityCommentVotes = context.CommentVotes;
+
 
 
 
@@ -109,7 +112,10 @@ namespace unolink.infrastructure.Repositories
         {
             return await _entityVotes.CountAsync(x => x.PostId == postId);
         }
-
+        public async Task<int> CommentVoteCount(Guid commentId)
+        {
+            return await _entityCommentVotes.CountAsync(x => x.CommentId == commentId);
+        }
         public async Task<List<(Guid PostId, int Count)>> GetVotesCountByPostIdsAsync(List<Guid> postIds)
         {
             var result = await _context.PostVotes
@@ -119,6 +125,41 @@ namespace unolink.infrastructure.Repositories
                 .ToListAsync();
 
             return result.Select(x => (x.PostId, x.Count)).ToList();
+        }
+
+        public async Task<bool> VoteComment(Guid commentId, Guid userId)
+        {
+            var user = await _entityUser.FirstOrDefaultAsync(x => x.Id == userId);
+            if (user == null)
+            {
+                return false;
+            }
+
+            var data = await _context.CommentVotes.FindAsync(userId, commentId);
+            if(data is not null)
+            {
+                _entityCommentVotes.Remove(data);
+                await unitOfWork.SaveChangesAsync();
+                return false;
+            }
+            var vote = new CommentVotes { 
+                CommentId = commentId,
+                UserId = userId,
+                CreatedAt = DateTime.UtcNow
+            };
+            await _entityCommentVotes.AddAsync(vote);
+            await unitOfWork.SaveChangesAsync();
+            return true;
+        }
+        public async Task<List<(Guid commentId, int Count)>> GetCommentVotesCountByCommentIdsAsync(List<Guid> commentIds)
+        {
+            var result = await _entityCommentVotes
+                .Where(v => commentIds.Contains(v.CommentId))
+                .GroupBy(v => v.CommentId)
+                .Select(g => new { CommentId = g.Key, Count = g.Count() })
+                .ToListAsync();
+
+            return result.Select(x => (x.CommentId, x.Count)).ToList();
         }
     }
 }

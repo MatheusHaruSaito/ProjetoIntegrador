@@ -7,6 +7,7 @@ import { ViewUserPost } from '../models/ViewUserPost';
 import { UpdateUserPost } from '../models/UpdateUserPost';
 import { CreateVoteRequest } from '../models/CreateVoteRequest';
 import { UserPost } from '../models/UserPost';
+import { CreateCommentVoteRequest } from '../models/CreateCommentVoteRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,8 @@ export class UserPostService {
   }
   Vote(request: CreateVoteRequest): Observable<boolean>{
     return this.http.post<boolean>(`${this.apiUrl}/Vote`,request)
+  }
+  CommentVote(request: CreateCommentVoteRequest): Observable<boolean>{
+    return this.http.post<boolean>(`${this.apiUrl}/CommentVote`,request)
   }
 }

@@ -39,6 +39,13 @@ namespace unolink.api.Application.Services.UserPostService
             var votesCounts = await _userPostRepostiory.GetVotesCountByPostIdsAsync(postsId);
             var votesDict = votesCounts.ToDictionary(vc => vc.PostId, vc => vc.Count);
 
+
+            //var comments = data.SelectMany(x => x.Comments).ToList() ;
+            //var commentIds = comments.Select(x => x.Id).ToList();
+            //var commentsVotesCounts = await _userPostRepostiory.GetCommentVotesCountByCommentIdsAsync(commentIds);
+            //var commentVotesDict = commentsVotesCounts.ToDictionary(vc => vc.commentId, vc => vc.Count);
+
+
             var userPostDTO = data.Select(x => new UserPostDTO
             {
                 Id = x.Id,
@@ -51,15 +58,15 @@ namespace unolink.api.Application.Services.UserPostService
                 PostImgPath = x.PostImgPath,
                 ProfileImgPath = x.User.ProfileImgPath,
                 UserName = x.User.UserName,
-                Comments = x.Comments?.Select(c => new PostCommentDTO
-                {
-                    Id = c.Id,
-                    IsActive = c.IsActive,
-                    CreatedAt = c.CreatedAt,
-                    UserId = c.UserId,
-                    Text = c.Text,
-                    Vote = c.Vote
-                })
+                //Comments = x.Comments?.Select(c => new PostCommentDTO
+                //{
+                //    Id = c.Id,
+                //    IsActive = c.IsActive,
+                //    CreatedAt = c.CreatedAt,
+                //    UserId = c.UserId,
+                //    Text = c.Text,
+                //    Vote = commentVotesDict.TryGetValue(c.Id, out var count) ? count : 0,
+                //})
             }).ToList();
             return userPostDTO;
         }
@@ -67,10 +74,15 @@ namespace unolink.api.Application.Services.UserPostService
         public async Task<UserPostDTO> GetById(Guid id)
         {
             var userPost = await _userPostRepostiory.GetById(id);
-            if(userPost is null)
+            if (userPost is null)
             {
                 return null;
             }
+            var commentIds = userPost.Comments?.Select(x => x.Id).ToList();
+            var votesCounts = await _userPostRepostiory.GetCommentVotesCountByCommentIdsAsync(commentIds);
+            var votesDict = votesCounts.ToDictionary(vc => vc.commentId, vc => vc.Count);
+
+
             var userPostDTO = new UserPostDTO
             {
                 Id = userPost.Id,
@@ -90,7 +102,7 @@ namespace unolink.api.Application.Services.UserPostService
                     CreatedAt = c.CreatedAt,
                     UserId = c.UserId,
                     Text = c.Text,
-                    Vote = c.Vote
+                    Vote = votesDict.TryGetValue(c.Id, out var count) ? count : 0
                 })
             };
             return userPostDTO;
@@ -129,6 +141,11 @@ namespace unolink.api.Application.Services.UserPostService
         public Task<bool> Vote(CreateVoteRequest request)
         {
             return _userPostRepostiory.Vote(request.PostId, request.UserId);
+        }
+
+        public Task<bool> VoteComment(CreateCommentVoteRequest request)
+        {
+            return _userPostRepostiory.VoteComment(request.CommentId, request.UserId);
         }
     }
 }
