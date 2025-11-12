@@ -47,6 +47,7 @@ namespace unolink.infrastructure.Repositories
                 .Include(p => p.Comments).FirstOrDefaultAsync(x => x.Id == id);
         }
 
+
         public async Task<bool> UseTriggerActive(Guid id)
         {
             var post = await _entity.FirstOrDefaultAsync(x => x.Id == id);

@@ -8,5 +8,8 @@
         public Guid UserId { get; set; }
         public string Text { get; set; }
         public int Vote { get; set; }
+        public string UserUsername { get; set; }
+        public string userProfileImgPath { get; set; }
+
     }
 }
