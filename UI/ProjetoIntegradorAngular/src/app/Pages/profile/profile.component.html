@@ -1,33 +1,52 @@
 <div class="profile-container">
 
-    <main class="profile">
-        <div class="photo">
-            <img id="ProfileImage" src="/images/user-placeholder.png" alt="Foto de Perfil">
-            <button [routerLink]="['/EditProfile']" class="editProfile">Editar Perfil</button>
-        </div>
-        <div class="info"><br>
-            <h2 >{{User.name}} <i class="fa-regular fa-pen-to-square" style="color: #d41e76;"></i></h2><br>
-            <p>{{User.description}}</p><br>
-            <label class="notification">
-                <input type="checkbox" checked> RECEBER NOTIFICAÇÃO
-            </label><br>
-            <button [routerLink]="['/Feedback']" id="feedbackBtn" class="btnFeedback"><i class="fa-solid fa-comments" style="color: var(--icon);"></i>  ENVIAR FEEDBACKS</button>
-        </div>
-            @for(post of UserPosts; track $index){
-        {{post.title}}
-        {{post.description}}
-    }
-    </main>
-    
-    <aside class="menu">
-        <h3>CONFIGURAÇÃO</h3>
-        <ul>
-            <li class="active"><i class="fa-solid fa-circle-user" style="color: var(--letra);"></i>  Seu Perfil</li><br>
-            <li><i class="fa-solid fa-lock" style="color: var(--letra);"></i>  Segurança e Privacidade</li><br>
-            <li id="toggle-theme" (click)="toggleTheme()"><i class="fa-solid fa-moon" style="color: var(--letra);"></i>  Aparência</li><br>
-            <li id="historicoBtn" class="btnHistorico"><i class="fa-solid fa-file" style="color: var(--letra);"></i>  Histórico</li><br>
-        </ul>
-        <div  class="exit"><i class="fas fa-sign-out-alt"></i>  SAIR</div>
-    </aside>
+  <!-- ====== MENU LATERAL ====== -->
+  <aside class="menu">
+    <h3>CONFIGURAÇÕES</h3>
+    <ul>
+      <li class="active"><i class="fa-solid fa-circle-user"></i> Seu Perfil</li>
+      <li><i class="fa-solid fa-lock"></i> Segurança e Privacidade</li>
+      <li id="toggle-theme" (click)="toggleTheme()"><i class="fa-solid fa-moon"></i> Aparência</li>
+      <li id="historicoBtn" class="btnHistorico"><i class="fa-solid fa-file"></i> Histórico</li>
+    </ul>
+<button class="btn-logout" (click)="logout()">
+  <i class="fas fa-sign-out-alt"></i> Sair
+</button>
+</aside><div>
+  <!-- ====== CONTEÚDO PRINCIPAL ====== -->
+  <main class="profile">
+    <section class="profile-card">
+      <div class="photo">
+        <img id="ProfileImage" src="/images/user-placeholder.png" alt="Foto de Perfil">
+        <button [routerLink]="['/EditProfile']" class="editProfile">
+          <i class="fa-solid fa-pen"></i> Editar Perfil
+        </button>
+      </div>
 
+      <div class="info">
+        <h2>{{ User.name }}</h2>
+        <p class="bio">{{ User.description || 'Sem descrição adicionada.' }}</p>
+
+        <label class="notification">
+          <input type="checkbox" checked> Receber notificações
+        </label>
+
+        <button [routerLink]="['/Feedback']" class="btnFeedback">
+          <i class="fa-solid fa-comments"></i> Enviar feedback
+        </button>
+      </div>
+    </section>
+
+    <section class="user-posts" *ngIf="UserPosts?.length">
+      <h3>Suas publicações</h3>
+      <div class="posts-grid">
+        @for (post of UserPosts; track $index) {
+          <div class="user-post-card">
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.description }}</p>
+          </div>
+        }
+      </div>
+    </section>
+  </main>
 </div>

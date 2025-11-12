@@ -18,12 +18,11 @@
           <li><a [routerLink]="['/ONGSList']">ONGS</a></li>
           <li><a [routerLink]="['/HowToHelp']">Como Ajudar</a></li>
           <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
+          <li><a [routerLink]="['/Feed']">Feed</a></li>
         </ul>
 
         <div class="auth-buttons">
           @if(isLogged){
-            <button (click)="logout()" class="btn-login btn-login-solid">Logout</button>
-
             <button 
               class="profile-btn" 
               [routerLink]="['/Profile']"

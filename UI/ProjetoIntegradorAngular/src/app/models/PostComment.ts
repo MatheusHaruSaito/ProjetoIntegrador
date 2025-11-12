@@ -6,4 +6,6 @@ export interface PostComment{
     postId: string
     text: string
     vote: number
+    userUsername: string
+    userProfileImgPath: string
 }
