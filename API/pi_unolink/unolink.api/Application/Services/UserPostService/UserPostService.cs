@@ -12,10 +12,12 @@ namespace unolink.api.Application.Services.UserPostService
     public class UserPostService : IUserPostService
     {
         private readonly IUserPostRepository _userPostRepostiory;
+        private readonly IUserRepository _userRepository;
         private readonly IFilesService _fileService;
 
-        public UserPostService(IUserPostRepository userPostRepostiory, IFilesService fileService)
+        public UserPostService(IUserPostRepository userPostRepostiory, IFilesService fileService, IUserRepository userRepository)
         {
+            _userRepository = userRepository;
             _userPostRepostiory = userPostRepostiory;
             _fileService = fileService;
         }
@@ -78,10 +80,33 @@ namespace unolink.api.Application.Services.UserPostService
             {
                 return null;
             }
+
             var commentIds = userPost.Comments?.Select(x => x.Id).ToList();
             var votesCounts = await _userPostRepostiory.GetCommentVotesCountByCommentIdsAsync(commentIds);
             var votesDict = votesCounts.ToDictionary(vc => vc.commentId, vc => vc.Count);
 
+
+            var userIds = userPost.Comments.Select(c => c.UserId).Distinct().ToList();
+            var users = await _userRepository.GetByIdsAsync(userIds);
+            var usersDict = users.ToDictionary(u => u.Id);
+
+            var commentDtos = userPost.Comments.Select(c =>
+            {
+                usersDict.TryGetValue(c.UserId, out var user);
+                return new PostCommentDTO
+                {
+                    Id = c.Id,
+                    IsActive = c.IsActive,
+                    CreatedAt = c.CreatedAt,
+                    UserId = c.UserId,
+                    Text = c.Text,
+                    Vote = votesDict.TryGetValue(c.Id, out var count) ? count : 0,
+                    userProfileImgPath = user?.ProfileImgPath,
+                    UserUsername = user?.UserName
+                };
+            }).ToList();
+
+        
 
             var userPostDTO = new UserPostDTO
             {
@@ -95,15 +120,7 @@ namespace unolink.api.Application.Services.UserPostService
                 PostImgPath = userPost.PostImgPath,
                 ProfileImgPath = userPost.User.ProfileImgPath,
                 UserName = userPost.User.UserName,
-                Comments = userPost.Comments.Select(c => new PostCommentDTO
-                {
-                    Id = c.Id,
-                    IsActive = c.IsActive,
-                    CreatedAt = c.CreatedAt,
-                    UserId = c.UserId,
-                    Text = c.Text,
-                    Vote = votesDict.TryGetValue(c.Id, out var count) ? count : 0
-                })
+                Comments = commentDtos
             };
             return userPostDTO;
         }
@@ -131,7 +148,7 @@ namespace unolink.api.Application.Services.UserPostService
             return await _userPostRepostiory.UnitOfWork.SaveEntitiesAsync();
         }
 
-        public async Task<bool> Comment(PostCommentRequest request)
+        public async Task<bool> Comment(CreateCommentRequest request)
         {
             var comment = await _userPostRepostiory.Comment(request.PostId,request.UserId,request.Text);
             if (comment is null) return false;
