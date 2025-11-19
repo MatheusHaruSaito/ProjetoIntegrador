@@ -1,12 +1,11 @@
 <div class="feedback-container">
     <main class="format">
       <h1 style="color: var(--letra);"><i class="fa-regular fa-comment-dots" style="color: var(--letra);"></i> FEEDBACKS</h1>
-      <form>
+      <form [formGroup]="feedbackFroms" (ngSubmit)="SendFeedBack()">
         <label for="sobre">SOBRE</label>
-        <input type="text" id="sobre" name="sobre" placeholder="Digite o assunto...">
-
+        <input type="text" id="sobre" name="sobre" placeholder="Digite o assunto..." formControlName="subject">
         <label for="assunto">ASSUNTO</label>
-        <input type="text" id="assunto" name="assunto" placeholder="Digite o conteúdo...">
+        <input type="text" id="assunto" name="assunto" placeholder="Digite o conteúdo..." formControlName="body">
 
         <button type="submit" id="btnEnviar">ENVIAR</button>
       </form>
