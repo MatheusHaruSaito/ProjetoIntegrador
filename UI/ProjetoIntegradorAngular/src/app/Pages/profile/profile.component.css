@@ -291,6 +291,190 @@
   color: var(--cinza-texto);
 }
 
+/* ======================================================
+   MODAL — IDÊNTICO AO FEED
+====================================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-window {
+  background: var(--branco);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--cinza-texto);
+}
+
+.modal-body {
+  display: flex;
+  gap: 1rem;
+  padding: 18px;
+  align-items: flex-start;
+}
+
+.modal-left {
+  flex: 1 1 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+}
+
+.modal-right {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-author {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.modal-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rosa-primario);
+}
+
+.modal-author-name {
+  font-weight: 700;
+  color: var(--letra);
+}
+
+.modal-dates {
+  color: var(--cinza-texto);
+  font-size: 0.9rem;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  color: var(--letra);
+  margin-top: 6px;
+}
+
+.modal-description {
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+.modal-noimage {
+  width: 100%;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cinza-texto);
+  border: 1px dashed var(--borda);
+  border-radius: 8px;
+}
+
+/* -------- Votos -------- */
+.modal-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid var(--borda);
+  padding-top: 0.8rem;
+  margin-top: 1rem;
+}
+
+.vote-section {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vote-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--cinza-texto);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.vote-btn:hover {
+  transform: scale(1.15);
+  color: var(--rosa-primario);
+}
+
+.vote-count {
+  font-weight: 600;
+  color: var(--letra);
+  font-size: 1rem;
+}
+
+/* ======================================================
+   RESPONSIVIDADE
+====================================================== */
+@media (max-width: 900px) {
+  .modal-body {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .modal-left,
+  .modal-right {
+    width: 100%;
+  }
+
+  .modal-image {
+    max-height: 50vh;
+  }
+
+  .modal-avatar {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-image {
+    max-height: 40vh;
+  }
+
+  .modal-close {
+    top: 6px;
+    right: 8px;
+    font-size: 22px;
+  }
+}
 /* ====== RESPONSIVIDADE ====== */
 @media (max-width: 900px) {
   .profile-container { flex-direction: column; }
@@ -302,6 +486,9 @@
     border-right: none;
     border-bottom: 1px solid var(--borda);
     padding: 12px;
+  }
+  .modal-body {
+    flex-direction: column;
   }
   .profile-card {
     flex-direction: column;

@@ -6,84 +6,171 @@
     <p class="feed-subtitle">Acompanhe as postagens mais recentes da comunidade</p>
   </div>
 
-  <!-- ====== Lista de posts ====== -->
+  <!-- ===== Card de criação ===== -->
+  <div class="create-card" (click)="openCreateModal()">
+    <img [src]="UserLogged?.profileImgPath || 'images/user-placeholder.png'"
+     class="user-avatar-small" alt="Você">
+
+
+    <input 
+      class="create-input"
+      type="text"
+      readonly
+      placeholder="O que você deseja compartilhar?"
+    />
+
+    <button class="btn-small">Criar</button>
+  </div>
+
+  <!-- ===== Lista de posts ===== -->
   <div class="feed-list">
     @for (post of posts; track $index) {
       <div class="post-card" (click)="openModal(post.id)">
-        <!-- Cabeçalho -->
+        
         <div class="post-header">
-          <div class="post-user">
-            <img [src]="post.profileImgPath || 'assets/user-placeholder.png'" alt="Imagem do usuário" class="user-avatar">
-            <div class="user-info">
-              <h3>{{ post.userName || ('Usuário ' + post.userId) }}</h3>
-              <p class="post-date">{{ post.createdAt | date:'short' }}</p>
-            </div>
+          <img [src]="post.profileImgPath || 'assets/user-placeholder.png'" class="user-avatar" alt="User">
+          
+          <div class="user-info">
+            <h3>{{ post.userName }}</h3>
+            <p class="post-date">{{ post.createdAt | date:'short' }}</p>
           </div>
         </div>
 
-        <!-- Conteúdo -->
         <div class="post-content">
           <h4 class="post-title">{{ post.title }}</h4>
           <p class="post-description">{{ post.description }}</p>
-          <img *ngIf="post.postImgPath" [src]="post.postImgPath" alt="Imagem do post" class="post-image">
+
+          <img 
+            *ngIf="post.postImgPath" 
+            [src]="post.postImgPath" 
+            class="post-image"
+            alt="Post">
         </div>
 
-        <!-- Rodapé (votos) -->
         <div class="post-footer">
-          <div class="vote-section">
-            <button (click)="Vote(post.id); $event.stopPropagation()" class="vote-btn upvote">
-              <i class="fas fa-arrow-up"></i>
-            </button>
-            <span class="vote-count">{{ post.votes }}</span>
-          </div>
+          <button 
+            class="vote-btn"
+            (click)="Vote(post.id); $event.stopPropagation()">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+
+          <span class="vote-count">{{ post.votes }}</span>
         </div>
+
       </div>
     }
   </div>
 </div>
 
-<!-- ====== Modal ====== -->
+<!-- ===== Botão flutuante de adicionar ===== -->
+<button class="floating-add" (click)="openCreateModal()">+</button>
+
+
+<!-- ========================================================= -->
+<!-- =============== MODAL DE CRIAÇÃO DE POST ================= -->
+<!-- ========================================================= -->
+
+<div class="modal-overlay" *ngIf="createModalOpen" (click)="closeCreateModal()">
+  
+  <div class="modal-window create-modal" (click)="$event.stopPropagation()">
+
+    <button class="modal-close" (click)="closeCreateModal()">×</button>
+
+    <div class="modal-body-create">
+      <h2>Criar nova publicação</h2>
+
+      <label class="form-label">Título</label>
+      <input 
+        type="text"
+        [(ngModel)]="createTitle"
+        class="form-input"
+        placeholder="Digite um título">
+
+      <label class="form-label">Descrição</label>
+      <textarea 
+        [(ngModel)]="createDescription"
+        rows="5"
+        class="form-input"
+        placeholder="Escreva algo..."></textarea>
+
+      <label class="form-label">Imagem (opcional)</label>
+      <input type="file" accept="image/*" (change)="onCreateFileChange($event)">
+
+      <div class="image-preview" *ngIf="createImagePreview">
+        <img [src]="createImagePreview" alt="Preview">
+      </div>
+
+      <div class="create-actions">
+        <span class="error" *ngIf="createError">{{ createError }}</span>
+
+        <button 
+          class="btn-cancel"
+          (click)="closeCreateModal()">Cancelar</button>
+        
+        <button 
+          class="btn-publish"
+          (click)="submitCreate()">
+          {{ creating ? "Enviando..." : "Publicar" }}
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ========================================================= -->
+<!-- =============== MODAL DE VISUALIZAÇÃO ==================== -->
+<!-- ========================================================= -->
+
 <div class="modal-overlay" *ngIf="selectedPost" (click)="onOverlayClick($event)">
-  <div class="modal-window" role="dialog" aria-modal="true">
-    <button class="modal-close" (click)="closeModal()" aria-label="Fechar modal">&times;</button>
+  <div class="modal-window">
+
+    <button class="modal-close" (click)="closeModal()">×</button>
 
     <div class="modal-body">
-      <!-- Lado esquerdo (imagem) -->
+      
       <div class="modal-left">
-        <img *ngIf="selectedPost.postImgPath; else noImage" [src]="selectedPost.postImgPath" alt="Imagem do post" class="modal-image">
+        <img 
+          *ngIf="selectedPost.postImgPath; else noImage"
+          [src]="selectedPost.postImgPath"
+          class="modal-image"
+        >
         <ng-template #noImage>
           <div class="modal-noimage">Sem imagem</div>
         </ng-template>
       </div>
 
-      <!-- Lado direito (detalhes) -->
       <div class="modal-right">
+
         <div class="modal-author">
-          <img [src]="selectedPost.profileImgPath || 'assets/user-placeholder.png'" alt="Avatar" class="modal-avatar">
+          <img 
+            [src]="selectedPost.profileImgPath || 'assets/user-placeholder.png'" 
+            class="modal-avatar"
+          >
           <div>
-            <div class="modal-author-name">{{ selectedPost.userName || ('Usuário ' + selectedPost.userId) }}</div>
+            <div class="modal-author-name">{{ selectedPost.userName }}</div>
             <div class="modal-dates">
-              <span>Criado: {{ selectedPost.createdAt | date:'short' }}</span>
+              Criado: {{ selectedPost.createdAt | date:'short' }}
             </div>
           </div>
         </div>
 
         <h3 class="modal-title">{{ selectedPost.title }}</h3>
+
         <p class="modal-description">{{ selectedPost.description }}</p>
 
-        <!-- Votos iguais aos do feed -->
         <div class="modal-footer">
-          <div class="vote-section">
-            <button (click)="Vote(selectedPost.id); $event.stopPropagation()" class="vote-btn upvote">
-              <i class="fas fa-arrow-up"></i>
-            </button>
-            <span class="vote-count">{{ selectedPost.votes }}</span>
-            @for(com of selectedPost.comments; track $index){
-              {{com.text}}
-            }
-          </div>
+          <button 
+            (click)="Vote(selectedPost.id); $event.stopPropagation()" 
+            class="vote-btn">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+          <span class="vote-count">{{ selectedPost.votes }}</span>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>

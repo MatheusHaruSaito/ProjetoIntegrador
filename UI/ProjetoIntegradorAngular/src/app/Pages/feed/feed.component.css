@@ -1,71 +1,108 @@
-/* ======================================================
-   ESTRUTURA GERAL
-====================================================== */
+/* ========================================================= */
+/* ================ ÁREA PRINCIPAL DO FEED ================= */
+/* ========================================================= */
+
 .feed-page {
   margin-top: calc(var(--navbar-height) + 40px);
   padding-bottom: 4rem;
 }
 
-/* ======================================================
-   CABEÇALHO
-====================================================== */
+/* ===== Cabeçalho ===== */
 .feed-header {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .feed-heading {
   font-size: 2rem;
-  color: var(--rosa-primario);
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: var(--rosa-primario);
 }
 
 .feed-subtitle {
-  color: var(--cinza-texto);
   font-size: 1rem;
-  margin-top: 0.4rem;
+  color: var(--cinza-texto);
 }
 
-/* ======================================================
-   LISTA DE POSTS
-====================================================== */
+/* ========================================================= */
+/* ===================== CARD DE CRIAÇÃO ==================== */
+/* ========================================================= */
+
+.create-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: var(--branco);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.18s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+}
+
+.create-card:hover {
+  transform: translateY(-3px);
+}
+
+.user-avatar-small {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rosa-primario);
+}
+
+.create-input {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 50px;
+  border: 1px solid var(--borda);
+  background: var(--cinza-claro);
+  cursor: pointer;
+}
+
+.btn-small {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--rosa-primario);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ========================================================= */
+/* ====================== POST NORMAL ======================= */
+/* ========================================================= */
+
 .feed-list {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
-/* ======================================================
-   POST CARD
-====================================================== */
 .post-card {
-  background-color: var(--branco);
+  background: var(--branco);
   border: 1px solid var(--borda);
   border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  padding: 1.5rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 1.4rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.25s;
+  cursor: pointer;
 }
 
 .post-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* ======================================================
-   CABEÇALHO DO POST
-====================================================== */
+/* Cabeçalho */
 .post-header {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
-}
-
-.post-user {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  gap: 10px;
 }
 
 .user-avatar {
@@ -77,96 +114,99 @@
 }
 
 .user-info h3 {
+  margin: 0;
   color: var(--letra);
   font-size: 1rem;
-  margin-bottom: 0.2rem;
 }
 
 .post-date {
-  color: var(--cinza-texto);
   font-size: 0.85rem;
+  color: var(--cinza-texto);
 }
 
-/* ======================================================
-   CONTEÚDO DO POST
-====================================================== */
-.post-content {
-  margin-bottom: 1rem;
-}
-
+/* Conteúdo */
 .post-title {
-  color: var(--letra);
+  margin-top: 1rem;
   font-size: 1.25rem;
+  color: var(--letra);
   font-weight: 600;
-  margin-bottom: 0.6rem;
 }
 
 .post-description {
+  margin-top: 8px;
   color: var(--texto);
-  line-height: 1.6;
-  font-size: 1rem;
-  margin-bottom: 1rem;
 }
 
 .post-image {
   width: 100%;
+  border-radius: 10px;
+  margin-top: 1rem;
+  border: 1px solid var(--borda);
   max-height: 280px;
   object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid var(--borda);
-  transition: transform 0.3s ease;
 }
 
-.post-image:hover {
-  transform: scale(1.02);
-}
-
-/* ======================================================
-   RODAPÉ (VOTOS)
-====================================================== */
-.post-footer,
-.modal-footer {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+/* Rodapé */
+.post-footer {
+  margin-top: 12px;
+  padding-top: 12px;
   border-top: 1px solid var(--borda);
-  padding-top: 0.8rem;
-  margin-top: 1rem;
-}
-
-.vote-section {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 8px;
 }
 
 .vote-btn {
-  border: none;
   background: none;
+  border: none;
+  font-size: 1.3rem;
   cursor: pointer;
-  font-size: 1.2rem;
   color: var(--cinza-texto);
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: 0.2s;
 }
 
 .vote-btn:hover {
-  transform: scale(1.15);
   color: var(--rosa-primario);
+  transform: scale(1.15);
 }
 
-.vote-count {
-  font-weight: 600;
-  color: var(--letra);
-  font-size: 1rem;
+/* ========================================================= */
+/* ================= BOTÃO FLUTUANTE + ====================== */
+/* ========================================================= */
+
+.floating-add {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--rosa-primario);
+  color: white;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  transition: 0.2s;
+  line-height: 1;
+  font-weight: 700;
 }
 
-/* ======================================================
-   MODAL
-====================================================== */
+.floating-add:hover {
+  transform: translateY(-3px);
+}
+
+/* ========================================================= */
+/* ======================== MODAL =========================== */
+/* ========================================================= */
+
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,59 +217,54 @@
 .modal-window {
   background: var(--branco);
   border-radius: 12px;
+  max-width: 950px;
   width: 100%;
-  max-width: 1000px;
   max-height: 90vh;
   overflow: auto;
   position: relative;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.22);
 }
 
+/* botão fechar */
 .modal-close {
   position: absolute;
   right: 12px;
   top: 10px;
-  background: transparent;
+  background: none;
   border: none;
+  color: var(--cinza-texto);
   font-size: 28px;
   cursor: pointer;
-  color: var(--cinza-texto);
 }
 
+/* layout do modal de visualização */
 .modal-body {
   display: flex;
-  gap: 1rem;
   padding: 18px;
-  align-items: flex-start;
+  gap: 14px;
 }
 
 .modal-left {
-  flex: 1 1 55%;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .modal-image {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   max-height: 70vh;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid var(--borda);
+  border-radius: 10px;
 }
 
 .modal-right {
-  flex: 1 1 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex: 1;
 }
 
 .modal-author {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
 }
 
 .modal-avatar {
@@ -240,91 +275,75 @@
   border: 2px solid var(--rosa-primario);
 }
 
-.modal-author-name {
-  font-weight: 700;
-  color: var(--letra);
-}
-
-.modal-dates {
-  color: var(--cinza-texto);
-  font-size: 0.9rem;
-}
-
 .modal-title {
+  margin-top: 12px;
   font-size: 1.25rem;
   color: var(--letra);
-  margin-top: 6px;
 }
 
-.modal-description {
-  color: var(--texto);
-  line-height: 1.6;
-}
 
-.modal-noimage {
-  width: 100%;
-  height: 280px;
+/* ========================================================= */
+/* ================ MODAL DE CRIAÇÃO ======================== */
+/* ========================================================= */
+
+.modal-body-create {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cinza-texto);
-  border: 1px dashed var(--borda);
-  border-radius: 8px;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
 }
 
-/* ======================================================
-   RESPONSIVIDADE
-====================================================== */
+.form-label {
+  font-weight: 600;
+  color: var(--letra);
+}
+
+.form-input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+  background: var(--branco);
+  resize: none;
+}
+
+.image-preview img {
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+}
+
+.create-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-cancel {
+  background: var(--cinza-claro);
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-publish {
+  background: var(--rosa-primario);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: #b00020;
+  margin-right: auto;
+}
+
+/* mobile */
 @media (max-width: 900px) {
   .modal-body {
     flex-direction: column;
-    padding: 12px;
-  }
-
-  .modal-left,
-  .modal-right {
-    width: 100%;
-  }
-
-  .modal-image {
-    max-height: 50vh;
-  }
-
-  .modal-avatar {
-    width: 46px;
-    height: 46px;
-  }
-}
-
-@media (max-width: 480px) {
-  .user-avatar {
-    width: 40px;
-    height: 40px;
-  }
-
-  .post-description {
-    font-size: 0.95rem;
-  }
-
-  .vote-btn {
-    font-size: 1rem;
-  }
-
-  .post-image {
-    max-height: 180px;
-  }
-
-  .modal-image {
-    max-height: 40vh;
-  }
-
-  .modal-close {
-    top: 6px;
-    right: 8px;
-    font-size: 22px;
-  }
-
-  .modal-right {
-    padding-left: 0;
   }
 }
