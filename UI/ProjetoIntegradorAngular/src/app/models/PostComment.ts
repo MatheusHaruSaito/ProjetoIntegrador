@@ -1,5 +1,3 @@
-
-
 export interface PostComment{
 
     userId: string

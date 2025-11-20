@@ -1,6 +1,6 @@
 <div class="profile-container">
 
-  <!-- ====== MENU LATERAL ====== -->
+  <!-- ==== MENU LATERAL ==== -->
   <aside class="menu">
     <h3>CONFIGURAÇÕES</h3>
 
@@ -16,18 +16,12 @@
     </button>
   </aside>
 
-
-  <!-- ====== CONTEÚDO PRINCIPAL ====== -->
   <main class="profile">
 
-    <!-- ====== CARD DO USUÁRIO ====== -->
+    <!-- ==== CARD DO USUÁRIO ==== -->
     <section class="profile-card">
       <div class="photo">
         <img id="ProfileImage" src="/images/user-placeholder.png" alt="Foto de Perfil">
-
-        <button [routerLink]="['/EditProfile']" class="editProfile">
-          <i class="fa-solid fa-pen"></i> Editar Perfil
-        </button>
       </div>
 
       <div class="info">
@@ -38,24 +32,35 @@
         <label class="notification">
           <input type="checkbox" checked> Receber notificações
         </label>
+      </div>
 
-        <button [routerLink]="['/Feedback']" class="btnFeedback">
+      <div class="profile-buttons">
+        <button [routerLink]="['/EditProfile']" class="btn-profile editProfile">
+          <i class="fa-solid fa-pen"></i> Editar Perfil
+        </button>
+
+        <button [routerLink]="['/Feedback']" class="btn-profile btnFeedback">
           <i class="fa-solid fa-comments"></i> Enviar feedback
         </button>
       </div>
     </section>
 
-
-    <!-- ====== POSTS DO USUÁRIO ====== -->
+    <!-- ==== POSTS DO USUÁRIO ==== -->
     <section class="user-posts" *ngIf="UserPosts?.length">
       <h3>Suas publicações</h3>
 
       <div class="posts-grid">
         @for (post of UserPosts; track $index) {
-          <div class="user-post-card" (click)="openModal(post.id)">
-            <h4>{{ post.title }}</h4>
-            <p>{{ post.description }}</p>
-          </div>
+        <div class="user-post-card" (click)="openModal(post.id)">
+
+          <h4 class="user-post-title">{{ post.title }}</h4>
+
+          <img *ngIf="post.postImgPath" [src]="post.postImgPath" class="user-post-thumb" alt="Miniatura">
+
+          <p class="user-post-excerpt">
+            {{ post.description }}
+          </p>
+        </div>
         }
       </div>
     </section>
@@ -63,68 +68,41 @@
   </main>
 </div>
 
-
-<!-- ================================================================================= -->
-<!--                               MODAL DE POST (IDÊNTICO AO FEED)                   -->
-<!-- ================================================================================= -->
+<!-- ==== MODAL DE POST ==== -->
 
 <div class="modal-overlay" *ngIf="selectedPost" (click)="onOverlayClick($event)">
-  <div class="modal-window" role="dialog" aria-modal="true">
+  <div class="modal-window" (click)="$event.stopPropagation()">
 
-    <button class="modal-close" (click)="closeModal()" aria-label="Fechar modal">&times;</button>
+    <button class="modal-close" (click)="closeModal()">×</button>
 
-    <div class="modal-body">
+    <div class="modal-body-vertical">
 
-      <!-- LADO ESQUERDO - IMAGEM -->
-      <div class="modal-left">
-        <img *ngIf="selectedPost.postImgPath; else noImage"
-             [src]="selectedPost.postImgPath"
-             class="modal-image"
-             alt="Imagem do post">
-
-        <ng-template #noImage>
-          <div class="modal-noimage">Sem imagem</div>
-        </ng-template>
-      </div>
-
-      <!-- LADO DIREITO - DETALHES -->
-      <div class="modal-right">
-
-        <!-- Autor -->
-        <div class="modal-author">
-          <img [src]="selectedPost.profileImgPath || 'assets/user-placeholder.png'"
-                alt="Avatar"
-                class="modal-avatar">
-
-          <div>
-            <div class="modal-author-name">
-              {{ selectedPost.userName || ('Usuário ' + selectedPost.userId) }}
-            </div>
-
-            <div class="modal-dates">
-              Criado: {{ selectedPost.createdAt | date:'short' }}
-            </div>
+      <div class="modal-author">
+        <img [src]="selectedPost.profileImgPath || 'images/user-placeholder.png'" class="modal-avatar" alt="Avatar">
+        <div>
+          <div class="modal-author-name">{{ selectedPost.userName }}</div>
+          <div class="modal-dates">
+            Criado: {{ selectedPost.createdAt | date:'short' }}
           </div>
         </div>
-
-        <h3 class="modal-title">{{ selectedPost.title }}</h3>
-
-        <p class="modal-description">
-          {{ selectedPost.description }}
-        </p>
-
-        <!-- VOTOS -->
-        <div class="modal-footer">
-          <div class="vote-section">
-            <button (click)="Vote(selectedPost.id); $event.stopPropagation()" class="vote-btn upvote">
-              <i class="fas fa-arrow-up"></i>
-            </button>
-
-            <span class="vote-count">{{ selectedPost.votes }}</span>
-          </div>
-        </div>
-
       </div>
+
+      <h3 class="modal-title">{{ selectedPost.title }}</h3>
+
+      <img *ngIf="selectedPost.postImgPath" [src]="selectedPost.postImgPath" class="modal-image-vertical" alt="Imagem">
+
+      <p class="modal-description-long">
+        {{ selectedPost.description }}
+      </p>
+
+      <div class="modal-footer">
+        <button (click)="Vote(selectedPost.id); $event.stopPropagation()" class="vote-btn">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+        <span class="vote-count">{{ selectedPost.votes }}</span>
+      </div>
+
     </div>
+
   </div>
 </div>

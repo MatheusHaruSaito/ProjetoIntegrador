@@ -28,7 +28,7 @@ h1::after {
     padding: 0 2rem;
 }
 
-/* =================== BARRA DE PESQUISA =================== */
+/* ==== BARRA DE PESQUISA ====*/
 #SearchBar {
     width: 100%;
     padding: 0.8rem 1.2rem;
@@ -47,7 +47,7 @@ h1::after {
     box-shadow: 0 0 0 3px var(--rosa-claro);
 }
 
-/* =================== TABELA =================== */
+/* ==== TABELA ==== */
 .table {
     width: 100%;
     table-layout: auto;
@@ -121,7 +121,7 @@ h1::after {
     background-color: var(--rosa-claro);
 }
 
-/* =================== BOTÕES =================== */
+/* ==== BOTÕES ==== */
 .btn {
     padding: 0.5rem 1rem;
     border: none;
@@ -156,7 +156,7 @@ h1::after {
     color: var(--branco);
 }
 
-/* =================== STATUS =================== */
+/* ==== STATUS ==== */
 .status-active {
     color: var(--rosa-primario);
     font-weight: 600;
@@ -167,7 +167,7 @@ h1::after {
     font-weight: 500;
 }
 
-/* =================== TIPOS DE USUÁRIOS =================== */
+/* ==== TIPOS DE USUÁRIOS ==== */
 .role-default {
     color: var(--texto);
 }
@@ -182,7 +182,7 @@ h1::after {
     font-weight: 600;
 }
 
-/* =================== MENSAGEM =================== */
+/* ===== MENSAGEM ==== */
 .no-users {
     text-align: center;
     padding: 2rem;
@@ -190,7 +190,7 @@ h1::after {
     font-size: 1.1rem;
 }
 
-/* =================== RESPONSIVIDADE ====================== */
+/* ==== RESPONSIVIDADE ====*/
 @media (max-width: 600px) {
     .admin-page {
         padding-top: 7rem;

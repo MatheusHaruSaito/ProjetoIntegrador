@@ -3,7 +3,8 @@
     <div class="header-content">
       <div class="logo">
         <a routerLink="/">
-          <img src="/images/unolinklogo.png" alt="UNOLINK logo completa" class="logo-full" width="310" height="50" loading="lazy">
+          <img src="/images/unolinklogo.png" alt="UNOLINK logo completa" class="logo-full" width="310" height="50"
+            loading="lazy">
           <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
         </a>
       </div>
@@ -23,16 +24,13 @@
 
         <div class="auth-buttons">
           @if(isLogged){
-            <button 
-              class="profile-btn" 
-              [routerLink]="['/Profile']"
-              [ngStyle]="{
+          <button class="profile-btn" [routerLink]="['/Profile']" [ngStyle]="{
                 'background-image': 'url(' + (UserLogged?.profileImgPath || 'images/user-placeholder.png') + ')'
               }">
-            </button>
+          </button>
           } @else {
-            <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
-            <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
+          <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
+          <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
           }
         </div>
       </nav>

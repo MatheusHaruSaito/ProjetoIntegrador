@@ -1,13 +1,9 @@
-/* ========================================================= */
-/* ================ ÁREA PRINCIPAL DO FEED ================= */
-/* ========================================================= */
-
+/* ==== FEED BASE ==== */
 .feed-page {
   margin-top: calc(var(--navbar-height) + 40px);
   padding-bottom: 4rem;
 }
 
-/* ===== Cabeçalho ===== */
 .feed-header {
   text-align: center;
   margin-bottom: 2rem;
@@ -24,10 +20,7 @@
   color: var(--cinza-texto);
 }
 
-/* ========================================================= */
-/* ===================== CARD DE CRIAÇÃO ==================== */
-/* ========================================================= */
-
+/* ==== CARD DE CRIAÇÃO ==== */
 .create-card {
   display: flex;
   align-items: center;
@@ -40,7 +33,7 @@
   margin-bottom: 20px;
   cursor: pointer;
   transition: 0.18s;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
 }
 
 .create-card:hover {
@@ -60,8 +53,8 @@
   padding: 12px 14px;
   border-radius: 50px;
   border: 1px solid var(--borda);
-  background: var(--cinza-claro);
-  cursor: pointer;
+  background: var(--cinza-menu);
+  color: var(--texto);
 }
 
 .btn-small {
@@ -74,10 +67,7 @@
   cursor: pointer;
 }
 
-/* ========================================================= */
-/* ====================== POST NORMAL ======================= */
-/* ========================================================= */
-
+/* ==== POST CARD ====*/
 .feed-list {
   display: flex;
   flex-direction: column;
@@ -89,7 +79,7 @@
   border: 1px solid var(--borda);
   border-radius: 12px;
   padding: 1.4rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   transition: 0.25s;
   cursor: pointer;
 }
@@ -98,7 +88,6 @@
   transform: translateY(-4px);
 }
 
-/* Cabeçalho */
 .post-header {
   display: flex;
   align-items: center;
@@ -124,29 +113,35 @@
   color: var(--cinza-texto);
 }
 
-/* Conteúdo */
 .post-title {
   margin-top: 1rem;
   font-size: 1.25rem;
   color: var(--letra);
   font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .post-description {
   margin-top: 8px;
   color: var(--texto);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .post-image {
   width: 100%;
+  max-height: 200px;
+  object-fit: contain;
   border-radius: 10px;
   margin-top: 1rem;
   border: 1px solid var(--borda);
-  max-height: 280px;
-  object-fit: cover;
+  background: var(--cinza-menu);
+  padding: 6px;
 }
 
-/* Rodapé */
 .post-footer {
   margin-top: 12px;
   padding-top: 12px;
@@ -170,9 +165,7 @@
   transform: scale(1.15);
 }
 
-/* ========================================================= */
-/* ================= BOTÃO FLUTUANTE + ====================== */
-/* ========================================================= */
+/* ==== BOTÃO FLUTUANTE + ==== */
 
 .floating-add {
   position: fixed;
@@ -189,24 +182,25 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.22);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
   transition: 0.2s;
-  line-height: 1;
   font-weight: 700;
+  line-height: 1;
+  padding-bottom: 6px;
+  padding-top: 1px;
 }
+
+
 
 .floating-add:hover {
   transform: translateY(-3px);
 }
 
-/* ========================================================= */
-/* ======================== MODAL =========================== */
-/* ========================================================= */
-
+/* ==== MODAL ==== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -217,15 +211,14 @@
 .modal-window {
   background: var(--branco);
   border-radius: 12px;
-  max-width: 950px;
+  max-width: 900px;
   width: 100%;
   max-height: 90vh;
   overflow: auto;
   position: relative;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.22);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
 }
 
-/* botão fechar */
 .modal-close {
   position: absolute;
   right: 12px;
@@ -237,34 +230,18 @@
   cursor: pointer;
 }
 
-/* layout do modal de visualização */
-.modal-body {
+/* ==== MODAL ==== */
+.modal-body-vertical {
   display: flex;
-  padding: 18px;
-  gap: 14px;
-}
-
-.modal-left {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-image {
-  max-width: 100%;
-  max-height: 70vh;
-  border-radius: 10px;
-}
-
-.modal-right {
-  flex: 1;
+  flex-direction: column;
+  padding: 22px;
+  gap: 18px;
 }
 
 .modal-author {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .modal-avatar {
@@ -275,22 +252,76 @@
   border: 2px solid var(--rosa-primario);
 }
 
-.modal-title {
-  margin-top: 12px;
-  font-size: 1.25rem;
+.modal-author-name {
+  font-weight: 700;
   color: var(--letra);
 }
 
+.modal-dates {
+  color: var(--cinza-texto);
+  font-size: 0.9rem;
+}
 
-/* ========================================================= */
-/* ================ MODAL DE CRIAÇÃO ======================== */
-/* ========================================================= */
+.modal-title {
+  font-size: 1.35rem;
+  color: var(--letra);
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
 
+.modal-image-vertical {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+  background: var(--cinza-menu);
+  padding: 8px;
+}
+
+.modal-description-long {
+  color: var(--texto);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  max-height: 40vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--borda);
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+.vote-count {
+  color: var(--letra) !important;
+}
+
+:root.dark-theme .vote-count {
+  color: var(--texto) !important;
+}
+
+:root.dark-theme .vote-btn {
+  color: var(--texto);
+}
+
+/* ==== MODAL CRIAÇÃO ====*/
 .modal-body-create {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 22px;
+}
+
+.modal-body-create h2 {
+  color: var(--letra);
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
 .form-label {
@@ -302,7 +333,8 @@
   padding: 12px;
   border-radius: 10px;
   border: 1px solid var(--borda);
-  background: var(--branco);
+  background: var(--cinza-menu);
+  color: var(--texto);
   resize: none;
 }
 
@@ -320,7 +352,8 @@
 }
 
 .btn-cancel {
-  background: var(--cinza-claro);
+  background: var(--cinza-menu);
+  color: var(--texto);
   padding: 10px 16px;
   border-radius: 8px;
   border: none;
@@ -337,11 +370,10 @@
 }
 
 .error {
-  color: #b00020;
+  color: #ff4f67;
   margin-right: auto;
 }
 
-/* mobile */
 @media (max-width: 900px) {
   .modal-body {
     flex-direction: column;

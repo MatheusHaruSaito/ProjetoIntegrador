@@ -3,58 +3,58 @@
 
   <div class="ticket-list">
     @if (ongTicketList.length > 0) {
-      @for (ticket of ongTicketList; track $index) {
-        @if (!ticket.reviwed) {
-          <div class="ticket-card">
-            <h2 class="ticket-subtitle"><i class="fas fa-table-list"></i> Solicitação de ONG</h2>
-            reviwed: {{ticket.reviwed}}
-            <div class="input-group">
-              <label><i class="fas fa-id-badge"></i>ID do Ticket</label>
-              <input type="text" [value]="ticket.id" disabled>
-            </div>
+    @for (ticket of ongTicketList; track $index) {
+    @if (!ticket.reviwed) {
+    <div class="ticket-card">
+      <h2 class="ticket-subtitle"><i class="fas fa-table-list"></i> Solicitação de ONG</h2>
+      reviwed: {{ticket.reviwed}}
+      <div class="input-group">
+        <label><i class="fas fa-id-badge"></i>ID do Ticket</label>
+        <input type="text" [value]="ticket.id" disabled>
+      </div>
 
 
-            <div class="input-group">
-              <label><i class="fas fa-building"></i> Nome da ONG</label>
-              <input type="text" [value]="ticket.name" disabled>
-            </div>
+      <div class="input-group">
+        <label><i class="fas fa-building"></i> Nome da ONG</label>
+        <input type="text" [value]="ticket.name" disabled>
+      </div>
 
-            <div class="input-group">
-              <label><i class="fas fa-envelope"></i> Email</label>
-              <input type="text" [value]="ticket.email" disabled>
-            </div>
+      <div class="input-group">
+        <label><i class="fas fa-envelope"></i> Email</label>
+        <input type="text" [value]="ticket.email" disabled>
+      </div>
 
-            <div class="input-group">
-              <label><i class="fas fa-map-marker-alt"></i> CEP</label>
-              <input type="text" [value]="ticket.cep" disabled>
-            </div>
+      <div class="input-group">
+        <label><i class="fas fa-map-marker-alt"></i> CEP</label>
+        <input type="text" [value]="ticket.cep" disabled>
+      </div>
 
-            <div class="input-group">
-              <label><i class="fas fa-id-card"></i> CNPJ</label>
-              <input type="text" [value]="ticket.cnpj" disabled>
-            </div>
+      <div class="input-group">
+        <label><i class="fas fa-id-card"></i> CNPJ</label>
+        <input type="text" [value]="ticket.cnpj" disabled>
+      </div>
 
-            <div class="input-group">
-              <label><i class="fas fa-calendar-alt"></i> Data de Expiração</label>
-              <input type="text" [value]="ticket.expirationDate" disabled>
-            </div>
+      <div class="input-group">
+        <label><i class="fas fa-calendar-alt"></i> Data de Expiração</label>
+        <input type="text" [value]="ticket.expirationDate" disabled>
+      </div>
 
-            <div class="input-group description-group">
-              <label><i class="fas fa-align-left"></i> Descrição</label>
-              <textarea disabled>{{ ticket.description }}</textarea>
-            </div>
+      <div class="input-group description-group">
+        <label><i class="fas fa-align-left"></i> Descrição</label>
+        <textarea disabled>{{ ticket.description }}</textarea>
+      </div>
 
-            <div class="ticket-actions">
-              <button type="button" class="btn btn-primario" (click)="AceeptTicket(ticket.id)">
-                <i class="fas fa-check"></i> Aceitar
-              </button>
-              <button type="button" class="btn btn-secundario" (click)="DeclineTicket(ticket.id)">
-                <i class="fas fa-times"></i> Negar
-              </button>
-            </div>
-          </div>
-        }
-      }
+      <div class="ticket-actions">
+        <button type="button" class="btn btn-primario" (click)="AceeptTicket(ticket.id)">
+          <i class="fas fa-check"></i> Aceitar
+        </button>
+        <button type="button" class="btn btn-secundario" (click)="DeclineTicket(ticket.id)">
+          <i class="fas fa-times"></i> Negar
+        </button>
+      </div>
+    </div>
+    }
+    }
     }
   </div>
 </div>

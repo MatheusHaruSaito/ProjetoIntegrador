@@ -1,4 +1,4 @@
-/* ==================== SEÇÃO HERO ==================== */
+/* ===== SEÇÃO HERO ==== */
 .about-hero {
   min-height: 50vh;
   display: flex;
@@ -26,7 +26,7 @@
   margin-right: auto;
 }
 
-/* ==================== NOSSA HISTÓRIA ==================== */
+/* ==== NOSSA HISTÓRIA ==== */
 .our-story {
   padding: 5rem 0;
   background-color: var(--branco);
@@ -59,7 +59,7 @@
   opacity: 0.8;
 }
 
-/* ==================== NOSSA EQUIPE ==================== */
+/* ==== NOSSA EQUIPE ==== */
 .our-team {
   padding: 5rem 0;
   background-color: var(--cinza-claro);
@@ -114,7 +114,7 @@
   line-height: 1.5;
 }
 
-/* ==================== MODO ESCURO ==================== */
+/* ==== MODO ESCURO ==== */
 :root.dark-theme .our-story,
 :root.dark-theme .our-team {
   background-color: var(--cinza-menu);
@@ -136,7 +136,7 @@
   box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
 }
 
-/* ==================== RESPONSIVIDADE ==================== */
+/* ==== RESPONSIVIDADE ==== */
 @media (max-width: 768px) {
   .story-content {
     flex-direction: column;

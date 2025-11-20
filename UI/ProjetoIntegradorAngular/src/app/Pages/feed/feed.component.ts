@@ -17,17 +17,17 @@ import { UserService } from '../../Services/user.service';
 })
 export class FeedComponent implements OnInit {
 
-  // --- Usuário logado (igual à Navbar) ---
+  // ==== Usuário logado ====
   userService = inject(UserService);
   authService = inject(AuthService);
   UserLogged: any = null;
 
-  // --- Posts ---
+  // ==== Posts ====
   postService = inject(UserPostService);
   posts: ViewUserPost[] = [];
   selectedPost: UserPost | null = null;
 
-  // --- Modal de criação ---
+  // ==== Modal de criação ====
   createModalOpen = false;
   createTitle = '';
   createDescription = '';
@@ -41,9 +41,6 @@ export class FeedComponent implements OnInit {
     this.loadLoggedUser();
   }
 
-  // ================================
-  // Carregar usuário logado (igual navbar)
-  // ================================
   loadLoggedUser() {
     this.authService.isLoggedIn().subscribe(isAuth => {
       if (!isAuth) {
@@ -63,9 +60,6 @@ export class FeedComponent implements OnInit {
     });
   }
 
-  // ================================
-  // Carregar posts
-  // ================================
   loadPosts(): void {
     this.postService.GetAll().subscribe({
       next: res => this.posts = res,
@@ -73,9 +67,6 @@ export class FeedComponent implements OnInit {
     });
   }
 
-  // ================================
-  // Modal do post
-  // ================================
   openModal(id: string) {
     this.postService.GetById(id).subscribe({
       next: r => this.selectedPost = r,
@@ -93,9 +84,6 @@ export class FeedComponent implements OnInit {
     }
   }
 
-  // ================================
-  // VOTOS
-  // ================================
   Vote(postId: string) {
     if (!this.UserLogged) return;
 
@@ -107,7 +95,6 @@ export class FeedComponent implements OnInit {
     this.postService.Vote(voteRequest).subscribe({
       next: () => {
         this.loadPosts();
-        // Atualiza post dentro do modal
         if (this.selectedPost?.id === postId) {
           this.postService.GetById(postId).subscribe(r => this.selectedPost = r);
         }
@@ -116,9 +103,6 @@ export class FeedComponent implements OnInit {
     });
   }
 
-  // ================================
-  // MODAL DE CRIAÇÃO
-  // ================================
   openCreateModal() {
     this.createModalOpen = true;
     this.createTitle = '';
@@ -152,48 +136,43 @@ export class FeedComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  // ================================
-  // Criar post
-  // ================================
-submitCreate() {
-  this.createError = null;
+  submitCreate() {
+    this.createError = null;
 
-  if (!this.createTitle.trim() || !this.createDescription.trim()) {
-    this.createError = 'Título e descrição são obrigatórios.';
-    return;
-  }
-
-  if (!this.UserLogged) {
-    this.createError = 'Você precisa estar logado para publicar.';
-    return;
-  }
-
-  this.creating = true;
-
-  const fd = new FormData();
-  fd.append('Title', this.createTitle);
-  fd.append('Description', this.createDescription);
-  fd.append('UserId', this.UserLogged.id);
-
-  // Só adiciona o arquivo se existir
-  if (this.createImageFile) {
-    fd.append('PostImg', this.createImageFile);
-  }
-
-  this.postService.Post(fd).subscribe({
-    next: () => {
-      this.creating = false;
-      this.closeCreateModal();
-      this.loadPosts();
-    },
-    error: err => {
-      console.error(err);
-      this.creating = false;
-      this.createError = 'Erro ao criar post.';
+    if (!this.createTitle.trim() || !this.createDescription.trim()) {
+      this.createError = 'Título e descrição são obrigatórios.';
+      return;
     }
-  });
-}
-  // Finalizar criação
+
+    if (!this.UserLogged) {
+      this.createError = 'Você precisa estar logado para publicar.';
+      return;
+    }
+
+    this.creating = true;
+
+    const fd = new FormData();
+    fd.append('Title', this.createTitle);
+    fd.append('Description', this.createDescription);
+    fd.append('UserId', this.UserLogged.id);
+
+    if (this.createImageFile) {
+      fd.append('PostImg', this.createImageFile);
+    }
+
+    this.postService.Post(fd).subscribe({
+      next: () => {
+        this.creating = false;
+        this.closeCreateModal();
+        this.loadPosts();
+      },
+      error: err => {
+        console.error(err);
+        this.creating = false;
+        this.createError = 'Erro ao criar post.';
+      }
+    });
+  }
   private finishCreation() {
     this.creating = false;
     this.closeCreateModal();
