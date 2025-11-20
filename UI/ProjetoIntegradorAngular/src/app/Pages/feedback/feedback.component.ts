@@ -2,15 +2,18 @@ import { Component, inject } from '@angular/core';
 import { EmailService } from '../../Services/email.service';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CreateEmail } from '../../models/CreateEmail';
+import { HomeComponent } from "../home/home.component";
+import { PopupComponent } from "../../pageComponent/popup/popup.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-feedback',
-  imports: [FormsModule,ReactiveFormsModule,],
+  imports: [FormsModule, ReactiveFormsModule, PopupComponent, CommonModule],
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.css'
 })
 export class FeedbackComponent {
-
+  popupAberto: boolean = false
   feedbackFroms!: FormGroup
   emailRequest!: CreateEmail
   emailService = inject(EmailService)
@@ -28,11 +31,11 @@ export class FeedbackComponent {
   }
   SendFeedBack(){
     this.emailRequest = this.feedbackFroms.value
-    this.emailRequest.toEmail = "joaomiguelnovais2@gmail.com"
+    this.emailRequest.toEmail = "unolinkfeedback@gmail.com"
         console.log(this.emailRequest)
     this.emailService.SendEmail(this.emailRequest).subscribe({
       next: r =>{
-        console.log(r)
+        this.popupAberto = true
       }
     })
   }

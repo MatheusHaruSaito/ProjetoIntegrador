@@ -6,9 +6,14 @@
         <input type="text" id="sobre" name="sobre" placeholder="Digite o assunto..." formControlName="subject">
         <label for="assunto">ASSUNTO</label>
         <input type="text" id="assunto" name="assunto" placeholder="Digite o conteúdo..." formControlName="body">
-
         <button type="submit" id="btnEnviar">ENVIAR</button>
       </form>
+
+      <app-popup 
+      *ngIf="popupAberto" 
+      [message]="'Email Enviado!'" 
+      (close)="popupAberto = false">
+    </app-popup>
     </main>
     <aside class="menu">
         <h3>CONFIGURAÇÃO</h3>
