@@ -16,40 +16,53 @@
   </div>
 
   <!-- ==== Lista de posts ==== -->
-  <div class="feed-list">
-    @for (post of posts; track $index) {
-    <div class="post-card" (click)="openModal(post.id)">
+<!-- ==== Lista de posts ==== -->
+<div class="feed-list">
+  @for (post of posts; track $index) {
+  <div class="post-card" (click)="openModal(post.id)">
 
-      <div class="post-header">
-        <img [src]="post.profileImgPath || 'images/user-placeholder.png'" class="user-avatar" alt="User">
+    <div class="post-header">
+      <img [src]="post.profileImgPath || 'images/user-placeholder.png'" class="user-avatar" alt="User">
 
-        <div class="user-info">
-          <h3>{{ post.userName }}</h3>
-          <p class="post-date">{{ post.createdAt | date:'short' }}</p>
-        </div>
+      <div class="user-info">
+        <h3>{{ post.userName }}</h3>
+        <p class="post-date">{{ post.createdAt | date:'short' }}</p>
       </div>
-
-      <div class="post-content">
-        <h4 class="post-title">{{ post.title }}</h4>
-
-        <p class="post-description">
-          {{ post.description }}
-        </p>
-
-        <img *ngIf="post.postImgPath" [src]="post.postImgPath" class="post-image" alt="Post">
-      </div>
-
-      <div class="post-footer">
-        <button class="vote-btn" (click)="Vote(post.id); $event.stopPropagation()">
-          <i class="fas fa-arrow-up"></i>
-        </button>
-
-        <span class="vote-count">{{ post.votes }}</span>
-      </div>
-
     </div>
-    }
+
+    <div class="post-content">
+      <h4 class="post-title">{{ post.title }}</h4>
+
+      <p class="post-description">{{ post.description }}</p>
+
+      <!-- ===== NOVO WRAPPER DE IMAGEM ESTILO REDDIT ===== -->
+      <div class="post-image-wrapper" *ngIf="post.postImgPath">
+        
+        <!-- Fundo borrado -->
+        <img 
+          [src]="post.postImgPath" 
+          class="post-image-blur" 
+          alt="BG">
+
+        <!-- Imagem real -->
+        <img 
+          [src]="post.postImgPath" 
+          class="post-image" 
+          alt="Post">
+
+      </div>
+    </div>
+
+    <div class="post-footer">
+      <button class="vote-btn" (click)="Vote(post.id); $event.stopPropagation()">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+
+      <span class="vote-count">{{ post.votes }}</span>
+    </div>
+
   </div>
+  }
 </div>
 
 <!-- ===== Botão flutuante ===== -->

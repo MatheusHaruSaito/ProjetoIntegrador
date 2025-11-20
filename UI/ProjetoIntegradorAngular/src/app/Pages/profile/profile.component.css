@@ -229,6 +229,7 @@
   font-weight: 700;
   font-size: 1rem;
   overflow: hidden;
+  -webkit-line-clamp: 2;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -244,17 +245,36 @@
   line-height: 1.4;
 }
 
-.user-post-thumb {
+.user-post-thumb-wrapper {
+  position: relative;
   width: 100%;
-  max-height: 160px;
-  object-fit: contain;
-  border-radius: 8px;
-  background: var(--cinza-menu);
-  border: 1px solid var(--borda);
+  height: 180px;            /* GARANTE ALTURA FIXA */
+  border-radius: 10px;
+  overflow: hidden;
   margin: 8px 0;
-  padding: 4px;
 }
 
+/* Fundo borrado do post */
+.user-post-thumb-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(22px) brightness(0.75);
+  transform: scale(1.25);
+  z-index: 1;
+}
+
+/* Imagem real */
+.user-post-thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;       /* mantem proporção */
+  padding: 6px;
+  z-index: 2;
+}
 
 :root.dark-theme .profile-container {
   background: var(--cinza-menu);
@@ -317,52 +337,6 @@
   color: var(--cinza-texto);
 }
 
-.modal-body {
-  display: flex;
-  gap: 1rem;
-  padding: 18px;
-  align-items: flex-start;
-}
-
-.modal-left {
-  flex: 1 1 55%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-image {
-  width: 100%;
-  height: auto;
-  max-height: 70vh;
-  object-fit: contain;
-  border-radius: 8px;
-  border: 1px solid var(--borda);
-  background: transparent;
-}
-
-.modal-noimage {
-  width: 100%;
-  height: 100%;
-  min-height: 160px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cinza-texto);
-  border: 1px dashed var(--borda);
-  border-radius: 8px;
-  padding: 18px;
-  background: transparent;
-}
-
-.modal-right {
-  flex: 1 1 45%;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  min-width: 0;
-}
-
 .modal-author {
   display: flex;
   gap: 10px;
@@ -395,14 +369,34 @@
   gap: 18px;
 }
 
+.modal-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 200px;
+  margin-top: 4px;
+}
+
+.modal-image-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(26px) brightness(0.75);
+  transform: scale(1.25);
+  z-index: 1;
+}
+
 .modal-image-vertical {
+  position: relative;
   width: 100%;
   max-height: 75vh;
   object-fit: contain;
-  border-radius: 10px;
-  border: 1px solid var(--borda);
-  background: var(--cinza-menu);
   padding: 8px;
+  border-radius: 12px;
+  z-index: 2;
 }
 
 .modal-description-long {
