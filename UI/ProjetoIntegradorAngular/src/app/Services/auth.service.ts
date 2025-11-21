@@ -52,4 +52,12 @@ export class AuthService {
     this.isAuthenticatedSubject.next(!!this.getJwtToken())
     return this.isAuthenticatedSubject.asObservable()
   }
+  getUserRoles(){
+    const token = localStorage.getItem(this.JWT_Token);
+    if(!token) return [];
+    const payload = JSON.parse(atob(token.split('.')[1]))
+    const roles = payload["role"] || payload["roles"]
+    if(!roles) return null
+    return Array.isArray(roles)? roles : [roles];
+  }
 }

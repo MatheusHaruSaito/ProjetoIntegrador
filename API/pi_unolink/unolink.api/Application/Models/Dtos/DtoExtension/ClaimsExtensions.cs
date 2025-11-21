@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.Data;
+using System.Security.Claims;
 
 namespace unolink.api.Application.Models.Dtos.DtoExtension
 {
@@ -6,13 +7,20 @@ namespace unolink.api.Application.Models.Dtos.DtoExtension
     {
         public static IEnumerable<Claim> GetClaims(this UserClaimDTO user)
         {
-            return new List<Claim>
+            var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Name),
-                new Claim(ClaimTypes.Email, user.Email),
-                //new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Email, user.Email)
             };
+            foreach (var role in user.Role)
+            {
+               claims.Add( new Claim(ClaimTypes.Role, role));
+            }
+
+            return claims;
+           
         }
     }
 }
+
