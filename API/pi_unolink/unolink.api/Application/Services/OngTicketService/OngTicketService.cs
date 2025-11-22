@@ -29,7 +29,7 @@ namespace unolink.api.Application.Services.OngTicketService
 
             var user = new User(ong.Name, ong.Email, "", ong.Description, ong.Cep);
             _ongTicketRepository.Update(ong);
-            _ongTicketRepository.AddUser(user);
+            await _userManager.CreateAsync(user);
             await _userManager.AddToRoleAsync(user, "Ong");
              return await _ongTicketRepository.UnitOfWork.SaveEntitiesAsync();
             

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ namespace unolink.domain.Models
     public class User : IdentityUser<Guid>
     {
         public string Description { get; private set; }
+        [MaxLength(8)]
         public string Cep { get; private set; }
         public bool IsActive { get; set; } = true;
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

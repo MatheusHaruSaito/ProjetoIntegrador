@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -12,7 +13,9 @@ namespace unolink.domain.Models
         public string Description { get; private set; }
         public string Name { get; private set; }
         public string Email { get; private set; }
+        [MaxLength(8)]
         public string Cep { get; private set; }
+        [MaxLength(14)]
         public string Cnpj { get; private set; }
         public DateTime ExpirationDate { get; private set; } = DateTime.UtcNow.AddYears(1);
         public void AcceptedOng()
