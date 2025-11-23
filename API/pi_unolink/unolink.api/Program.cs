@@ -12,6 +12,7 @@ using unolink.infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using unolink.api.Application.Services.ImagesSevice;
 using unolink.api.Application.Services.UserPostService;
+using unolink.api.Application.Services.SearchService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +31,9 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IFilesService, FilesService>();
 builder.Services.AddScoped<IUserPostRepository, UserPostRepository>();
 builder.Services.AddScoped<IUserPostService, UserPostService>();
+builder.Services.AddScoped<ISearchRepository, SearchRepository>();
+builder.Services.AddScoped<ISearchService, SearchService>();
+
 
 
 

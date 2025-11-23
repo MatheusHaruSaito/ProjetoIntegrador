@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\unolink.domain\unolink.domain.csproj" />
     <ProjectReference Include="..\unolink.infrastructure\unolink.infrastructure.csproj" />
   </ItemGroup>
 

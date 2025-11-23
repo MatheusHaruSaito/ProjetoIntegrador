@@ -9,7 +9,6 @@ namespace unolink.api.Application.Models.Request
     public class UpdateUserRequest
     {
         public Guid Id { get; set; }
-        public UserRoleEnum Role { get; set; }//TIRA ISSO DPS
         public string Name { get; set; }
         public string Description { get; set; }
         public string Email { get; set; }
