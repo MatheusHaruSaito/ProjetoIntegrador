@@ -4,7 +4,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-api/pi_unolink/wwwroot/resources/*
+API/pi_unolink/unolink.api/wwwroot/Resources/*
 # Build Results
 [Bb]in/
 [Oo]bj/
@@ -19,5 +19,3 @@ artifacts/
 # Angular
 node_modules/
 dist/
-
-wwwroot/
