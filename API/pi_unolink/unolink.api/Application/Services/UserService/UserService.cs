@@ -32,12 +32,12 @@ namespace unolink.api.Application.Services.UserService
             
             var user = new User(request.Name, request.Email,
             " ", request.Description, request.Cep);
-            await _userManager.AddToRoleAsync(user, "Default");
             user.PasswordHash =  new PasswordHasher<User>().HashPassword(user, request.Password);
+            await _userManager.CreateAsync(user);
+            await _userManager.AddToRoleAsync(user, "Default");
 
-            _userRepository.Add(user);
 
-            return await _userRepository.UnitOfWork.SaveEntitiesAsync();
+            return true;
         }
 
         public async Task<List<UserDTO>> GetAll()

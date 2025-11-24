@@ -3,5 +3,7 @@ export const environment = {
     ApiUrlOngTicket: 'https://localhost:7161/api/OngTicket',
     ApiUrlAuth: "https://localhost:7161/api/Auth",
     ApiUrlUserPost: "https://localhost:7161/api/UserPost",
-    ApiUrlSearch: "https://localhost:7161/api/Search"
+    ApiUrlSearch: "https://localhost:7161/api/Search",
+    ApiUrlEmail: "https://localhost:7161/api/Email"
+
 };

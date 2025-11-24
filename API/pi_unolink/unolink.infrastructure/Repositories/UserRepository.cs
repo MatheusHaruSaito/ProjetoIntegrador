@@ -52,7 +52,7 @@ namespace unolink.infrastructure.Repositories
 
             if (user is null) return false;
 
-            user.IsActive = false;
+            user.IsActive = !user.IsActive;
 
             return true;
         }

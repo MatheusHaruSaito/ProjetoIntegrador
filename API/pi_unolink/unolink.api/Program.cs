@@ -11,8 +11,12 @@ using unolink.infrastructure.Context;
 using unolink.infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using unolink.api.Application.Services.ImagesSevice;
+<<<<<<< HEAD
 using unolink.api.Application.Services.UserPostService;
 using unolink.api.Application.Services.SearchService;
+=======
+using unolink.api.Application.Services.EmailService;
+>>>>>>> 0311908f2340a3704164f4d83abbc8f97c214d4e
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,12 +33,16 @@ builder.Services.AddScoped<IOngTicketRepository, OngTicketRepository>();
 builder.Services.AddScoped<IOngTicketService, OngTicketService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IFilesService, FilesService>();
+<<<<<<< HEAD
 builder.Services.AddScoped<IUserPostRepository, UserPostRepository>();
 builder.Services.AddScoped<IUserPostService, UserPostService>();
 builder.Services.AddScoped<ISearchRepository, SearchRepository>();
 builder.Services.AddScoped<ISearchService, SearchService>();
 
 
+=======
+builder.Services.AddScoped<IEmailService, EmailService>();
+>>>>>>> 0311908f2340a3704164f4d83abbc8f97c214d4e
 
 
 builder.Services.AddControllers();

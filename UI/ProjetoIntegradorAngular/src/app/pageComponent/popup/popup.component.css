@@ -1,0 +1,49 @@
+@keyframes open{
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    50%{
+        transform: translateX(75%);
+    }
+    100%{
+        transform: translateX(50%);
+        opacity: 1;
+    }
+}
+@keyframes close {
+    0% {
+        transform: translateX(50%);
+        opacity: 1;
+    }
+    25%{
+
+        transform: translateX(75%);
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 0;
+    }
+}
+.PopUp{
+
+    background-color: var(--rosa-primario);
+    animation: open 2s forwards;
+
+}
+.PopUp.close{
+    animation: close 2s forwards;
+}
+.ProgressBar{
+    background-color: green;
+    animation: progressBar 8s forwards;
+}
+@keyframes progressBar {
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+

@@ -14,13 +14,15 @@ export class UserListComponent implements OnInit {
   users: User[]= []
   Allusers: User[]=[]
   constructor(private UserService : UserService) {}
-  ngOnInit(): void {
-    this.UserService.GetUsers().subscribe(response =>{
-      this.users = response;
-      this.Allusers = response;
-      console.log(response);
-    })
-  }
+ngOnInit(): void {
+  this.UserService.GetUsers().subscribe(response => {
+    this.Allusers = response.filter(user => {
+      const isAdmin = user.role.some(r => r.toLowerCase() === 'admin');
+      return !isAdmin;
+    });
+    this.users = [...this.Allusers];
+  });
+}
   TriggerUserActive(id:string) :void{
     console.log(id);
 
