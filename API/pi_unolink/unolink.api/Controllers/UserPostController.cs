@@ -79,14 +79,14 @@ namespace unolink.api.Controllers
         [HttpPut("Comment")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> Coment(CreateCommentRequest request)
+        public async Task<IActionResult> Comment(CreateCommentRequest request)
         {
             var result = await _userPostService.Comment(request);
             if (!result)
             {
                 return BadRequest("Failed To comment");
             }
-            return Ok("Commented");
+            return Ok(result);
         }
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]

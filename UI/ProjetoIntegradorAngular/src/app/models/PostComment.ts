@@ -1,9 +1,10 @@
-export interface PostComment{
-
-    userId: string
-    postId: string
-    text: string
-    vote: number
-    userUsername: string
-    userProfileImgPath: string
+export interface PostComment {
+    id: string;
+    text: string;
+    vote: number;
+    userId: string;
+    userUsername: string;
+    userProfileImgPath: string;
+    createdAt: string;
+    isActive: boolean;
 }

@@ -6,8 +6,10 @@ import { UserPostService } from '../../Services/user-post.service';
 import { CreateVoteRequest } from '../../models/CreateVoteRequest';
 import { AuthService } from '../../Services/auth.service';
 import { UserPost } from '../../models/UserPost';
-import { CreateUserPost } from '../../models/CreateUserPost';
 import { UserService } from '../../Services/user.service';
+import { PostComment } from '../../models/PostComment';
+import { CreateComment } from '../../models/CreateComment';
+import { CreateCommentVoteRequest } from '../../models/CreateCommentVoteRequest';
 
 @Component({
   selector: 'app-feed',
@@ -26,6 +28,10 @@ export class FeedComponent implements OnInit {
   postService = inject(UserPostService);
   posts: ViewUserPost[] = [];
   selectedPost: UserPost | null = null;
+
+  // ==== Comentários ====
+  currentComments: PostComment[] = [];
+  newCommentText = '';
 
   // ==== Modal de criação ====
   createModalOpen = false;
@@ -52,30 +58,31 @@ export class FeedComponent implements OnInit {
       if (!tokenUser?.id) return;
 
       this.userService.GetUserById(tokenUser.id).subscribe({
-        next: res => {
-          this.UserLogged = res;
-        },
-        error: err => console.error("Erro ao carregar usuário logado:", err)
+        next: user => this.UserLogged = user
       });
     });
   }
 
-  loadPosts(): void {
+  loadPosts() {
     this.postService.GetAll().subscribe({
-      next: res => this.posts = res,
-      error: err => console.error('Erro ao carregar posts:', err)
+      next: res => this.posts = res
     });
   }
 
   openModal(id: string) {
     this.postService.GetById(id).subscribe({
-      next: r => this.selectedPost = r,
-      error: e => console.error('Erro ao carregar post:', e)
+      next: r => {
+        this.selectedPost = r;
+        this.currentComments = [...(r.comments || [])];
+        this.newCommentText = '';
+      }
     });
   }
 
   closeModal() {
     this.selectedPost = null;
+    this.currentComments = [];
+    this.newCommentText = '';
   }
 
   onOverlayClick(event: MouseEvent) {
@@ -87,21 +94,69 @@ export class FeedComponent implements OnInit {
   Vote(postId: string) {
     if (!this.UserLogged) return;
 
-    const voteRequest: CreateVoteRequest = {
+    const req: CreateVoteRequest = {
       postId,
       userId: this.UserLogged.id
     };
 
-    this.postService.Vote(voteRequest).subscribe({
+    this.postService.Vote(req).subscribe({
       next: () => {
         this.loadPosts();
         if (this.selectedPost?.id === postId) {
-          this.postService.GetById(postId).subscribe(r => this.selectedPost = r);
+          this.postService.GetById(postId).subscribe(p => this.selectedPost = p);
         }
-      },
-      error: () => this.loadPosts()
+      }
     });
   }
+
+  // ========================
+  //      COMENTÁRIOS
+  // ========================
+
+  sendComment() {
+    if (!this.UserLogged || !this.selectedPost || !this.newCommentText.trim()) return;
+
+    const req: CreateComment = {
+      postId: this.selectedPost.id,
+      userId: this.UserLogged.id,
+      text: this.newCommentText.trim()
+    };
+
+    this.postService.Comment(req).subscribe({
+      next: () => {
+        this.newCommentText = '';
+        this.reloadComments();
+      }
+    });
+  }
+
+  reloadComments() {
+    if (!this.selectedPost) return;
+
+    this.postService.GetById(this.selectedPost.id).subscribe({
+      next: p => {
+        this.currentComments = [...(p.comments || [])];
+        this.selectedPost = p;
+      }
+    });
+  }
+
+  voteComment(commentId: string) {
+    if (!this.UserLogged) return;
+
+    const req: CreateCommentVoteRequest = {
+      userId: this.UserLogged.id,
+      commentId
+    };
+
+    this.postService.CommentVote(req).subscribe({
+      next: () => this.reloadComments()
+    });
+  }
+
+  // ========================
+  //  Modal de criação
+  // ========================
 
   openCreateModal() {
     this.createModalOpen = true;
@@ -114,9 +169,6 @@ export class FeedComponent implements OnInit {
 
   closeCreateModal() {
     this.createModalOpen = false;
-    this.createImageFile = null;
-    this.createImagePreview = null;
-    this.createError = null;
   }
 
   onCreateFileChange(event: Event) {
@@ -128,12 +180,11 @@ export class FeedComponent implements OnInit {
       return;
     }
 
-    const file = input.files[0];
-    this.createImageFile = file;
+    this.createImageFile = input.files[0];
 
     const reader = new FileReader();
     reader.onload = () => this.createImagePreview = reader.result as string;
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(this.createImageFile);
   }
 
   submitCreate() {
@@ -145,7 +196,7 @@ export class FeedComponent implements OnInit {
     }
 
     if (!this.UserLogged) {
-      this.createError = 'Você precisa estar logado para publicar.';
+      this.createError = 'Você precisa estar logado.';
       return;
     }
 
@@ -166,16 +217,10 @@ export class FeedComponent implements OnInit {
         this.closeCreateModal();
         this.loadPosts();
       },
-      error: err => {
-        console.error(err);
+      error: () => {
         this.creating = false;
         this.createError = 'Erro ao criar post.';
       }
     });
-  }
-  private finishCreation() {
-    this.creating = false;
-    this.closeCreateModal();
-    this.loadPosts();
   }
 }

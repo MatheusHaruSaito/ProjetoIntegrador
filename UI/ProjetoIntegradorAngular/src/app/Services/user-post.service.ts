@@ -48,8 +48,8 @@ export class UserPostService {
   Vote(request: CreateVoteRequest): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/Vote`, request);
   }
-  Comment(request: CreateComment){
-    return this.http.put(`${this.apiUrl}/Comment`,request)
+  Comment(request: CreateComment):Observable<string>{
+    return this.http.put<string>(`${this.apiUrl}/Comment`,request)
   }
   CommentVote(request: CreateCommentVoteRequest): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/CommentVote`, request);
