@@ -1,4 +1,11 @@
-<div class="PopUp" [class.close]="closing" (animationend)="onAnimationEnd()">
-         {{message}}
-         <div class="ProgressBar">.</div>
-</div>
+<div class="popup" [class.close]="closing" (animationend)="onAnimationEnd()">
+
+    <div class="popup-content">
+      <i class="fa-solid fa-check-circle popup-icon"></i>
+      <span>{{ message }}</span>
+    </div>
+  
+    <div class="popup-progress"></div>
+  
+  </div>
+  

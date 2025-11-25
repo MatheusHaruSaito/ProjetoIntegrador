@@ -348,10 +348,11 @@ object-position: center;
   color: var(--letra) !important;
 }
 
-/* ============================= */
-/*       ÁREA DE COMENTÁRIOS     */
-/* ============================= */
+.comment-count {
+  color: var(--letra) !important;
+}
 
+/*  ==== COMENTÁRIOS ==== */
 .comments-section {
   margin-top: 18px;
   padding-top: 12px;
