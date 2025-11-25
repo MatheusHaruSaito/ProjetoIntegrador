@@ -1,104 +1,110 @@
-
 .feedback-container {
-      display: flex;
-      padding-top: calc(var(--navbar-height) + 3px);
-      background-color: var(--branco);
-  }
-.menu {
-      width: 220px;
-      height: 89.3vh;
-      padding: 20px;
-      font-weight: bold;
-      background-color: var(--cinza-menu);
-      
-  } 
-  .menu h3 {
-      font-size: 17px;
-      margin-bottom: 10px;
-      color: var(--letra);
-  }
-  .menu ul {
-      list-style: none;
-      padding: 0;
-  }
-    
-  .menu li {
-      padding: 10px 5px;
-      cursor: pointer;
-      border-left: 4px solid transparent;
-      transition: background 0.3s;
-      font-size: 20px;
-      color: var(--letra);
-  }
-  .menu li:hover{
-    background-color: var(--branco);
-    border-left: 4px solid var(--rosa);
-    color: var(--rosa);
-  }
-  
-  .exit {
-      padding-top: 40vh;
-      font-size: 20px;
-      color: var(--letra);
-  }
-  .menu li i,
-  .exit i{
-      margin-right: 10px;
-  } 
-  .form-container {
-      flex: 1;
-      padding: 60px;
-  }
-    
-  .form-container h1 {
-      font-size: 24px;
-      margin-bottom: 30px;
-  }
-  
-  form {
-      display: flex;
-      flex-direction: column;
-  }
-  
-    
-  form label {
-      font-weight: bold;
-      margin: 10px 0 5px;
-      color: var(--letra);
-  }
-    
-  form input {
-      background-color: var(--rosa-secundario);
-      border: none;
-      padding: 10px;
-      border-radius: 6px;
-      color: var(--letra);
-      font-weight: bold;
-      
-  }
-    
-  form button {
-      background-color: var(--rosa-primario);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      margin-top: 20px;
-      font-weight: bold;
-      cursor: pointer;
+  display: flex;
+  padding-top: calc(var(--navbar-height));
+  background: var(--branco);
+  min-height: 100vh;
+}
+
+.feedback-content {
+  flex: 1;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  color: var(--letra);
+}
+
+.feedback-header h1 {
+  font-size: 28px;
+  color: var(--letra);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-header p {
+  color: var(--cinza-texto);
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.feedback-card {
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 23px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--borda);
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feedback-card label {
+    font-weight: 600;
+    margin-top: 14px;     
+    margin-bottom: 8px;    
+    color: var(--letra);
+    display: block;      
+}
+.feedback-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+  background: var(--cinza-menu);
+  color: var(--letra);
+  font-size: 15px;
+  line-height: 1.5;
+  resize: none;
+  overflow-y: auto;
+  min-height: 120px;
+  max-height: 220px;
+  transition: height 0.12s ease;
+}
+
+.feedback-card input,
+.feedback-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+  background: var(--cinza-menu);
+  color: var(--letra);
+  font-size: 15px;
+}
+
+.feedback-card input:focus,
+.feedback-card textarea:focus {
+  outline: 2px solid var(--rosa);
+  border-color: var(--rosa);
+}
+
+#btnEnviar {
+  background-color: var(--rosa-primario);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#btnEnviar:hover {
+  background-color: var(--rosa-secundario);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .feedback-content {
+    padding: 20px;
   }
 
-  .format {
-      padding: 100px;
-      padding-right: 690px;
-      border-radius: 8px;
-      text-align: center;
-      width: 500px;
-      flex: 1;
-    gap: 30px;
-   align-items: flex-start;
-      
-      
+  .feedback-card {
+    padding: 18px;
   }
-
-  
+}

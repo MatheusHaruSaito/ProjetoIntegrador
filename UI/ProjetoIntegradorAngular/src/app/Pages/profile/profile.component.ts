@@ -8,10 +8,10 @@ import { UserPostService } from '../../Services/user-post.service';
 import { ViewUserPost } from '../../models/ViewUserPost';
 import { UserPost } from '../../models/UserPost';
 import { CreateVoteRequest } from '../../models/CreateVoteRequest';
-
+import { ProfilemenuComponent } from '../../pageComponent/profilemenu/profilemenu.component';
 @Component({
   selector: 'app-profile',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, ProfilemenuComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -50,19 +50,6 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  toggleTheme(): void {
-    const root = document.documentElement;
-    const isDark = root.classList.contains('dark-theme');
-
-    if (isDark) {
-      root.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      root.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    }
-  }
-
   openModal(postId: string): void {
     this.postService.GetById(postId).subscribe({
       next: (post) => this.selectedPost = post,
@@ -94,8 +81,4 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  logout(): void {
-    this.authService.Logout();
-    this.router.navigate(['/Login']);
-  }
 }

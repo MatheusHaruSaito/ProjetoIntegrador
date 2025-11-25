@@ -1,20 +1,6 @@
 <div class="profile-container">
 
-  <!-- ==== MENU LATERAL ==== -->
-  <aside class="menu">
-    <h3>CONFIGURAÇÕES</h3>
-
-    <ul>
-      <li class="active"><i class="fa-solid fa-circle-user"></i> Seu Perfil</li>
-      <li><i class="fa-solid fa-lock"></i> Segurança e Privacidade</li>
-      <li id="toggle-theme" (click)="toggleTheme()"><i class="fa-solid fa-moon"></i> Aparência</li>
-      <li id="historicoBtn" class="btnHistorico"><i class="fa-solid fa-file"></i> Histórico</li>
-    </ul>
-
-    <button class="btn-logout" (click)="logout()">
-      <i class="fas fa-sign-out-alt"></i> Sair
-    </button>
-  </aside>
+  <app-profilemenu></app-profilemenu>
 
   <main class="profile">
 
