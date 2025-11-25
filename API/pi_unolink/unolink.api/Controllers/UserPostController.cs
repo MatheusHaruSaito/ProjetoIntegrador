@@ -102,12 +102,12 @@ namespace unolink.api.Controllers
         [HttpPost("Vote")]
 
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<IActionResult> VotePost(CreateVoteRequest request)
         {
             var data = await _userPostService.Vote(request);
 
-            if (!data) return NotFound();
+            if (!data) return NoContent();
 
             return Ok();
         }

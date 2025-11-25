@@ -162,5 +162,15 @@ namespace unolink.infrastructure.Repositories
 
             return result.Select(x => (x.CommentId, x.Count)).ToList();
         }
+        public async Task<List<(Guid PostId, int Count)>> GetCommentCountByPostIdsAsync(List<Guid> postIds)
+        {
+            var result = await _context.PostComment
+                .Where(c => postIds.Contains(c.PostId))
+                .GroupBy(c => c.PostId)
+                .Select(g => new { PostId = g.Key, Count = g.Count() })
+                .ToListAsync();
+
+            return result.Select(x => (x.PostId, x.Count)).ToList();
+        }
     }
 }

@@ -10,5 +10,4 @@ export interface ViewUserPost{
     userId: string,
     userName: string,
     profileImgPath: string,
-
 }

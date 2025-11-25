@@ -41,12 +41,8 @@ namespace unolink.api.Application.Services.UserPostService
             var votesCounts = await _userPostRepostiory.GetVotesCountByPostIdsAsync(postsId);
             var votesDict = votesCounts.ToDictionary(vc => vc.PostId, vc => vc.Count);
 
-
-            //var comments = data.SelectMany(x => x.Comments).ToList() ;
-            //var commentIds = comments.Select(x => x.Id).ToList();
-            //var commentsVotesCounts = await _userPostRepostiory.GetCommentVotesCountByCommentIdsAsync(commentIds);
-            //var commentVotesDict = commentsVotesCounts.ToDictionary(vc => vc.commentId, vc => vc.Count);
-
+            var commentsCounts = await _userPostRepostiory.GetCommentCountByPostIdsAsync(postsId);
+            var commentDict = commentsCounts.ToDictionary(cc => cc.PostId, cc =>cc.Count);
 
             var userPostDTO = data.Select(x => new UserPostDTO
             {
@@ -60,15 +56,7 @@ namespace unolink.api.Application.Services.UserPostService
                 PostImgPath = x.PostImgPath,
                 ProfileImgPath = x.User.ProfileImgPath,
                 UserName = x.User.UserName,
-                //Comments = x.Comments?.Select(c => new PostCommentDTO
-                //{
-                //    Id = c.Id,
-                //    IsActive = c.IsActive,
-                //    CreatedAt = c.CreatedAt,
-                //    UserId = c.UserId,
-                //    Text = c.Text,
-                //    Vote = commentVotesDict.TryGetValue(c.Id, out var count) ? count : 0,
-                //})
+                CommentsCount = commentDict.TryGetValue(x.Id, out var commentcount)? commentcount : 0
             }).ToList();
             return userPostDTO;
         }
@@ -120,7 +108,8 @@ namespace unolink.api.Application.Services.UserPostService
                 PostImgPath = userPost.PostImgPath,
                 ProfileImgPath = userPost.User.ProfileImgPath,
                 UserName = userPost.User.UserName,
-                Comments = commentDtos
+                Comments = commentDtos,
+                CommentsCount = userPost.Comments.Count,
             };
             return userPostDTO;
         }
