@@ -12,6 +12,6 @@ export interface UserPost{
     userId: string,
     userName: string,
     profileImgPath: string,
-    comments: PostComment[]
+    comments: PostComment[],
 
 }

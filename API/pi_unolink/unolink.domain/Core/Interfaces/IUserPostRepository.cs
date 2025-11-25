@@ -19,7 +19,7 @@ namespace unolink.domain.Core.Interfaces
 
         Task<List<(Guid PostId, int Count)>> GetVotesCountByPostIdsAsync(List<Guid> postIds);
         Task<List<(Guid commentId, int Count)>> GetCommentVotesCountByCommentIdsAsync(List<Guid> commentIds);
-
+        Task<List<(Guid PostId, int Count)>> GetCommentCountByPostIdsAsync(List<Guid> postIds);
 
     }
 }

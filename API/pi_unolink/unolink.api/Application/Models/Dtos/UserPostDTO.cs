@@ -12,6 +12,7 @@ namespace unolink.api.Application.Models.Dtos
         public DateTime UpdateTime { get; set; }
         public string? PostImgPath { get; set; }
         public IEnumerable<PostCommentDTO> Comments { get; set; }
+        public int ? CommentsCount { get; set; } = 0;
         public Guid UserId { get; set; }
         public string UserName { get; set; }
         public string? ProfileImgPath { get; set; }

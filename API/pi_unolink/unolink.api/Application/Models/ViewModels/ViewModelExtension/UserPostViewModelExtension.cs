@@ -17,8 +17,8 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 PostImgPath = userPostDTO.PostImgPath,
                 Comments = userPostDTO.Comments,
                 UserName = userPostDTO.UserName,
-                ProfileImgPath = userPostDTO.ProfileImgPath
-
+                ProfileImgPath = userPostDTO.ProfileImgPath,
+                CommentsCount = userPostDTO.CommentsCount,
             };
         }
         public static UserPostSummaryViewModel ToSummaryViewModel(this UserPostDTO userPostDTO)
@@ -35,7 +35,7 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 PostImgPath = userPostDTO.PostImgPath,
                 CommentsCount = userPostDTO.Comments.Count(),
                 UserName = userPostDTO.UserName,
-                ProfileImgPath = userPostDTO.ProfileImgPath
+                ProfileImgPath = userPostDTO.ProfileImgPath,
             };
         }
     }
