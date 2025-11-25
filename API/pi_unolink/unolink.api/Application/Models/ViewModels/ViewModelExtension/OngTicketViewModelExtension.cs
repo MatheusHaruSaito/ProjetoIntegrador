@@ -19,7 +19,9 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 Cep = DTO.Cep,
                 Cnpj = DTO.Cnpj,
                 CreationDate = DTO.CreationDate,
-                ExpirationDate = DTO.ExpirationDate
+                ExpirationDate = DTO.ExpirationDate,
+                Reviwed = DTO.Reviwed
+                
             };
         }
     }

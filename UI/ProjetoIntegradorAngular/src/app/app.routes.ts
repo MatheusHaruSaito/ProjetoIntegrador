@@ -14,8 +14,8 @@ import { ONGsListComponent } from './Pages/ongs-list/ongs-list.component';
 import { EditProfileComponent } from './Pages/edit-profile/edit-profile.component';
 
 export const routes: Routes = [
-    {path:'Admin-UserList',component: UserListComponent,canActivate: [authGuard],data:{roles:['Admin']}},
-    {path:'Admin-TicketList',component:TicketListComponent,canActivate: [authGuard],data:{roles:['Admin']}},
+    {path:'Admin-UserList',component: UserListComponent},
+    {path:'Admin-TicketList',component:TicketListComponent},
     {path:'',component:HomeComponent},
     {path:'Register',component:RegisterComponent},
     {path:'OngTicketForm',component:OngTicketFormComponent,},

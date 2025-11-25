@@ -15,5 +15,6 @@ namespace unolink.api.Application.Models.ViewModels
         public string Cnpj { get; set; }
         public string CreationDate { get; set; }
         public string ExpirationDate { get; set; }
+        public bool Reviwed { get; set; }
     }
 }

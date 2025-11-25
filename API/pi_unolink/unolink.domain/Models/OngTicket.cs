@@ -30,8 +30,8 @@ namespace unolink.domain.Models
         }
         public OngTicket(string description, string name, string email, string cep, string cnpj)
         {
-            Reviwed = true;
-            Accepeted = true;
+            Reviwed = false;
+            Accepeted = false;
             Description = description;
             Name = name;
             Email = email;

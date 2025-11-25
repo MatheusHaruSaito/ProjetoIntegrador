@@ -16,7 +16,7 @@ export class TicketListComponent implements OnInit {
   ngOnInit(): void {
   this.ongTicketService.GetOngTicketList().subscribe({
     next: response => {
-      this.ongTicketList = response.filter(x => {x.reviwed = false});
+      this.ongTicketList = response.filter(x => x.reviwed == false);
       console.log('Resposta recebida:', response);
     },
     error: err => {

@@ -24,15 +24,29 @@ namespace unolink.api.Application.Services.OngTicketService
         {
             var ong = await _ongTicketRepository.GetById(id);
             if (ong == null) return false;
-
+            if (ong.Reviwed) return false;
             ong.AcceptedOng();
-
+            
+            //LEMBRA DE COLOCAR UMA SENHA FORTE ALEATORIA AQUI DEPOIS
             var user = new User(ong.Name, ong.Email, "", ong.Description, ong.Cep);
             _ongTicketRepository.Update(ong);
-            await _userManager.CreateAsync(user);
-            await _userManager.AddToRoleAsync(user, "Ong");
-             return await _ongTicketRepository.UnitOfWork.SaveEntitiesAsync();
+            var userCreated = await _userManager.CreateAsync(user);
+            if (!userCreated.Succeeded)
+            {
+                return false;
+            }
+            var addedRole =  await _userManager.AddToRoleAsync(user, "Ong");
+            if (!addedRole.Succeeded)
+            {
+                return false;
+            }
+            await _ongTicketRepository.UnitOfWork.SaveEntitiesAsync();
             
+            if((await _ongTicketRepository.GetById(id)).Reviwed)
+            {
+                return true;
+            }
+            return false;
         }
 
         public async Task<bool> Add(CreateOngTicketRequest request)
@@ -72,6 +86,7 @@ namespace unolink.api.Application.Services.OngTicketService
                 Email = x.Email,
                 Cep = x.Cep,
                 Cnpj = x.Cnpj,
+                Reviwed = x.Reviwed,
                 CreationDate = x.CreatedAt.ToString("dd-MM-yyyy"),
                 ExpirationDate = x.ExpirationDate.ToString("dd-MM-yyyy")
             }).ToList();
@@ -93,6 +108,7 @@ namespace unolink.api.Application.Services.OngTicketService
                 Email = ongTicket.Email,
                 Cep = ongTicket.Cep,
                 Cnpj = ongTicket.Cnpj,
+                Reviwed = ongTicket.Reviwed,
                 CreationDate = ongTicket.CreatedAt.ToString("dd-MM-yyyy"),
                 ExpirationDate = ongTicket.ExpirationDate.ToString("dd-MM-yyyy")
             };
