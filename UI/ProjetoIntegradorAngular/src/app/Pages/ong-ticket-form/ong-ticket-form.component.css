@@ -1,10 +1,11 @@
-/* ==================== FORMULÁRIO ==================== */
+/* ======= FORMULÁRIO ===== */
 .register-form {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 80px 20px 20px; 
+    padding: 80px 20px 20px;
+    padding-top: calc(var(--navbar-height) + 20px);
     background-color: var(--cinza-fundo);
     box-sizing: border-box;
 }
@@ -12,6 +13,7 @@
 .form-container {
     background-color: var(--branco);
     padding: 30px;
+
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
