@@ -123,6 +123,7 @@ export class FeedComponent implements OnInit {
     this.postService.Comment(req).subscribe({
       next: () => {
         this.newCommentText = '';
+        this.popup.show("Comentário publicado!");
         this.reloadComments();
       }
     });
@@ -210,6 +211,7 @@ export class FeedComponent implements OnInit {
       next: () => {
         this.creating = false;
         this.closeCreateModal();
+        this.popup.show("Publicação realizada!");
         this.loadPosts();
       },
       error: () => {

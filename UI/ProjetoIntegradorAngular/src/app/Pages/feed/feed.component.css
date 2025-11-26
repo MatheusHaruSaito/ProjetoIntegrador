@@ -2,8 +2,10 @@
 .feed-page {
   margin-top: calc(var(--navbar-height) + 40px);
   padding-bottom: 4rem;
-  max-width: 750px; /* qualquer valor entre 650–800 funciona muito bem */
-  margin: 0 auto;   /* centraliza tudo */
+  max-width: 750px;
+  /* qualquer valor entre 650–800 funciona muito bem */
+  margin: 0 auto;
+  /* centraliza tudo */
 }
 
 .feed-header {
@@ -122,7 +124,7 @@
   font-weight: 600;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;  
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   word-break: break-word;
 }
@@ -140,9 +142,9 @@
   position: relative;
   width: 100%;
   max-height: 360px;
-border-radius: 10px;
-object-fit: contain;
-object-position: center;
+  border-radius: 10px;
+  object-fit: contain;
+  object-position: center;
   padding: 6px;
   z-index: 2;
 }
@@ -320,7 +322,8 @@ object-position: center;
   border-radius: 12px;
   overflow: hidden;
   margin-top: 0.5rem;
-  background: black; /* melanoma contra brilho forte */
+  background: black;
+  /* melanoma contra brilho forte */
 }
 
 .modal-image-blur {
@@ -376,6 +379,12 @@ object-position: center;
   max-height: 250px;
   overflow-y: auto;
   padding-right: 4px;
+}
+
+.comment-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
 }
 
 .comment-item {
@@ -507,36 +516,36 @@ object-position: center;
 }
 
 .modal-vote-box {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 12px;
-    background: var(--cinza-menu);
-    border-radius: 10px;
-    width: fit-content;
-    margin-top: 12px;
-    border: 1px solid var(--borda);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: var(--cinza-menu);
+  border-radius: 10px;
+  width: fit-content;
+  margin-top: 12px;
+  border: 1px solid var(--borda);
 }
 
 .modal-vote-box .vote-btn {
-    font-size: 1.4rem;
-    color: var(--texto);
-    transition: 0.2s ease;
+  font-size: 1.4rem;
+  color: var(--texto);
+  transition: 0.2s ease;
 }
 
 .modal-vote-box .vote-btn:hover {
-    transform: scale(1.2);
-    color: var(--rosa);
+  transform: scale(1.2);
+  color: var(--rosa);
 }
 
 .modal-vote-box .vote-count {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--letra);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--letra);
 }
 
 :root.dark-theme .modal-vote-box {
-    background: var(--menu-ativado);
+  background: var(--menu-ativado);
 }
 
 .btn-publish {
@@ -549,47 +558,47 @@ object-position: center;
 }
 
 .file-upload-wrapper {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .file-upload-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 18px;
-    background: var(--rosa-primario);
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: .2s ease;
-    box-shadow: 0 4px 10px var(--shadow);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  background: var(--rosa-primario);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .2s ease;
+  box-shadow: 0 4px 10px var(--shadow);
 }
 
 .file-upload-label:hover {
-    background: var(--rosa);
-    transform: translateY(-2px);
+  background: var(--rosa);
+  transform: translateY(-2px);
 }
 
 .file-upload-label i {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .file-upload-input {
-    display: none;
+  display: none;
 }
 
 .file-preview {
-    margin-top: 12px;
-    border-radius: 12px;
-    max-width: 100%;
-    border: 1px solid var(--borda);
-    overflow: hidden;
+  margin-top: 12px;
+  border-radius: 12px;
+  max-width: 100%;
+  border: 1px solid var(--borda);
+  overflow: hidden;
 }
 
 .file-preview img {
-    width: 100%;
-    border-radius: inherit;
+  width: 100%;
+  border-radius: inherit;
 }
 
 .error {
@@ -614,5 +623,3 @@ object-position: center;
     transform: scale(1.15);
   }
 }
-
-
