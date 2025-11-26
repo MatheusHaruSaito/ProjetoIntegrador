@@ -11,6 +11,7 @@ namespace unolink.domain.Core.Interfaces
         //Task<OngTicket> AcceptTicket(Guid id);
         //Task<OngTicket> DeclineTicket(Guid id);
         Task<List<OngTicket>> GetAll();
+        Task<OngTicket> GetByEmail(string email);
         void AddUser(User user);
     }
 }

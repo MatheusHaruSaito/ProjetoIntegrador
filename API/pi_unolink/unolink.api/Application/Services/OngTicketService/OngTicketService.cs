@@ -7,17 +7,20 @@ using unolink.api.Application.Models.Dtos;
 using unolink.api.Application.Models.Request.OngTicket;
 using unolink.domain.Core.Interfaces;
 using unolink.domain.Models;
+using unolink.infrastructure.Repositories;
 
 namespace unolink.api.Application.Services.OngTicketService
 {
     public class OngTicketService : IOngTicketService
     {
         private readonly UserManager<User> _userManager;
+        private readonly IUserRepository _userRepository;
         private readonly IOngTicketRepository _ongTicketRepository;
-        public OngTicketService(IOngTicketRepository ongTicketRepository, UserManager<User> userManager)
+        public OngTicketService(IOngTicketRepository ongTicketRepository, UserManager<User> userManager, IUserRepository userRepository)
         {
             _ongTicketRepository = ongTicketRepository;
             _userManager = userManager;
+            _userRepository = userRepository;
         }
 
         public async Task<bool> AcceptTicket(Guid id)
@@ -51,6 +54,9 @@ namespace unolink.api.Application.Services.OngTicketService
 
         public async Task<bool> Add(CreateOngTicketRequest request)
         {
+            var UserExisits = await _userRepository.GetByEmailAsync(request.Email) is not null;
+            var TicketExists = await _ongTicketRepository.GetByEmail(request.Email) is not null;
+            if (UserExisits || TicketExists) return false;
             var ong = new OngTicket(request.Description, request.Name, request.Email, request.Cep, request.Cnpj);
 
             _ongTicketRepository.Add(ong);

@@ -40,6 +40,10 @@ namespace unolink.infrastructure.Repositories
         {
             return await _entity.FirstOrDefaultAsync(x => x.Id == id);
         }
+        public async Task<OngTicket> GetByEmail(string email)
+        {
+            return await _entity.FirstOrDefaultAsync(x => x.Email == email);
+        }
 
         public void Update(OngTicket entity)
         {
