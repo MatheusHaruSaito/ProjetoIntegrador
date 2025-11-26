@@ -115,12 +115,12 @@ namespace unolink.api.Controllers
         [HttpPost("CommentVote")]
 
         [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<IActionResult> CommentVote(CreateCommentVoteRequest request)
         {
             var data = await _userPostService.VoteComment(request);
 
-            if (!data) return NotFound();
+            if (!data) return NoContent();
 
             return Ok();
         }
