@@ -3,9 +3,9 @@
   margin-top: calc(var(--navbar-height) + 40px);
   padding-bottom: 4rem;
   max-width: 750px;
-  /* qualquer valor entre 650–800 funciona muito bem */
   margin: 0 auto;
-  /* centraliza tudo */
+  padding-top: calc(var(--navbar-height) + 20px);
+
 }
 
 .feed-header {

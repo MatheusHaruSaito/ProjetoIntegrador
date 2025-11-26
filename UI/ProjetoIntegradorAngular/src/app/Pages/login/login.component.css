@@ -4,9 +4,10 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 80px 20px 20px; /* Aumente o topo conforme a altura da navbar */
-    background-color: var(--cinza-fundo); /* opcional */
+    padding: 80px 20px 20px;
+    background-color: var(--cinza-fundo); 
     box-sizing: border-box;
+    padding-top: calc(var(--navbar-height) + 20px);
 }
 
 

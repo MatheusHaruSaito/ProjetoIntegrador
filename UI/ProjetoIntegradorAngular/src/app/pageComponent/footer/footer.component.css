@@ -1,10 +1,9 @@
 footer {
-    background: var(--cinza-menu);         /* antes #333 */
-    color: var(--texto);                   /* antes white */
+    background: var(--cinza-menu);       
+    color: var(--texto);               
     padding: 1.8rem 0;
     text-align: center;
     border-top: 1px solid var(--borda);
-    box-shadow: 0 -4px 12px var(--shadow);
     transition: background 0.25s ease, color 0.25s ease;
 }
 
