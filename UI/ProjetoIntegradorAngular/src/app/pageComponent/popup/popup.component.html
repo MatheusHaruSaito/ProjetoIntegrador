@@ -1,0 +1,13 @@
+<div class="popup" 
+     *ngIf="message" 
+     [class.close]="closing"
+     (animationend)="onAnimationEnd()">
+
+  <div class="popup-content">
+    <i class="fa-solid fa-check-circle popup-icon"></i>
+    <span>{{ message }}</span>
+  </div>
+
+  <div class="popup-progress"></div>
+
+</div>

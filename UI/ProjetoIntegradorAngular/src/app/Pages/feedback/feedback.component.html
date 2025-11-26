@@ -1,25 +1,30 @@
 <div class="feedback-container">
-    <main class="format">
-      <h1 style="color: var(--letra);"><i class="fa-regular fa-comment-dots" style="color: var(--letra);"></i> FEEDBACKS</h1>
-      <form>
-        <label for="sobre">SOBRE</label>
-        <input type="text" id="sobre" name="sobre" placeholder="Digite o assunto...">
+  <app-profilemenu></app-profilemenu>
 
-        <label for="assunto">ASSUNTO</label>
-        <input type="text" id="assunto" name="assunto" placeholder="Digite o conteúdo...">
+  <main class="feedback-content">
+    <div class="feedback-header">
+      <h1><i class="fa-regular fa-comment-dots"></i> Enviar Feedback</h1>
+      <p>
+        Nos ajude a melhorar a plataforma enviando sua opinião ou relato de
+        problema.
+      </p>
+    </div>
 
-        <button type="submit" id="btnEnviar">ENVIAR</button>
+    <div class="feedback-card">
+      <form [formGroup]="feedbackFroms" (ngSubmit)="SendFeedBack()">
+        <label for="sobre">Assunto</label>
+        <input type="text" id="sobre" placeholder="Qual é o assunto do feedback?" formControlName="subject" />
+
+        <label for="assunto">Mensagem</label>
+        <textarea id="assunto"
+          placeholder="Descreva seu feedback com detalhes..."
+          formControlName="body"
+          rows="1"
+          oninput="this.style.height='auto'; this.style.height=this.scrollHeight + 'px'"></textarea>
+
+        <button type="submit" id="btnEnviar">Enviar Feedback</button>
       </form>
-    </main>
-    <aside class="menu">
-        <h3>CONFIGURAÇÃO</h3>
-        <ul>
-            <li class="active"><i class="fa-solid fa-circle-user" style="color: var(--letra);"></i>  Seu Perfil</li><br>
-            <li><i class="fa-solid fa-lock" style="color: var(--letra);"></i>  Segurança e Privacidade</li><br>
-            <li id="toggle-theme" (click)="toggleTheme()"><i class="fa-solid fa-moon" style="color: var(--letra);"></i>  Aparência</li><br>
-            <li id="historicoBtn" class="btnHistorico"><i class="fa-solid fa-file" style="color: var(--letra);"></i>  Histórico</li><br>
-        </ul>
-        <div class="exit"><i class="fas fa-sign-out-alt"></i>  SAIR</div>
-    </aside>
+    </div>
 
-  </div>
+  </main>
+</div>

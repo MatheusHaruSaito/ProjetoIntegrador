@@ -3,7 +3,6 @@
         <h1>Lista de Usuários</h1>
 
         <input type="text" id="SearchBar" placeholder="Buscar usuários..." (input)="Search($event)">
-            <p>0 = Padrão; 1 = Admin; 2 = ONG.</p>
         <table class="table">
             <thead>
                 <tr>
@@ -27,19 +26,19 @@
                         @else {
                         <button class="btn btn-danger" (click)="TriggerUserActive(user.id)">Inativo</button>
                         }
-                        
+
                     </td>
                     <td>{{user.id}}</td>
                     <td>
                         @if(user.role.includes("Admin")){
-                            <span class="role-admin">Admin</span>
+                        <span class="role-admin">Admin</span>
 
                         }
                         @else if(user.role.includes("Ong")){
-                            <span class="role-ong">ONG</span> 
+                        <span class="role-ong">ONG</span>
                         }
                         @else if(user.role.includes("Default")){
-                            <span class="role-default">Padrão</span>
+                        <span class="role-default">Padrão</span>
                         }
                     </td>
                     <td>{{user.name}}</td>

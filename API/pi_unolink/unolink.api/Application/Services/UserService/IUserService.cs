@@ -13,7 +13,7 @@ namespace unolink.api.Application.Services.UserService
         Task<List<UserDTO>> GetAll();
         Task<UserDTO> GetById(Guid id);
         Task<UserDTO> GetByEmail(string Email);
-        Task<bool> Update(UpdateUserRequest request);
+        Task<bool> Update(UpdateUserRequest request,string baseUrl);
         Task<bool> UserTriggerActive(Guid id);
     }
 }

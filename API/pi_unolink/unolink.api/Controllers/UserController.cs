@@ -35,7 +35,7 @@ namespace unolink.api.Controllers
             return Ok("Usuario cadastrado com sucesso!");
         }
         [HttpGet]
-        [ProducesResponseType(typeof(List<UserViewModel>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(List<UserPostViewModel>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         public async Task<IActionResult> GetAll()
         {
@@ -65,11 +65,10 @@ namespace unolink.api.Controllers
         public async Task<IActionResult> Update(UpdateUserRequest request)
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
-            request.ProfileImgPath = await _fileService.AddImage(request.ProfileImg, baseUrl);
-
-            var result = await _userService.Update(request);
-            if (!result) { 
-                await _fileService.DeleteFile(request.ProfileImgPath);
+            
+            var result = await _userService.Update(request, baseUrl);
+            if (!result) {
+                if(request.ProfileImgPath != null) await _fileService.DeleteFile(request.ProfileImgPath);
                 return BadRequest();
             }
                 return Ok();
@@ -85,12 +84,12 @@ namespace unolink.api.Controllers
 
             return Ok(result);
         }
-        [HttpGet("Profile/{email}")]
+        [HttpGet("Profile/{Id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        public async Task<IActionResult> GetProfileInfo(string email)
+        public async Task<IActionResult> GetProfileInfo(Guid Id)
         {
-            var data = await _userService.GetByEmail(email);
+            var data = await _userService.GetById(Id);
 
             if (data is null) return NotFound();
 

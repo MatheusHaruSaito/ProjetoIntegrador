@@ -32,6 +32,7 @@ namespace unolink.api.Application.Services.ImagesSevice
             
             string fileName = Path.GetFileName(FileUrl);
 
+
             var path = Path.Combine(_env.WebRootPath, "Resources",fileName);
 
             if (File.Exists(path))
@@ -39,6 +40,7 @@ namespace unolink.api.Application.Services.ImagesSevice
                 File.Delete(path);
                 return true;
             }
+
             return false;
         }
 

@@ -1,38 +1,39 @@
 <header>
-    <div class="container">
-        <div class="header-content">
-            <div class="logo">
-                <a routerLink="/">
-                    <img src="/images/unolinklogo.png" alt="UNOLINK logo completa" class="logo-full" width="310" height="50" loading="lazy">
-                    <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
-                </a>
-            </div>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <a routerLink="/">
+          <img src="/images/unolinkfull.svg" alt="UNOLINK logo completa" class="logo-full" width="320" height="52"
+            loading="lazy">
+          <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
+        </a>
+      </div>
 
-            <button class="menu-toggle" (click)="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
 
-            <nav class="main-nav" [ngClass]="{ 'active': isMenuOpen }">
-                <ul>
-                    <li><a [routerLink]="['/']">Início</a></li>
-                    <li><a [routerLink]="['/ONGSList']">ONGS</a></li>
-                    <li><a [routerLink]="['/HowToHelp']">Como Ajudar</a></li>
-                    <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
-                </ul>
+      <nav class="main-nav" [ngClass]="{ 'active': isMenuOpen }">
+        <ul>
+          <li><a [routerLink]="['/']">Início</a></li>
+          <li><a [routerLink]="['/ONGSList']">ONGS</a></li>
+          <li><a [routerLink]="['/HowToHelp']">Como Ajudar</a></li>
+          <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
+          <li><a [routerLink]="['/Feed']">Feed</a></li>
+        </ul>
 
-                <div class="auth-buttons">
-                    @if(isLogged){
-                    <button (click)="logout()" class="btn-login btn-login-solid">Logout</button>
-                                        <button [routerLink]="['/Profile']">Perfil</button>
-                         {{User?.name}}
-                    }@else {
-                    <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
-                    <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
-                    }
-
-
-                </div>
-            </nav>
+        <div class="auth-buttons">
+          @if(isLogged){
+          <button class="profile-btn" [routerLink]="['/Profile']" [ngStyle]="{
+                'background-image': 'url(' + (UserLogged?.profileImgPath || 'images/user-placeholder.png') + ')'
+              }">
+          </button>
+          } @else {
+          <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
+          <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
+          }
         </div>
+      </nav>
     </div>
+  </div>
 </header>

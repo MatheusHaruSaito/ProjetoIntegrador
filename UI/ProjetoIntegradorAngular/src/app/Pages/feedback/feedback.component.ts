@@ -1,31 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { EmailService } from '../../Services/email.service';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CreateEmail } from '../../models/CreateEmail';
+import { PopupService } from '../../Services/popup.service';
+import { CommonModule } from '@angular/common';
+import { ProfilemenuComponent } from '../../pageComponent/profilemenu/profilemenu.component';
 
 @Component({
   selector: 'app-feedback',
-  imports: [],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, ProfilemenuComponent],
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.css'
 })
 export class FeedbackComponent {
 
-  toggleTheme() {
-    const root = document.documentElement;
-    const isDark = root.classList.contains('dark-theme');
-  
-    if (isDark) {
-      root.classList.remove('dark-theme');
-      localStorage.setItem('theme', 'light');
-    } else {
-      root.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark');
-    }
+  feedbackFroms!: FormGroup;
+  emailRequest!: CreateEmail;
+
+  emailService = inject(EmailService);
+  popup = inject(PopupService);
+
+  SendFeedBack() {
+    this.emailRequest = this.feedbackFroms.value;
+    this.emailRequest.toEmail = "unolinkfeedback@gmail.com";
+
+    this.emailService.SendEmail(this.emailRequest).subscribe({
+      next: () => {
+        this.popup.show("Email enviado!");
+      }
+    });
   }
 
-  
   ngOnInit() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark-theme');
-    }
+    this.feedbackFroms = new FormGroup({
+      subject: new FormControl("", Validators.required),
+      body: new FormControl("", Validators.required)
+    });
   }
 }

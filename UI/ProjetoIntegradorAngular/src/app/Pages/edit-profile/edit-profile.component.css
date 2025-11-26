@@ -1,12 +1,13 @@
-/* ==================== FORMULÁRIO ==================== */
+/* ==== FORMULÁRIO ==== */
 .register-form {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 80px 20px 20px; /* Aumente o topo conforme a altura da navbar */
-    background-color: var(--cinza-fundo); /* opcional */
+    padding: 80px 20px 20px;
+    background-color: var(--cinza-fundo);
     box-sizing: border-box;
+    padding-top: calc(var(--navbar-height) + 20px);
 }
 
 
@@ -70,7 +71,7 @@ input:focus {
     box-shadow: 0 0 0 3px var(--rosa-claro);
 }
 
-/* ==================== BOTÕES ==================== */
+/* ==== BOTÕES ==== */
 .btn {
     width: 100%;
     padding: 12px;
@@ -79,21 +80,25 @@ input:focus {
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .btn-primario {
     background-color: var(--rosa-primario);
-    color: var(--branco);
+    color: white;
+}
+
+.btn-primario i {
+    color: white !important;
 }
 
 .btn-primario:hover {
-    background-color: #b61a65;
+    background-color: var(--rosa);
     transform: translateY(-2px);
 }
 
@@ -103,14 +108,129 @@ input:focus {
     border: 2px solid var(--rosa-primario);
 }
 
+.btn-secundario i {
+    color: var(--rosa-primario);
+}
+
 .btn-secundario:hover {
     background-color: var(--rosa-claro);
 }
 
-/* ==================== RESPONSIVIDADE ==================== */
+:root.dark-theme .btn-secundario {
+    background-color: transparent;
+    color: var(--rosa);
+    border-color: var(--rosa);
+}
+
+:root.dark-theme .btn-secundario i {
+    color: var(--rosa);
+}
+
+:root.dark-theme .btn-secundario:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.file-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.file-input input[type="file"] {
+    display: none;
+}
+
+.file-label {
+    background: var(--rosa-primario);
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.file-label i {
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    color: white !important;
+}
+
+.file-label:hover {
+    background: #b61a65;
+    transform: translateY(-2px);
+}
+
+.file-name {
+    color: var(--texto);
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.9;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    padding: 0 8px;
+}
+
+.preview-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.image-preview {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 3px solid var(--rosa-primario);
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+:root.dark-theme .file-label {
+    background: var(--rosa) !important;
+    color: white !important;
+}
+
+:root.dark-theme .file-label i {
+    color: white !important;
+}
+
+:root.dark-theme .file-name {
+    color: var(--texto);
+}
+
+.editProfile i,
+.btn-profile.editProfile i {
+    color: white !important;
+}
+
+.editProfile,
+.btn-profile.editProfile {
+    color: white !important;
+    background: var(--rosa-primario) !important;
+}
+
+.editProfile:hover,
+.btn-profile.editProfile:hover {
+    background: var(--rosa) !important;
+    transform: translateY(-2px);
+}
+
+
+/* ==== RESPONSIVIDADE ==== */
 @media (max-width: 600px) {
     .register-form {
-      padding-top: 100px;
+        padding-top: 100px;
     }
 }
 
@@ -128,4 +248,3 @@ input:focus {
         padding: 10px;
     }
 }
-

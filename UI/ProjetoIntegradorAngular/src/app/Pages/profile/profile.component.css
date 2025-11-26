@@ -1,115 +1,483 @@
-.profile-container{
-    display: flex;
-    padding-top: calc(var(--navbar-height) + 3px);
-    background-color: var(--branco);
+/* ==== LAYOUT PRINCIPAL ==== */
+.profile-container {
+  display: flex;
+  min-height: calc(100vh - var(--navbar-height));
+  background: var(--fundo, var(--cinza-claro));
+  padding-top: var(--navbar-height);
+  color: var(--letra);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.menu{
-    width: 220px;
-    height: 89.3vh;
-    padding: 20px;
-    background-color: var(--cinza-menu);
-    font-weight: bold;
-}
-.menu h3{
-    margin-bottom: 10px;
-    font-size: 17px;
-    color: var(--letra);
-}
-.menu ul{
-    list-style: none;
-    padding: 0;
-}
-.menu li{
-    padding: 10px 5px;
-    cursor: pointer;
-    border-left: 4px solid transparent;
-    transition: background 0.3s;
-    font-size: 20px;
-    color: var(--letra);
-}
-.menu li.active, 
-.menu li:hover{
-    background-color: var(--branco);
-    border-left: 4px solid var(--rosa);
-    color: var(--rosa);
-}
-.exit {
-    padding-top: 40vh;
-    font-size: 20px;
-    color: var(--letra);
-}
-  
+
+/* ==== PERFIL PRINCIPAL ==== */
 .profile {
-   flex: 1;
-   padding: 40px;
-   display: flex;
-    gap: 30px;
-   align-items: flex-start;
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-width: 0;
 }
-       
-.photo img{
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    position: relative;
-    left: 100px;
+
+/* ==== CARD DO PERFIL ==== */
+.profile-card {
+  display: grid;
+  grid-template-columns: 140px 1fr auto;
+  align-items: center;
+  background: var(--branco);
+  border-radius: 12px;
+  padding: 1.75rem;
+  gap: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-    
-.editProfile {
-    margin-top: 10px;
-    background-color: var(--rosa);
-    border: none;
-    color: white;
-    padding: 8px 14px;
-    cursor: pointer;
-    border-radius: 5px;
-    position: relative;
-    top: 50px;
-    right: 35px;
+
+.photo img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--rosa-primario);
+  display: block;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
 }
 
 .info h2 {
-    margin: 0;
-    font-size: 20px;
-    color: var(--letra);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--letra);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  word-break: break-word;
 }
-  
-.info p {
-    font-weight: bold;
-    color: var(--letra);
+
+.bio {
+  font-size: 0.95rem;
+  color: var(--texto);
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
-.info label{
-    color: var(--letra);
-}
-  
-.edit {
-    font-size: 14px;
-    color: var(--rosa);
-    cursor: pointer;
-}
-  
+
 .notification {
-    display: block;
-    margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--letra);
 }
-  
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-self: end;
+}
+
+.btn-profile {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--rosa-primario);
+  color: var(--branco);
+  font-size: 0.95rem;
+  box-shadow: 0 3px 8px var(--shadow);
+  transition: transform 0.22s ease, background 0.25s ease;
+}
+
+.btn-profile i {
+  font-size: 1rem;
+}
+
+.btn-profile:hover {
+  background: var(--hover);
+  transform: translateY(-3px);
+}
+
+.editProfile {
+  background: var(--rosa-primario);
+  color: white;
+
+}
+
 .btnFeedback {
-    margin-top: 20px;
-    background-color: var(--letra);
-    color: var(--branco);
-    border: none;
-    padding: 10px 14px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    
+  background: var(--rosa-primario);
+  color: white;
 }
-  
-.menu li i,
-.exit i,
-.btnFeedback i {
-  margin-right: 10px;
-  
+
+:root.dark-theme .btn-profile {
+  color: #ffffff;
+  background: var(--rosa-primario);
+}
+
+:root.dark-theme .btn-profile:hover {
+  background: var(--rosa-secundario);
+}
+
+/* ==== POSTS DO USUÁRIO ==== */
+.user-posts h3 {
+  font-size: 1.2rem;
+  color: var(--rosa-primario);
+  margin-bottom: 1rem;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+
+.user-post-card {
+  background: var(--branco);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid var(--borda);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.user-post-card .user-post-title {
+  color: var(--letra);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-post-card .user-post-excerpt {
+  color: var(--texto);
+  font-size: 0.95rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.user-post-thumb-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  /* GARANTE ALTURA FIXA */
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+/* Fundo borrado do post */
+.user-post-thumb-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(22px) brightness(0.75);
+  transform: scale(1.25);
+  z-index: 1;
+}
+
+/* Imagem real */
+.user-post-thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* mantem proporção */
+  padding: 6px;
+  z-index: 2;
+}
+
+:root.dark-theme .profile-container {
+  background: var(--cinza-menu);
+}
+
+:root.dark-theme .menu {
+  background-color: var(--menu-ativado);
+  border-right-color: var(--borda);
+  box-shadow: 2px 0 6px rgba(255, 255, 255, 0.03);
+}
+
+:root.dark-theme .profile-card,
+:root.dark-theme .user-post-card {
+  background: var(--branco);
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.03);
+  border-color: var(--borda);
+}
+
+:root.dark-theme .info h2,
+:root.dark-theme .user-post-card .user-post-title {
+  color: var(--letra);
+}
+
+:root.dark-theme .bio,
+:root.dark-theme .user-post-card .user-post-excerpt {
+  color: var(--cinza-texto);
+}
+
+/* ==== MODAL ==== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-window {
+  background: var(--branco);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--cinza-texto);
+}
+
+.modal-author {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.modal-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rosa-primario);
+}
+
+.modal-author-name {
+  font-weight: 700;
+  color: var(--letra);
+  word-break: break-word;
+}
+
+.modal-dates {
+  color: var(--cinza-texto);
+  font-size: 0.9rem;
+}
+
+.modal-body-vertical {
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  gap: 18px;
+}
+
+.modal-image-wrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 200px;
+  margin-top: 4px;
+}
+
+.modal-image-blur {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(26px) brightness(0.75);
+  transform: scale(1.25);
+  z-index: 1;
+}
+
+.modal-image-vertical {
+  position: relative;
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  padding: 8px;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.modal-description-long {
+  color: var(--texto);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  max-height: 40vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  color: var(--letra);
+  margin-top: 6px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.modal-description {
+  color: var(--texto);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: pre-wrap;
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid var(--borda);
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+.vote-section {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+
+.vote-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--cinza-texto);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.vote-btn:hover {
+  transform: scale(1.15);
+  color: var(--rosa-primario);
+}
+
+.vote-count {
+  font-weight: 600;
+  color: var(--letra);
+  font-size: 1rem;
+}
+
+:root.dark-theme .vote-count {
+  color: var(--texto);
+}
+
+:root.dark-theme .vote-btn {
+  color: var(--cinza-texto);
+}
+
+/* ==== RESPONSIVIDADE ==== */
+@media (max-width: 900px) {
+
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .profile {
+    width: 100%;
+  }
+
+  .modal-body {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .modal-left,
+  .modal-right {
+    width: 100%;
+  }
+
+  .modal-image {
+    max-height: 50vh;
+  }
+
+  .modal-avatar {
+    width: 46px;
+    height: 46px;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center; 
+  }
+
+  .photo img {
+    margin: 0 auto; 
+  }
+
+  .profile-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }}
+
+@media (max-width: 520px) {
+  .photo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-logout {
+    width: 100%;
+    justify-content: center;
+  }
 }

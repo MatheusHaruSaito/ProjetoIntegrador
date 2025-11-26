@@ -153,6 +153,29 @@ namespace unolink.infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("unolink.domain.Models.CommentVotes", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CommentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("PostCommentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "CommentId");
+
+                    b.HasIndex("CommentId");
+
+                    b.HasIndex("PostCommentId");
+
+                    b.ToTable("CommentVotes");
+                });
+
             modelBuilder.Entity("unolink.domain.Models.OngTicket", b =>
                 {
                     b.Property<Guid>("Id")
@@ -202,6 +225,55 @@ namespace unolink.infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OngTicket", (string)null);
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.PostComment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("UserPostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserPostId");
+
+                    b.ToTable("PostComment");
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.PostVotes", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PostId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("UserId", "PostId");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("PostVotes");
                 });
 
             modelBuilder.Entity("unolink.domain.Models.User", b =>
@@ -293,6 +365,40 @@ namespace unolink.infrastructure.Migrations
                     b.ToTable("User", (string)null);
                 });
 
+            modelBuilder.Entity("unolink.domain.Models.UserPost", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PostImgPath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdateTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserPost");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", null)
@@ -342,6 +448,85 @@ namespace unolink.infrastructure.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.CommentVotes", b =>
+                {
+                    b.HasOne("unolink.domain.Models.PostComment", "Comment")
+                        .WithMany()
+                        .HasForeignKey("CommentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("unolink.domain.Models.PostComment", null)
+                        .WithMany("Votes")
+                        .HasForeignKey("PostCommentId");
+
+                    b.HasOne("unolink.domain.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Comment");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.PostComment", b =>
+                {
+                    b.HasOne("unolink.domain.Models.UserPost", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("UserPostId");
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.PostVotes", b =>
+                {
+                    b.HasOne("unolink.domain.Models.UserPost", "Post")
+                        .WithMany("Votes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("unolink.domain.Models.User", "User")
+                        .WithMany("VotedPosts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.UserPost", b =>
+                {
+                    b.HasOne("unolink.domain.Models.User", "User")
+                        .WithMany("UserPosts")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.PostComment", b =>
+                {
+                    b.Navigation("Votes");
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.User", b =>
+                {
+                    b.Navigation("UserPosts");
+
+                    b.Navigation("VotedPosts");
+                });
+
+            modelBuilder.Entity("unolink.domain.Models.UserPost", b =>
+                {
+                    b.Navigation("Comments");
+
+                    b.Navigation("Votes");
                 });
 #pragma warning restore 612, 618
         }

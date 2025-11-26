@@ -1,150 +1,188 @@
-/* ==================== SEÇÃO HERO ==================== */
+/* ===== SEÇÃO HERO ==== */
 .about-hero {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--rosa-claro);
-    color: var(--texto);
-    padding: 100px 0 60px;
-    position: relative;
-    padding-top: calc(var(--navbar-height) + 20px);
-    text-align: center;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--cinza-claro);
+  color: var(--texto);
+  padding: 100px 0 60px;
+  text-align: center;
+  padding-top: calc(var(--navbar-height) + 20px);
+}
+
+:root.dark-theme .about-hero {
+  background-color: var(--menu-ativado);
 }
 
 .about-hero h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    color: var(--rosa-primario);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: var(--rosa-primario);
 }
 
 .about-hero p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* ==================== NOSSA HISTÓRIA ==================== */
+/* ==== NOSSA HISTÓRIA ==== */
 .our-story {
-    padding: 5rem 0;
-    background-color: var(--branco);
+  padding: 5rem 0;
+  background-color: var(--branco);
+  color: var(--texto);
+}
+
+:root.dark-theme .our-story {
+  background-color: var(--cinza-menu);
 }
 
 .story-content {
-    display: flex;
-    gap: 3rem;
-    align-items: center;
-    margin-top: 2rem;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 .story-text {
-    flex: 1;
+  flex: 1;
 }
 
 .story-text p {
-    margin-bottom: 1.5rem;
-    color: var(--cinza-texto);
-    line-height: 1.6;
-    font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--cinza-texto);
+  line-height: 1.6;
+  font-size: 1.1rem;
 }
 
 .story-icon {
-    flex: 1;
-    text-align: center;
-    font-size: 10rem;
-    color: var(--rosa-primario);
-    opacity: 0.8;
+  flex: 1;
+  text-align: center;
+  font-size: 10rem;
+  color: var(--rosa-primario);
+  opacity: 0.8;
 }
 
-/* ==================== NOSSA EQUIPE ==================== */
+/* ==== NOSSA EQUIPE ==== */
 .our-team {
-    padding: 5rem 0;
-    background-color: #f9f9f9;
-    border-top: 1px solid #f0f0f0;
-    border-bottom: 1px solid #f0f0f0;
+  padding: 5rem 0;
+  background-color: var(--cinza-claro);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+  color: var(--texto);
 }
 
 .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .team-member {
-    background-color: var(--branco);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 2rem;
-    text-align: center;
+  background-color: var(--branco);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 10px var(--shadow);
+  transition: transform 0.25s, background-color 0.25s;
+}
+
+:root.dark-theme .team-member {
+  background-color: var(--menu-ativado);
+  box-shadow: 0 4px 10px rgba(255,255,255,0.04);
 }
 
 .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
 }
 
 .member-icon {
-    font-size: 3.5rem;
-    color: var(--rosa-primario);
-    margin-bottom: 1.5rem;
+  font-size: 3.5rem;
+  color: var(--rosa-primario);
+  margin-bottom: 1.5rem;
 }
 
 .member-info h3 {
-    color: var(--rosa-primario);
-    margin-bottom: 0.5rem;
+  color: var(--rosa-primario);
+  margin-bottom: 0.5rem;
 }
 
 .member-info .role {
-    color: var(--cinza-texto);
-    font-weight: 500;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+  color: var(--cinza-texto);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
 .member-info .bio {
-    color: var(--cinza-texto);
-    font-size: 0.95rem;
-    line-height: 1.5;
+  color: var(--cinza-texto);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-/* ==================== RESPONSIVIDADE ==================== */
+/* ==== MODO ESCURO ==== */
+:root.dark-theme .our-story,
+:root.dark-theme .our-team {
+  background-color: var(--cinza-menu);
+  color: var(--texto);
+}
+
+:root.dark-theme .story-text p,
+:root.dark-theme .member-info .role,
+:root.dark-theme .member-info .bio {
+  color: var(--cinza-texto);
+}
+
+:root.dark-theme .team-member {
+  background-color: var(--menu-ativado);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
+
+:root.dark-theme .team-member:hover {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* ==== RESPONSIVIDADE ==== */
 @media (max-width: 768px) {
-    .story-content {
-        flex-direction: column;
-    }
-    
-    .story-icon {
-        font-size: 6rem;
-    }
-    
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .numbers-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
+  .story-content {
+    flex-direction: column;
+  }
+
+  .story-icon {
+    font-size: 6rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 768px) {
+  .about-hero {
+    padding: 70px 0 40px;
+  }
+
+  .story-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 }
 
 @media (max-width: 480px) {
-    .numbers-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .about-hero {
-        min-height: 40vh;
-    }
-    
-    .story-icon {
-        font-size: 4rem;
-    }
+  .about-hero {
+    min-height: 40vh;
+  }
+
+  .story-icon {
+    font-size: 4rem;
+  }
 }

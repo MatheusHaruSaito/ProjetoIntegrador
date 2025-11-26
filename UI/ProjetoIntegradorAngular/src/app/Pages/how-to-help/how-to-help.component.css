@@ -230,39 +230,43 @@
     flex-wrap: wrap;
 }
 
+/* BOTÃO PADRÃO UNOLINK */
 .primary-button {
-    display: inline-block;
-    padding: 1rem 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
     background-color: var(--rosa-primario);
     color: white;
-    border-radius: 4px;
-    text-decoration: none;
+    border-radius: 10px;                /* ← igual aos outros botões */
     font-weight: 600;
-    transition: all 0.3s ease;
     border: 2px solid var(--rosa-primario);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px var(--shadow); /* ← igual aos outros */
+    transition: 0.25s ease;
+    gap: 8px;  /* se quiser colocar ícone no futuro */
 }
 
 .primary-button:hover {
-    background-color: var(--rosa-secundario);
-    transform: translateY(-2px);
+    background-color: var(--rosa);      /* padrão dos outros */
+    border-color: var(--rosa);
+    transform: translateY(-2px);        /* mesmo hover */
 }
 
-.secondary-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    background-color: transparent;
-    color: var(--rosa-primario);
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid var(--rosa-primario);
+/* DARK MODE */
+:root.dark-theme .primary-button {
+    background-color: var(--rosa);
+    border-color: var(--rosa);
+    color: white;
 }
 
-.secondary-button:hover {
-    background-color: rgba(212, 30, 118, 0.1);
-    transform: translateY(-2px);
+:root.dark-theme .primary-button:hover {
+    background-color: var(--rosa-primario);
+    border-color: var(--rosa-primario);
 }
+
 
 @media (max-width: 768px) {
     .intro-section {

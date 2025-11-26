@@ -15,6 +15,7 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
             {
                 Id = DTO.Id,
                 Role = DTO.Role,
+                UserPosts = DTO.UserPosts,
                 Name = DTO.Name,
                 Email = DTO.Email,
                 Password = DTO.Password,
@@ -31,6 +32,7 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
             {
                 Name = DTO.Name,
                 Email = DTO.Email,
+                UserPosts = DTO.UserPosts,
                 Description = DTO.Description,
                 Cep = DTO.Cep,
                 IsActive = DTO.IsActive,

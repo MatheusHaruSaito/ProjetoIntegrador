@@ -1,0 +1,179 @@
+<div class="feed-page container">
+
+  <!-- ==== Cabeçalho ==== -->
+  <div class="feed-header">
+    <h2 class="feed-heading">Feed de Publicações</h2>
+    <p class="feed-subtitle">Acompanhe as postagens mais recentes da comunidade</p>
+  </div>
+
+  <!-- ==== Card de criação ==== -->
+  <div class="create-card" (click)="openCreateModal()">
+    <img [src]="UserLogged?.profileImgPath || 'images/user-placeholder.png'" class="user-avatar-small" alt="Você">
+
+    <input class="create-input" type="text" readonly placeholder="O que você deseja compartilhar?" />
+
+    <button class="btn-small">Criar</button>
+  </div>
+
+  <!-- ==== Lista de posts ==== -->
+  <div class="feed-list">
+    @for (post of posts; track $index) {
+    <div class="post-card" (click)="openModal(post.id)">
+
+      <div class="post-header">
+        <img [src]="post.profileImgPath || 'images/user-placeholder.png'" class="user-avatar" alt="User">
+
+        <div class="user-info">
+          <h3>{{ post.userName }}</h3>
+          <p class="post-date">{{ post.createdAt | date:'short'}}</p>
+        </div>
+      </div>
+
+      <div class="post-content">
+        <h4 class="post-title">{{ post.title }}</h4>
+
+        <p class="post-description">{{ post.description }}</p>
+
+        <!-- Wrapper da imagem -->
+        <div class="post-image-wrapper" *ngIf="post.postImgPath">
+          <img [src]="post.postImgPath" class="post-image-blur" alt="BG">
+          <img [src]="post.postImgPath" class="post-image" alt="Post">
+        </div>
+      </div>
+
+      <div class="post-footer">
+        <button class="vote-btn" (click)="Vote(post.id); $event.stopPropagation()">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <span class="vote-count">{{ post.votes }}</span>
+
+        <button class="vote-btn" (click)="openModal(post.id); $event.stopPropagation()">
+          <i class="fas fa-comment"></i>
+        </button>
+        <span class="comment-count">{{ post.commentsCount || 0 }}</span>
+      </div>
+
+    </div>
+    }
+  </div>
+
+  <!-- ===== Botão flutuante ===== -->
+  <button class="floating-add" (click)="openCreateModal()">+</button>
+
+
+  <!-- ==== MODAL DE CRIAÇÃO ==== -->
+  <div class="modal-overlay" *ngIf="createModalOpen" (click)="closeCreateModal()">
+
+    <div class="modal-window create-modal" (click)="$event.stopPropagation()">
+
+      <button class="modal-close" (click)="closeCreateModal()">×</button>
+
+      <div class="modal-body-create">
+        <h2>Criar nova publicação</h2>
+
+        <label class="form-label">Título</label>
+        <input type="text" [(ngModel)]="createTitle" class="form-input" placeholder="Digite um título">
+
+        <label class="form-label">Descrição</label>
+        <textarea [(ngModel)]="createDescription" rows="5" class="form-input" placeholder="Escreva algo..."></textarea>
+
+        <div class="file-upload-wrapper">
+          <label for="createFile" class="file-upload-label">
+            <i class="fas fa-image"></i>
+            Selecionar imagem
+          </label>
+          <input id="createFile" type="file" accept="image/*" class="file-upload-input"
+            (change)="onCreateFileChange($event)" />
+
+          <div class="file-preview" *ngIf="createImagePreview">
+            <img [src]="createImagePreview" alt="Preview">
+          </div>
+        </div>
+
+        <div class="create-actions">
+          <span class="error" *ngIf="createError">{{ createError }}</span>
+
+          <button class="btn-cancel" (click)="closeCreateModal()">Cancelar</button>
+
+          <button class="btn-publish" (click)="submitCreate()">
+            {{ creating ? "Enviando..." : "Publicar" }}
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==== MODAL DE VISUALIZAÇÃO DO POST ==== -->
+  <div class="modal-overlay" *ngIf="selectedPost" (click)="onOverlayClick($event)">
+    <div class="modal-window" (click)="$event.stopPropagation()">
+
+      <button class="modal-close" (click)="closeModal()">×</button>
+
+      <div class="modal-body-vertical">
+
+        <div class="modal-author">
+          <img [src]="selectedPost.profileImgPath || 'images/user-placeholder.png'" class="modal-avatar">
+          <div>
+            <div class="modal-author-name">{{ selectedPost.userName }}</div>
+            <div class="modal-dates">
+              Criado: {{ selectedPost.createdAt | date:'short' }}
+            </div>
+          </div>
+        </div>
+
+        <h3 class="modal-title">{{ selectedPost.title }}</h3>
+
+        <img *ngIf="selectedPost.postImgPath" [src]="selectedPost.postImgPath" class="modal-image-vertical">
+
+        <p class="modal-description-long">{{ selectedPost.description }}</p>
+
+        <div class="modal-vote-box">
+          <button class="vote-btn" (click)="Vote(selectedPost.id); $event.stopPropagation()">
+            <i class="fas fa-arrow-up"></i>
+          </button>
+          <span class="vote-count">{{ selectedPost.votes }}</span>
+        </div>
+
+        <div class="comments-section">
+
+          <h3 class="comments-header">Comentários ({{ currentComments.length }})</h3>
+
+          <div class="comments-list">
+            <div class="comment-item" *ngFor="let c of currentComments">
+
+              <img [src]="c.userProfileImgPath || 'images/user-placeholder.png'" class="comment-avatar">
+
+              <div class="comment-body">
+                <div class="comment-meta">
+                  <strong>{{ c.userUsername }}</strong>
+                  <span>{{ c.createdAt | date:'short' }}</span>
+                </div>
+                <p class="comment-text">{{ c.text }}</p>
+              </div>
+
+              <div class="comment-vote">
+                <button class="vote-btn" (click)="voteComment(c.id); $event.stopPropagation()">
+                  <i class="fas fa-arrow-up"></i>
+                </button>
+                <span class="comment-votes">{{ c.vote }}</span>
+              </div>
+
+            </div>
+          </div>
+
+          <textarea [(ngModel)]="newCommentText" class="comment-input" rows="3"
+            placeholder="Escreva algo..."></textarea>
+
+          <button class="btn-publish" (click)="sendComment()">Comentar</button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -11,6 +11,9 @@ namespace unolink.domain.Core.Interfaces
         Task<List<User>> GetAll();
         Task<User> GetByEmailAsync(string email);
         Task<bool> UseTriggerActive(Guid id);
-        
+        Task<List<User>> GetByIdsAsync(IEnumerable<Guid> ids);
+
+
+
     }
 }

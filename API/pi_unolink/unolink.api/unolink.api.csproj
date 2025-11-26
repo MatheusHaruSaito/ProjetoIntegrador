@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MailKit" Version="4.14.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.2" />
@@ -26,11 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\unolink.domain\unolink.domain.csproj" />
     <ProjectReference Include="..\unolink.infrastructure\unolink.infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Models\ViewModels\ViewModelExtension\" />
     <Folder Include="wwwroot\Resources\" />
   </ItemGroup>
 

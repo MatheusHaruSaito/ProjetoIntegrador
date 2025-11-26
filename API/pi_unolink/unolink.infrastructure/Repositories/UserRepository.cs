@@ -23,17 +23,22 @@ namespace unolink.infrastructure.Repositories
 
         public async Task<List<User>> GetAll()
         {
-            return await _entity.ToListAsync();
+            return await _entity
+                .ToListAsync();
         }
 
         public async Task<User?> GetByEmailAsync(string email)
         {
-            return await _entity.FirstOrDefaultAsync(x => x.Email == email);
+            return await _entity
+                .Include(u => u.UserPosts)
+                .FirstOrDefaultAsync(x => x.Email == email);
         }
 
         public async Task<User?> GetById(Guid id)
         {
-            return await _entity.FirstOrDefaultAsync(x => x.Id == id);
+            return await _entity
+                .Include(u => u.UserPosts)
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public void Update(User entity)
@@ -50,6 +55,16 @@ namespace unolink.infrastructure.Repositories
             user.IsActive = !user.IsActive;
 
             return true;
+        }
+
+        public async Task<List<User>> GetByIdsAsync(IEnumerable<Guid> ids)
+        {
+            if (ids == null || !ids.Any())
+                return new List<User>();
+
+            return await _entity
+                .Where(u => ids.Contains(u.Id))
+                .ToListAsync();
         }
     }
 }

@@ -20,14 +20,28 @@
         <input type="password" id="senha" placeholder="Senha" required formControlName="password">
       </div>
 
-            <div class="input-group">
+      <div class="input-group">
         <i class="fas fa-envelope"></i>
         <input type="text" id="description" placeholder="description" required formControlName="description">
       </div>
-        <div class="input-group">
-        <i class="fas fa-user"></i>
-        <input type="file" (change)="onFileSelected($event)" id="profile-image" required />
+
+      <div class="input-group file-input">
+
+        <label for="profile-image" class="file-label">
+          <i class="fa-solid fa-image"></i>
+          Selecionar Foto
+        </label>
+
+        <input type="file" id="profile-image" accept="image/*" (change)="onFileSelected($event)" />
+
+        <p class="file-name">
+          {{ selectedFile?.name || 'Nenhum arquivo selecionado' }}
+        </p>
+
+        <div class="preview-container" *ngIf="previewImage">
+          <img [src]="previewImage" class="image-preview" alt="Preview da imagem">
         </div>
+      </div>
 
       <button type="submit" class="btn btn-primario">
         <i class="fas fa-user-plus"></i> Editar

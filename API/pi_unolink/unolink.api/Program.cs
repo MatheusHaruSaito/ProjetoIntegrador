@@ -11,12 +11,16 @@ using unolink.infrastructure.Context;
 using unolink.infrastructure.Repositories;
 using Microsoft.AspNetCore.Identity;
 using unolink.api.Application.Services.ImagesSevice;
+using unolink.api.Application.Services.UserPostService;
+using unolink.api.Application.Services.SearchService;
+using unolink.api.Application.Services.EmailService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
-builder.Services.AddDbContext<ApplicationDataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//DefaultConnection
+//FatecConnection
+builder.Services.AddDbContext<ApplicationDataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FatecConnection")));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -26,7 +30,13 @@ builder.Services.AddScoped<IOngTicketRepository, OngTicketRepository>();
 builder.Services.AddScoped<IOngTicketService, OngTicketService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IFilesService, FilesService>();
+builder.Services.AddScoped<IUserPostRepository, UserPostRepository>();
+builder.Services.AddScoped<IUserPostService, UserPostService>();
+builder.Services.AddScoped<ISearchRepository, SearchRepository>();
+builder.Services.AddScoped<ISearchService, SearchService>();
 
+
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 
 builder.Services.AddControllers();

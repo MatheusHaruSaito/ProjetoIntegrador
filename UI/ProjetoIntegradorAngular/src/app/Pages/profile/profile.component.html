@@ -1,29 +1,107 @@
 <div class="profile-container">
 
-    <main class="profile">
-        <div class="photo">
-            <img id="ProfileImage" src="images/unolinkicon.png" alt="Foto de Perfil">
-            <button [routerLink]="['/EditProfile']" class="editProfile">Editar Perfil</button>
-        </div>
-        <div class="info"><br>
-            <h2 >{{User.name}} <i class="fa-regular fa-pen-to-square" style="color: #d41e76;"></i></h2><br>
-            <p>{{User.description}}</p><br>
-            <label class="notification">
-                <input type="checkbox" checked> RECEBER NOTIFICAÇÃO
-            </label><br>
-            <button [routerLink]="['/Feedback']" id="feedbackBtn" class="btnFeedback"><i class="fa-solid fa-comments" style="color: var(--icon);"></i>  ENVIAR FEEDBACKS</button>
-        </div>
-    </main>
+  <app-profilemenu></app-profilemenu>
 
-    <aside class="menu">
-        <h3>CONFIGURAÇÃO</h3>
-        <ul>
-            <li class="active"><i class="fa-solid fa-circle-user" style="color: var(--letra);"></i>  Seu Perfil</li><br>
-            <li><i class="fa-solid fa-lock" style="color: var(--letra);"></i>  Segurança e Privacidade</li><br>
-            <li id="toggle-theme" (click)="toggleTheme()"><i class="fa-solid fa-moon" style="color: var(--letra);"></i>  Aparência</li><br>
-            <li id="historicoBtn" class="btnHistorico"><i class="fa-solid fa-file" style="color: var(--letra);"></i>  Histórico</li><br>
-        </ul>
-        <div  class="exit"><i class="fas fa-sign-out-alt"></i>  SAIR</div>
-    </aside>
-    
+  <main class="profile">
+
+    <!-- ==== CARD DO USUÁRIO ==== -->
+    <section class="profile-card">
+      <div class="photo">
+        <img id="ProfileImage" src="/images/user-placeholder.png" alt="Foto de Perfil">
+      </div>
+
+      <div class="info">
+        <h2>{{ User.name }}</h2>
+        <p class="bio">{{ User.description || 'Sem descrição adicionada.' }}</p>
+      </div>
+
+      <div class="profile-buttons">
+        <button [routerLink]="['/EditProfile']" class="btn-profile editProfile">
+          <i class="fa-solid fa-pen"></i> Editar Perfil
+        </button>
+
+        <button [routerLink]="['/Feedback']" class="btn-profile btnFeedback">
+          <i class="fa-solid fa-comments"></i> Enviar feedback
+        </button>
+      </div>
+    </section>
+
+    <!-- ==== POSTS DO USUÁRIO ==== -->
+    <section class="user-posts" *ngIf="UserPosts?.length">
+      <h3>Suas publicações</h3>
+
+      <div class="posts-grid">
+        @for (post of UserPosts; track $index) {
+
+        <div class="user-post-card" (click)="openModal(post.id)">
+
+          <h4 class="user-post-title">{{ post.title }}</h4>
+
+          <div class="user-post-thumb-wrapper" *ngIf="post.postImgPath">
+
+            <img
+              [src]="post.postImgPath"
+              class="user-post-thumb-blur"
+              alt="blur">
+
+            <img
+              [src]="post.postImgPath"
+              class="user-post-thumb"
+              alt="Miniatura">
+
+          </div>
+
+          <!-- EXCERPT LIMITADO -->
+          <p class="user-post-excerpt">{{ post.description }}</p>
+
+        </div>
+
+        }
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ==== MODAL DO POST — IGUAL AO FEED ==== -->
+<div class="modal-overlay" *ngIf="selectedPost" (click)="onOverlayClick($event)">
+  <div class="modal-window" (click)="$event.stopPropagation()">
+
+    <button class="modal-close" (click)="closeModal()">×</button>
+
+    <div class="modal-body-vertical">
+
+      <!-- Autor -->
+      <div class="modal-author">
+        <img [src]="selectedPost.profileImgPath || 'images/user-placeholder.png'" class="modal-avatar" alt="Avatar">
+        <div>
+          <div class="modal-author-name">{{ selectedPost.userName }}</div>
+          <div class="modal-dates">Criado: {{ selectedPost.createdAt | date:'short' }}</div>
+        </div>
+      </div>
+
+      <!-- Título -->
+      <h3 class="modal-title">{{ selectedPost.title }}</h3>
+
+      <!-- ==== IMAGEM COM FUNDO BORRADO ==== -->
+      <div class="modal-image-wrapper" *ngIf="selectedPost.postImgPath">
+
+        <img [src]="selectedPost.postImgPath" class="modal-image-blur" alt="bg">
+
+        <img [src]="selectedPost.postImgPath" class="modal-image-vertical" alt="Imagem">
+
+      </div>
+
+      <!-- Descrição -->
+      <p class="modal-description-long">{{ selectedPost.description }}</p>
+
+      <div class="modal-footer">
+        <button (click)="Vote(selectedPost.id); $event.stopPropagation()" class="vote-btn">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+        <span class="vote-count">{{ selectedPost.votes }}</span>
+      </div>
+
+    </div>
+  </div>
 </div>

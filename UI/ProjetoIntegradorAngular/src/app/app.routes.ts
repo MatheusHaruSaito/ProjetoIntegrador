@@ -12,6 +12,7 @@ import { AboutUsComponent } from './Pages/about-us/about-us.component';
 import { HowToHelpComponent } from './Pages/how-to-help/how-to-help.component';
 import { ONGsListComponent } from './Pages/ongs-list/ongs-list.component';
 import { EditProfileComponent } from './Pages/edit-profile/edit-profile.component';
+import { FeedComponent } from './Pages/feed/feed.component';
 
 export const routes: Routes = [
     {path:'Admin-UserList',component: UserListComponent},
@@ -25,5 +26,6 @@ export const routes: Routes = [
     {path:'Feedback', component: FeedbackComponent},
     {path:'HowToHelp', component: HowToHelpComponent},
     {path:'ONGSList', component: ONGsListComponent},
-    {path:'EditProfile', component: EditProfileComponent}
+    {path:'EditProfile', component: EditProfileComponent},
+    {path:'Feed', component: FeedComponent}
 ];

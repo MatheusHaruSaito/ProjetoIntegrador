@@ -1,11 +1,12 @@
-/* ==================== FORMULÁRIO ==================== */
+/* ==== FORMULÁRIO ==== */
 .register-form {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 80px 20px 20px; /* Aumente o topo conforme a altura da navbar */
-    background-color: var(--borda); /* opcional */
+    padding: 80px 20px 20px;
+    padding-top: calc(var(--navbar-height) + 20px);
+    background-color: var(--cinza-fundo);
     box-sizing: border-box;
 }
 
@@ -70,7 +71,7 @@ input:focus {
     box-shadow: 0 0 0 3px var(--rosa-claro);
 }
 
-/* ==================== BOTÕES ==================== */
+/* ==== BOTÕES ==== */
 .btn {
     width: 100%;
     padding: 12px;
@@ -107,10 +108,10 @@ input:focus {
     background-color: var(--rosa-claro);
 }
 
-/* ==================== RESPONSIVIDADE ==================== */
+/* ===== RESPONSIVIDADE ==== */
 @media (max-width: 600px) {
     .register-form {
-      padding-top: 100px;
+        padding-top: 100px;
     }
 }
 
@@ -128,4 +129,3 @@ input:focus {
         padding: 10px;
     }
 }
-
