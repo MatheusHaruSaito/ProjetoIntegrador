@@ -506,6 +506,39 @@ object-position: center;
   cursor: pointer;
 }
 
+.modal-vote-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: var(--cinza-menu);
+    border-radius: 10px;
+    width: fit-content;
+    margin-top: 12px;
+    border: 1px solid var(--borda);
+}
+
+.modal-vote-box .vote-btn {
+    font-size: 1.4rem;
+    color: var(--texto);
+    transition: 0.2s ease;
+}
+
+.modal-vote-box .vote-btn:hover {
+    transform: scale(1.2);
+    color: var(--rosa);
+}
+
+.modal-vote-box .vote-count {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--letra);
+}
+
+:root.dark-theme .modal-vote-box {
+    background: var(--menu-ativado);
+}
+
 .btn-publish {
   background: var(--rosa-primario);
   color: white;
@@ -513,6 +546,50 @@ object-position: center;
   border-radius: 8px;
   border: none;
   cursor: pointer;
+}
+
+.file-upload-wrapper {
+    margin-top: 1rem;
+}
+
+.file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    background: var(--rosa-primario);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s ease;
+    box-shadow: 0 4px 10px var(--shadow);
+}
+
+.file-upload-label:hover {
+    background: var(--rosa);
+    transform: translateY(-2px);
+}
+
+.file-upload-label i {
+    font-size: 1.2rem;
+}
+
+.file-upload-input {
+    display: none;
+}
+
+.file-preview {
+    margin-top: 12px;
+    border-radius: 12px;
+    max-width: 100%;
+    border: 1px solid var(--borda);
+    overflow: hidden;
+}
+
+.file-preview img {
+    width: 100%;
+    border-radius: inherit;
 }
 
 .error {

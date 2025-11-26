@@ -1,28 +1,30 @@
+import { Component, inject } from '@angular/core';
+import { PopupService } from '../../Services/popup.service';
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-popup',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule], 
   templateUrl: './popup.component.html',
   styleUrl: './popup.component.css'
-}) 
-export class PopupComponent implements OnInit{
-  closing  = false;
-  @Input() message: string = ''
-  @Output() close = new EventEmitter<void>();
+})
+export class PopupComponent {
 
-  ngOnInit() {
-    setTimeout(() => this.closePopup(),4500);
+  popup = inject(PopupService);
+
+  get message() {
+    return this.popup.message();
   }
 
-  closePopup(){
-    this.closing = true;
+  get closing() {
+    return this.popup.closing();
   }
 
-  onAnimationEnd(){
-    if(this.closing ){
-    this.close.emit()
+  onAnimationEnd() {
+    if (this.closing) {
+      this.popup.message.set(null);
+      this.popup.closing.set(false);
     }
   }
 }

@@ -13,7 +13,8 @@
   flex-direction: column;
   justify-content: space-evenly;
   border-right: 1px solid var(--borda);
-  box-shadow: 2px 0 6px var(--shadow);
+  box-shadow: 2px 6px 6px var(--shadow);
+  transition: background 0.25s ease, border-color 0.25s ease;
 }
 
 .menu h3 {
@@ -22,7 +23,6 @@
   color: var(--letra);
   letter-spacing: 0.5px;
   align-self: center;
-  align-items: flex-start;
 }
 
 .menu ul {
@@ -61,7 +61,7 @@
   gap: 0.6rem;
   padding: 0.6rem 1rem;
   background-color: var(--rosa-primario);
-  color: var(--branco);
+  color: white;
   border: none;
   border-radius: 8px;
   font-size: 0.95rem;
@@ -81,7 +81,36 @@
 }
 
 :root.dark-theme .btn-logout {
-  background-color: var(--botoes, var(--rosa-primario));
-  color: var(--letra);
-  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.04);
+  background-color: var(--rosa-primario);
+  color: white !important;
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 900px) {
+  .menu {
+    position: relative;
+    width: 100vw !important;
+    height: auto !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; 
+    border-bottom: 1px solid var(--borda);
+    border-right: none !important; 
+    padding: 16px 12px;
+  }
+  .menu ul {
+    width: 100%;
+    align-items: center;
+  }
+
+  .menu li {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-logout {
+    width: 80%;
+    justify-content: center;
+  }
 }

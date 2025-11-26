@@ -4,61 +4,80 @@ import { Router, RouterModule } from '@angular/router';
 import { UserService } from '../../Services/user.service';
 import { AuthService } from '../../Services/auth.service';
 import { UpdateUser } from '../../models/UpdateUser';
+import { PopupService } from '../../Services/popup.service'; 
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-edit-profile',
-  imports: [RouterModule,FormsModule, ReactiveFormsModule],
+  imports: [RouterModule, FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './edit-profile.component.html',
   styleUrl: './edit-profile.component.css'
 })
 export class EditProfileComponent implements OnInit {
-  UpdateForm!: FormGroup;
-  userService= inject(UserService)
-  authService = inject(AuthService);
-  selectedFile: File | null = null;
-  route = inject(Router)
-ngOnInit(): void {
 
-  var userEmail = this.authService.GetUserFromJwtToken().email;
-  this.userService.GetUsersByEmail(userEmail).subscribe({
-    next: res =>{
+  UpdateForm!: FormGroup;
+  userService = inject(UserService);
+  authService = inject(AuthService);
+  popupService = inject(PopupService);   
+  selectedFile: File | null = null;
+  previewImage: string | null = null;  
+  route = inject(Router);
+
+  ngOnInit(): void {
+    const userEmail = this.authService.GetUserFromJwtToken().email;
+
+    this.userService.GetUsersByEmail(userEmail).subscribe({
+      next: res => {
         this.UpdateForm = new FormGroup({
           name: new FormControl(res.name),
           email: new FormControl(res.email),
           description: new FormControl(res.description),
           password: new FormControl(res.password),
-          
-        })
+        });
+
+        this.previewImage = res.profileImgPath;
+      }
+    });
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.previewImage = e.target.result;
+      };
+      reader.readAsDataURL(this.selectedFile);
     }
-  });
-}
-onFileSelected(event: Event) {
-  const input = event.target as HTMLInputElement;
-  if (input.files && input.files.length > 0) {
-    this.selectedFile = input.files[0];
   }
-}
-  Update(): void{
 
-      var userEmail = this.authService.GetUserFromJwtToken().email;
-      this.userService.GetUsersByEmail(userEmail).subscribe({
-        next: res =>{
-          const updateUser : UpdateUser ={
-            id: res.id,
-            name : this.UpdateForm.get("name")?.value,
-            email : this.UpdateForm.get("email")?.value,
-            description: this.UpdateForm.get("description")?.value,
-            password : this.UpdateForm.get("password")?.value,
-            profileImg : this.selectedFile,
+  Update(): void {
+    const userEmail = this.authService.GetUserFromJwtToken().email;
+
+    this.userService.GetUsersByEmail(userEmail).subscribe({
+      next: res => {
+        const updateUser: UpdateUser = {
+          id: res.id,
+          name: this.UpdateForm.get("name")?.value,
+          email: this.UpdateForm.get("email")?.value,
+          description: this.UpdateForm.get("description")?.value,
+          password: this.UpdateForm.get("password")?.value,
+          profileImg: this.selectedFile,
+        };
+
+        this.userService.UpdateUser(updateUser).subscribe({
+          next: () => {
+            this.popupService.show("Perfil atualizado com sucesso!");
+            this.authService.RefreshSession(); 
+            setTimeout(() => {
+              this.route.navigate(["/Profile"]);
+            }, 600);
           }
-              console.log(updateUser)
-        this.userService.UpdateUser(updateUser).subscribe();
-        this.route.navigate(["/Profile"]);
-        }
-      });
-
-
-
+        });
+      }
+    });
   }
-  }
+}

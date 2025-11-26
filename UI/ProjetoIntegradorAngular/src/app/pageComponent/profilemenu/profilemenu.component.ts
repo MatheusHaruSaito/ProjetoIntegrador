@@ -6,6 +6,7 @@ import { UserService } from '../../Services/user.service';
 import { AuthService } from '../../Services/auth.service';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { PopupService } from '../../Services/popup.service';
 
 @Component({
   selector: 'app-profilemenu',
@@ -22,6 +23,7 @@ export class ProfilemenuComponent implements OnInit {
   userService = inject(UserService);
   postService = inject(UserPostService);
   router = inject(Router);
+  popup = inject(PopupService);
 
   ngOnInit(): void {
     this.loggedUser = this.authService.GetUserFromJwtToken();
@@ -47,6 +49,7 @@ export class ProfilemenuComponent implements OnInit {
 
   logout(): void {
     this.authService.Logout();
+    this.popup.show("Você saiu da sua conta."); 
     this.router.navigate(['/Login']);
   }
 

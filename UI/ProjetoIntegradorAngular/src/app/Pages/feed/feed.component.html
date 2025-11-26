@@ -25,7 +25,7 @@
 
         <div class="user-info">
           <h3>{{ post.userName }}</h3>
-          <p class="post-date">{{ post.createdAt | date:'short' }}</p>
+          <p class="post-date">{{ post.createdAt | date:'short'}}</p>
         </div>
       </div>
 
@@ -78,11 +78,17 @@
         <label class="form-label">Descrição</label>
         <textarea [(ngModel)]="createDescription" rows="5" class="form-input" placeholder="Escreva algo..."></textarea>
 
-        <label class="form-label">Imagem (opcional)</label>
-        <input type="file" accept="image/*" (change)="onCreateFileChange($event)">
+        <div class="file-upload-wrapper">
+          <label for="createFile" class="file-upload-label">
+            <i class="fas fa-image"></i>
+            Selecionar imagem
+          </label>
+          <input id="createFile" type="file" accept="image/*" class="file-upload-input"
+            (change)="onCreateFileChange($event)" />
 
-        <div class="image-preview" *ngIf="createImagePreview">
-          <img [src]="createImagePreview" alt="Preview">
+          <div class="file-preview" *ngIf="createImagePreview">
+            <img [src]="createImagePreview" alt="Preview">
+          </div>
         </div>
 
         <div class="create-actions">
@@ -109,9 +115,7 @@
       <div class="modal-body-vertical">
 
         <div class="modal-author">
-          <img
-            [src]="selectedPost.profileImgPath || 'images/user-placeholder.png'"
-            class="modal-avatar">
+          <img [src]="selectedPost.profileImgPath || 'images/user-placeholder.png'" class="modal-avatar">
           <div>
             <div class="modal-author-name">{{ selectedPost.userName }}</div>
             <div class="modal-dates">
@@ -122,24 +126,17 @@
 
         <h3 class="modal-title">{{ selectedPost.title }}</h3>
 
-        <img
-          *ngIf="selectedPost.postImgPath"
-          [src]="selectedPost.postImgPath"
-          class="modal-image-vertical">
+        <img *ngIf="selectedPost.postImgPath" [src]="selectedPost.postImgPath" class="modal-image-vertical">
 
         <p class="modal-description-long">{{ selectedPost.description }}</p>
 
-        <div class="modal-footer">
+        <div class="modal-vote-box">
           <button class="vote-btn" (click)="Vote(selectedPost.id); $event.stopPropagation()">
             <i class="fas fa-arrow-up"></i>
           </button>
           <span class="vote-count">{{ selectedPost.votes }}</span>
         </div>
 
-
-        <!-- ======================= -->
-        <!--   ÁREA DE COMENTÁRIOS   -->
-        <!-- ======================= -->
         <div class="comments-section">
 
           <h3 class="comments-header">Comentários ({{ currentComments.length }})</h3>
@@ -147,9 +144,7 @@
           <div class="comments-list">
             <div class="comment-item" *ngFor="let c of currentComments">
 
-              <img
-                [src]="c.userProfileImgPath || 'images/user-placeholder.png'"
-                class="comment-avatar">
+              <img [src]="c.userProfileImgPath || 'images/user-placeholder.png'" class="comment-avatar">
 
               <div class="comment-body">
                 <div class="comment-meta">
@@ -169,10 +164,7 @@
             </div>
           </div>
 
-          <textarea
-            [(ngModel)]="newCommentText"
-            class="comment-input"
-            rows="3"
+          <textarea [(ngModel)]="newCommentText" class="comment-input" rows="3"
             placeholder="Escreva algo..."></textarea>
 
           <button class="btn-publish" (click)="sendComment()">Comentar</button>

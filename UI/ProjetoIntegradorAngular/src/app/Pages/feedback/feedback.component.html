@@ -16,13 +16,15 @@
         <input type="text" id="sobre" placeholder="Qual é o assunto do feedback?" formControlName="subject" />
 
         <label for="assunto">Mensagem</label>
-        <textarea id="assunto" placeholder="Descreva seu feedback com detalhes..." formControlName="body" rows="1"
+        <textarea id="assunto"
+          placeholder="Descreva seu feedback com detalhes..."
+          formControlName="body"
+          rows="1"
           oninput="this.style.height='auto'; this.style.height=this.scrollHeight + 'px'"></textarea>
+
         <button type="submit" id="btnEnviar">Enviar Feedback</button>
       </form>
     </div>
 
-    <app-popup *ngIf="popupAberto" [message]="'Email Enviado!'" (close)="popupAberto = false">
-    </app-popup>
   </main>
 </div>

@@ -10,6 +10,7 @@ import { UserService } from '../../Services/user.service';
 import { PostComment } from '../../models/PostComment';
 import { CreateComment } from '../../models/CreateComment';
 import { CreateCommentVoteRequest } from '../../models/CreateCommentVoteRequest';
+import { PopupService } from '../../Services/popup.service';
 
 @Component({
   selector: 'app-feed',
@@ -22,6 +23,7 @@ export class FeedComponent implements OnInit {
   // ==== Usuário logado ====
   userService = inject(UserService);
   authService = inject(AuthService);
+  popup = inject(PopupService);
   UserLogged: any = null;
 
   // ==== Posts ====
@@ -109,10 +111,6 @@ export class FeedComponent implements OnInit {
     });
   }
 
-  // ========================
-  //      COMENTÁRIOS
-  // ========================
-
   sendComment() {
     if (!this.UserLogged || !this.selectedPost || !this.newCommentText.trim()) return;
 
@@ -154,9 +152,6 @@ export class FeedComponent implements OnInit {
     });
   }
 
-  // ========================
-  //  Modal de criação
-  // ========================
 
   openCreateModal() {
     this.createModalOpen = true;

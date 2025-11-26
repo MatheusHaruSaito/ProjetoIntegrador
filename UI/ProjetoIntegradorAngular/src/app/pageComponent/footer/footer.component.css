@@ -1,18 +1,40 @@
 footer {
-    background-color: #333333;
-    color: white;
-    padding: 2rem 0;
+    background: var(--cinza-menu);         /* antes #333 */
+    color: var(--texto);                   /* antes white */
+    padding: 1.8rem 0;
     text-align: center;
+    border-top: 1px solid var(--borda);
+    box-shadow: 0 -4px 12px var(--shadow);
+    transition: background 0.25s ease, color 0.25s ease;
 }
 
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 1.5rem 0;
+footer .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.footer-links a {
-    color: white;
-    text-decoration: none;
+footer p {
+    margin: 4px 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cinza-texto);
+}
+
+/* “UNOLINK” maior e com peso */
+footer p:first-child {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--letra);
+    letter-spacing: 0.5px;
+}
+
+/* Ajuste especial para o dark-theme */
+:root.dark-theme footer {
+    background: var(--cinza-menu);
+    color: var(--texto);
+}
+
+:root.dark-theme footer p:first-child {
+    color: var(--texto);
 }

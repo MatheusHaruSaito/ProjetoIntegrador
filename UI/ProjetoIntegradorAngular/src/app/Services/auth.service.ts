@@ -4,11 +4,18 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { LoginUser } from '../models/LoginUser';
 import { jwtDecode } from "jwt-decode";
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly JWT_Token= "JWT_TOKEN"
+  private userSubject = new BehaviorSubject<any>(null);
+  user$ = this.userSubject.asObservable();
+  RefreshSession() {
+    const updatedUser = this.GetUserFromJwtToken();
+    localStorage.setItem("UserLogged", JSON.stringify(updatedUser));
+  }
+  private readonly JWT_Token = "JWT_TOKEN"
   private loggedUser?: string;
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   private readonly ApiUrl = environment.ApiUrlAuth;
@@ -17,39 +24,40 @@ export class AuthService {
 
   LogIn(user: LoginUser): Observable<any> {
     return this.http.post(this.ApiUrl, user).pipe(
-      tap(res => this.doLoginUser(user.email,res))
+      tap(res => this.doLoginUser(user.email, res))
     );
   }
 
-  private doLoginUser(email: string, tokens:any){
+  private doLoginUser(email: string, tokens: any) {
     this.loggedUser = email;
     this.storeJwtToken(tokens.token);
     this.isAuthenticatedSubject.next(true);
   }
-  private storeJwtToken(jwt:string){
-    localStorage.setItem(this.JWT_Token,jwt);
+  private storeJwtToken(jwt: string) {
+    localStorage.setItem(this.JWT_Token, jwt);
   }
   private getJwtToken(): string | null {
-  if (typeof window !== 'undefined' && window.localStorage) {
-    return localStorage.getItem('JWT_TOKEN');
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return localStorage.getItem('JWT_TOKEN');
+    }
+    return null;
   }
-  return null;
-}
-  Logout():void{
+
+  Logout(): void {
     localStorage.removeItem(this.JWT_Token);
     this.isAuthenticatedSubject.next(false);
   }
-  GetUserFromJwtToken(){
-     var token = this.getJwtToken()!
+  GetUserFromJwtToken() {
+    var token = this.getJwtToken()!
     var decodedToken: any = jwtDecode(token)
-    const userDetail ={
+    const userDetail = {
       id: decodedToken.nameid,
       email: decodedToken.email,
       name: decodedToken.unique_name,
     }
     return userDetail;
   }
-  isLoggedIn(): Observable<boolean>{
+  isLoggedIn(): Observable<boolean> {
     this.isAuthenticatedSubject.next(!!this.getJwtToken())
     return this.isAuthenticatedSubject.asObservable()
   }

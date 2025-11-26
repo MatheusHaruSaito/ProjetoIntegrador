@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from "./pageComponent/navbar/navbar.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from "./pageComponent/footer/footer.component";
+import { PopupComponent } from './pageComponent/popup/popup.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, ReactiveFormsModule, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, ReactiveFormsModule, FooterComponent,PopupComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
