@@ -123,7 +123,6 @@
     margin-top: 0.2rem;
 }
 
-/* Depoimentos */
 .testimonials {
     padding: 4rem 0;
     background-color: var(--cinza-claro);
@@ -181,7 +180,6 @@
     color: var(--cinza-texto);
 }
 
-/* FAQ */
 .faq {
     padding: 4rem 0;
     background-color: var(--branco);
@@ -215,7 +213,6 @@
     line-height: 1.6;
 }
 
-/* Chamada Final */
 .final-cta {
     padding: 4rem 0;
     background-color: var(--rosa-claro);
@@ -230,7 +227,6 @@
     flex-wrap: wrap;
 }
 
-/* BOTÃO PADRÃO UNOLINK */
 .primary-button {
     display: inline-flex;
     align-items: center;
@@ -238,24 +234,23 @@
     padding: 12px 26px;
     background-color: var(--rosa-primario);
     color: white;
-    border-radius: 10px;                /* ← igual aos outros botões */
+    border-radius: 10px;
     font-weight: 600;
     border: 2px solid var(--rosa-primario);
     cursor: pointer;
     text-decoration: none;
     font-size: 1rem;
-    box-shadow: 0 4px 12px var(--shadow); /* ← igual aos outros */
+    box-shadow: 0 4px 12px var(--shadow);
     transition: 0.25s ease;
-    gap: 8px;  /* se quiser colocar ícone no futuro */
+    gap: 8px;
 }
 
 .primary-button:hover {
-    background-color: var(--rosa);      /* padrão dos outros */
+    background-color: var(--rosa);
     border-color: var(--rosa);
-    transform: translateY(-2px);        /* mesmo hover */
+    transform: translateY(-2px);
 }
 
-/* DARK MODE */
 :root.dark-theme .primary-button {
     background-color: var(--rosa);
     border-color: var(--rosa);

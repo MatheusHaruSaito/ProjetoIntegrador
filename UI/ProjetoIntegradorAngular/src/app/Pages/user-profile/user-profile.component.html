@@ -1,62 +1,47 @@
 <div class="profile-container">
-
-  <app-profilemenu></app-profilemenu>
-
   <main class="profile">
 
     <!-- ==== CARD DO USUÁRIO ==== -->
     <section class="profile-card">
       <div class="photo">
-        <img id="ProfileImage" src="/images/user-placeholder.png" alt="Foto de Perfil">
+        <img [src]="user?.profileImgPath || 'images/user-placeholder.png'" alt="Foto de Perfil">
       </div>
 
       <div class="info">
-        <h2>{{ User.name }}</h2>
-        <p class="bio">{{ User.description || 'Sem descrição adicionada.' }}</p>
-      </div>
-
-      <div class="profile-buttons">
-        <button [routerLink]="['/EditProfile']" class="btn-profile editProfile">
-          <i class="fa-solid fa-pen"></i> Editar Perfil
-        </button>
-
-        <button [routerLink]="['/Feedback']" class="btn-profile btnFeedback">
-          <i class="fa-solid fa-comments"></i> Enviar feedback
-        </button>
+        <h2>{{ user?.name }}</h2>
+        <p class="bio">{{ user?.description || 'Este usuário ainda não escreveu uma biografia.' }}</p>
       </div>
     </section>
 
     <!-- ==== POSTS DO USUÁRIO ==== -->
-    <section class="user-posts" *ngIf="UserPosts?.length">
-      <h3>Suas publicações</h3>
+    <section class="user-posts" *ngIf="userPosts?.length">
+      <h3>Publicações</h3>
 
       <div class="posts-grid">
-        @for (post of UserPosts; track $index) {
-
-        <div class="user-post-card" (click)="openModal(post.id)">
+        <div class="user-post-card" *ngFor="let post of userPosts" (click)="openPostModal(post.id)">
 
           <h4 class="user-post-title">{{ post.title }}</h4>
 
           <div class="user-post-thumb-wrapper" *ngIf="post.postImgPath">
-
             <img [src]="post.postImgPath" class="user-post-thumb-blur" alt="blur">
-
             <img [src]="post.postImgPath" class="user-post-thumb" alt="Miniatura">
-
           </div>
 
           <p class="user-post-excerpt">{{ post.description }}</p>
 
         </div>
-
-        }
       </div>
+    </section>
+
+    <section class="user-posts" *ngIf="!userPosts?.length">
+      <h3>Publicações</h3>
+      <p>Este usuário ainda não possui publicações.</p>
     </section>
 
   </main>
 </div>
 
-    <!-- ==== MODAL ==== -->
+<!-- ==== MODAL DO POST ==== -->
 <div class="modal-overlay" *ngIf="selectedPost" (click)="onOverlayClick($event)">
   <div class="modal-window" (click)="$event.stopPropagation()">
 
@@ -65,8 +50,9 @@
     <div class="modal-body-vertical">
 
       <div class="modal-author">
-        <img [src]="selectedPost.profileImgPath || 'images/user-placeholder.png'" class="modal-avatar" alt="Avatar">
-        <div>
+        <img [src]="selectedPost.profileImgPath || 'images/user-placeholder.png'" class="modal-avatar" alt="Avatar"
+             (click)="navigateToUserProfile(selectedPost.userId, $event)" style="cursor:pointer">
+        <div (click)="navigateToUserProfile(selectedPost.userId, $event)" style="cursor:pointer">
           <div class="modal-author-name">{{ selectedPost.userName }}</div>
           <div class="modal-dates">Criado: {{ selectedPost.createdAt | date:'short' }}</div>
         </div>
@@ -75,11 +61,8 @@
       <h3 class="modal-title">{{ selectedPost.title }}</h3>
 
       <div class="modal-image-wrapper" *ngIf="selectedPost.postImgPath">
-
         <img [src]="selectedPost.postImgPath" class="modal-image-blur" alt="bg">
-
         <img [src]="selectedPost.postImgPath" class="modal-image-vertical" alt="Imagem">
-
       </div>
 
       <p class="modal-description-long">{{ selectedPost.description }}</p>
@@ -92,18 +75,17 @@
       </div>
 
       <div class="comments-section">
-
         <h3 class="comments-header">Comentários ({{ currentComments.length }})</h3>
 
         <div class="comments-list">
           <div class="comment-item" *ngFor="let c of currentComments">
 
             <img [src]="c.userProfileImgPath || 'images/user-placeholder.png'" class="comment-avatar"
-              [routerLink]="['/UserProfile', c.userId]" style="cursor:pointer">
+                 (click)="navigateToUserProfile(c.userId, $event)" style="cursor:pointer">
 
             <div class="comment-body">
               <div class="comment-meta">
-                <strong>{{ c.userUsername }}</strong>
+                <strong (click)="navigateToUserProfile(c.userId, $event)" style="cursor:pointer">{{ c.userUsername }}</strong>
                 <span>{{ c.createdAt | date:'short' }}</span>
               </div>
 
@@ -120,9 +102,14 @@
           </div>
         </div>
 
-        <textarea [(ngModel)]="newCommentText" class="comment-input" rows="3" placeholder="Escreva algo..."></textarea>
-
-        <button class="btn-publish" (click)="sendComment()">Comentar</button>
+        <div *ngIf="loggedUser">
+          <textarea [(ngModel)]="newCommentText" class="comment-input" rows="3" placeholder="Escreva algo..."></textarea>
+          <button class="btn-publish" (click)="sendComment()">Comentar</button>
+        </div>
+        
+        <div *ngIf="!loggedUser" class="login-prompt">
+          <p>Faça login para comentar</p>
+        </div>
 
       </div>
 

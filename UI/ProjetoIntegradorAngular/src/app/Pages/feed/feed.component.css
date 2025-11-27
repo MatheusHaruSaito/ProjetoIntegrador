@@ -54,6 +54,101 @@
   color: var(--cinza-texto);
 }
 
+.search-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--letra);
+  margin-bottom: 10px;
+}
+
+.no-result {
+  font-size: 1rem;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+  background: var(--cinza-menu);
+  color: var(--texto);
+  margin-bottom: 12px;
+}
+
+
+:root.dark-theme .search-title {
+  color: var(--branco) !important; 
+}
+
+:root.dark-theme .no-result {
+  background: var(--menu-ativado);
+  color: var(--texto) !important;   
+  border: 1px solid var(--borda);
+}
+
+/* ==== SEARCH USER CARD ==== */
+
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.22s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--rosa-primario);
+  box-shadow: 0 6px 14px rgba(255, 56, 126, 0.15);
+}
+
+.user-card-avatar {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rosa-primario);
+}
+
+.user-card-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--letra);
+  margin: 0;
+}
+
+.user-card-username {
+  font-size: 0.9rem;
+  color: var(--cinza-texto);
+  margin-top: 2px;
+}
+
+/* ==== DARK MODE ==== */
+
+:root.dark-theme .user-card {
+  background: var(--menu-ativado);
+  border-color: var(--borda);
+}
+
+:root.dark-theme .user-card-name {
+  color: var(--branco);
+}
+
+:root.dark-theme .search-title{
+  color: var(--branco);
+}
+
+:root.dark-theme .user-card-username {
+  color: var(--texto);
+}
 
 /* ==== CARD DE CRIAÇÃO ==== */
 .create-card {
@@ -354,7 +449,6 @@
   overflow: hidden;
   margin-top: 0.5rem;
   background: black;
-  /* melanoma contra brilho forte */
 }
 
 .modal-image-blur {

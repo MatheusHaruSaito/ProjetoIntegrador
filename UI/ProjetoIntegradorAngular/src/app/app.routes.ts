@@ -27,5 +27,6 @@ export const routes: Routes = [
     {path:'HowToHelp', component: HowToHelpComponent},
     {path:'ONGSList', component: ONGsListComponent},
     {path:'EditProfile', component: EditProfileComponent},
-    {path:'Feed', component: FeedComponent}
+    {path:'Feed', component: FeedComponent},
+    { path:'UserProfile/:id', loadComponent: () => import('./Pages/user-profile/user-profile.component').then(m => m.UserProfileComponent) }
 ];
