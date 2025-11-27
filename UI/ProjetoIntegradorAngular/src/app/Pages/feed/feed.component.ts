@@ -11,10 +11,13 @@ import { PostComment } from '../../models/PostComment';
 import { CreateComment } from '../../models/CreateComment';
 import { CreateCommentVoteRequest } from '../../models/CreateCommentVoteRequest';
 import { PopupService } from '../../Services/popup.service';
+import { SearchService } from '../../Services/search.service';
+import { SearchTypeEnum } from '../../models/SearchTypeEnum';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './feed.component.html',
   styleUrl: './feed.component.css'
 })
@@ -44,6 +47,14 @@ export class FeedComponent implements OnInit {
   creating = false;
   createError: string | null = null;
 
+  searchService = inject(SearchService);
+  searchQuery: string = "";
+  searching: boolean = false;
+  searchResults: any = null;
+  isSearching: boolean = false;
+
+
+
   ngOnInit(): void {
     this.loadPosts();
     this.loadLoggedUser();
@@ -70,6 +81,31 @@ export class FeedComponent implements OnInit {
       next: res => this.posts = res
     });
   }
+
+  search() {
+    const q = this.searchQuery.trim();
+    if (q.length === 0) {
+      this.isSearching = false;
+      this.searchResults = null;
+      return;
+    }
+    this.isSearching = true;
+    this.searchService.Search(q).subscribe({
+      next: (res) => {
+        this.searchResults = {
+          user: res.user || [],
+          posts: res.posts || []
+        };
+      },
+      error: () => {
+        this.searchResults = {
+          user: [],
+          posts: []
+        };
+      }
+    });
+  }
+
 
   openModal(id: string) {
     this.postService.GetById(id).subscribe({
