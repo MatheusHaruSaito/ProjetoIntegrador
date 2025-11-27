@@ -11,33 +11,33 @@ import { User } from '../../../models/user';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent implements OnInit {
-  users: User[]= []
-  Allusers: User[]=[]
-  constructor(private UserService : UserService) {}
-ngOnInit(): void {
-  this.UserService.GetUsers().subscribe(response => {
-    this.Allusers = response.filter(user => {
-      const isAdmin = user.role.some(r => r.toLowerCase() === 'admin');
-      return !isAdmin;
+  users: User[] = []
+  Allusers: User[] = []
+  constructor(private UserService: UserService) { }
+  ngOnInit(): void {
+    this.UserService.GetUsers().subscribe(response => {
+      this.Allusers = response.filter(user => {
+        const isAdmin = user.role.some(r => r.toLowerCase() === 'admin');
+        return !isAdmin;
+      });
+      this.users = [...this.Allusers];
     });
-    this.users = [...this.Allusers];
-  });
-}
-  TriggerUserActive(id:string) :void{
+  }
+  TriggerUserActive(id: string): void {
     console.log(id);
 
-    this.UserService.TriggerUserActive(id).subscribe(response =>{
+    this.UserService.TriggerUserActive(id).subscribe(response => {
       window.location.reload();
 
     })
   }
-  Search(event: Event){
+  Search(event: Event) {
     const target = event.target as HTMLInputElement;
     const value = target.value.toLowerCase();
     console.log(value);
-    this.users = this.Allusers.filter(user =>{
-      return user.name.toLowerCase().includes(value)||
-              user.role.includes(value)
+    this.users = this.Allusers.filter(user => {
+      return user.name.toLowerCase().includes(value) ||
+        user.role.includes(value)
     })
   }
 

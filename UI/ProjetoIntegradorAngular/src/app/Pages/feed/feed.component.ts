@@ -13,7 +13,7 @@ import { CreateCommentVoteRequest } from '../../models/CreateCommentVoteRequest'
 import { PopupService } from '../../Services/popup.service';
 import { SearchService } from '../../Services/search.service';
 import { SearchTypeEnum } from '../../models/SearchTypeEnum';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -28,6 +28,7 @@ export class FeedComponent implements OnInit {
   authService = inject(AuthService);
   popup = inject(PopupService);
   UserLogged: any = null;
+  router = inject(Router);
 
   // ==== Posts ====
   postService = inject(UserPostService);
@@ -52,8 +53,6 @@ export class FeedComponent implements OnInit {
   searching: boolean = false;
   searchResults: any = null;
   isSearching: boolean = false;
-
-
 
   ngOnInit(): void {
     this.loadPosts();
@@ -106,6 +105,9 @@ export class FeedComponent implements OnInit {
     });
   }
 
+  goToUser(id: string) {
+    this.router.navigate(['/UserProfile', id]);
+  }
 
   openModal(id: string) {
     this.postService.GetById(id).subscribe({

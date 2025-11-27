@@ -9,7 +9,6 @@
   cursor: pointer;
 }
 
-/* Botões da seção hero */
 .btn-outline {
   border: 2px solid var(--rosa-primario);
   color: var(--rosa-primario);
@@ -21,7 +20,6 @@
   transform: translateY(-2px);
 }
 
-/* Botões de login/cadastro */
 .auth-buttons {
   display: flex;
   gap: 1rem;
@@ -58,7 +56,7 @@
   transform: translateY(-2px);
 }
 
-/* ==================== SEÇÃO HERO ==================== */
+/* ==== SEÇÃO HERO ==== */
 .hero {
   min-height: 80vh;
   display: flex;
@@ -96,7 +94,7 @@
   flex-wrap: wrap;
 }
 
-/* ==================== SEÇÃO VALORES ==================== */
+/* ==== SEÇÃO VALORES ==== */
 .values {
   background-color: var(--cinza-menu);
   padding: 5rem 0;
@@ -155,7 +153,7 @@
 }
 
 
-/* ==================== ONGS ==================== */
+/* ==== ONGS ==== */
 .ongs-section {
   background-color: var(--branco);
   padding: 4rem 0;
@@ -206,7 +204,7 @@
   line-height: 1.5;
 }
 
-/* ==================== CHAMADA PARA AÇÃO ==================== */
+/* ==== CHAMADA PARA AÇÃO ==== */
 .cta {
   padding: 4rem 0;
   background-color: var(--branco);
@@ -232,27 +230,7 @@
   transform: translateY(-2px);
 }
 
-/* ==================== RODAPÉ ==================== */
-footer {
-  background-color: #333333;
-  color: white;
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 1.5rem 0;
-}
-
-.footer-links a {
-  color: white;
-  text-decoration: none;
-}
-
-/* ==================== RESPONSIVIDADE (melhora isso aqui depois) ==================== */
+/* ==== RESPONSIVIDADE ====*/
 @media (max-width: 768px) {
   .hero-content {
     padding: 0 1rem;

@@ -8,7 +8,6 @@
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-
 /* ==== PERFIL PRINCIPAL ==== */
 .profile {
   flex: 1;
@@ -22,7 +21,7 @@
 /* ==== CARD DO PERFIL ==== */
 .profile-card {
   display: grid;
-  grid-template-columns: 140px 1fr auto;
+  grid-template-columns: 140px 1fr;
   align-items: center;
   background: var(--branco);
   border-radius: 12px;
@@ -67,65 +66,7 @@
   overflow-wrap: break-word;
 }
 
-.notification {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--letra);
-}
-
-.profile-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  justify-self: end;
-}
-
-.btn-profile {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.7rem 1.3rem;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-  background: var(--rosa-primario);
-  color: var(--branco);
-  font-size: 0.95rem;
-  box-shadow: 0 3px 8px var(--shadow);
-  transition: transform 0.22s ease, background 0.25s ease;
-}
-
-.btn-profile i {
-  font-size: 1rem;
-}
-
-.btn-profile:hover {
-  background: var(--hover);
-  transform: translateY(-3px);
-}
-
-.editProfile {
-  background: var(--rosa-primario);
-  color: white;
-
-}
-
-.btnFeedback {
-  background: var(--rosa-primario);
-  color: white;
-}
-
-:root.dark-theme .btn-profile {
-  color: #ffffff;
-  background: var(--rosa-primario);
-}
-
-:root.dark-theme .btn-profile:hover {
-  background: var(--rosa-secundario);
-}
-
+/* ==== POSTS DO USUÁRIO ==== */
 .user-posts h3 {
   font-size: 1.2rem;
   color: var(--rosa-primario);
@@ -203,33 +144,6 @@
   object-fit: contain;
   padding: 6px;
   z-index: 2;
-}
-
-:root.dark-theme .profile-container {
-  background: var(--cinza-menu);
-}
-
-:root.dark-theme .menu {
-  background-color: var(--menu-ativado);
-  border-right-color: var(--borda);
-  box-shadow: 2px 0 6px rgba(255, 255, 255, 0.03);
-}
-
-:root.dark-theme .profile-card,
-:root.dark-theme .user-post-card {
-  background: var(--branco);
-  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.03);
-  border-color: var(--borda);
-}
-
-:root.dark-theme .info h2,
-:root.dark-theme .user-post-card .user-post-title {
-  color: var(--letra);
-}
-
-:root.dark-theme .bio,
-:root.dark-theme .user-post-card .user-post-excerpt {
-  color: var(--cinza-texto);
 }
 
 /* ==== MODAL ==== */
@@ -350,53 +264,6 @@
   overflow: hidden;
 }
 
-.modal-description {
-  color: var(--texto);
-  line-height: 1.6;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  white-space: pre-wrap;
-  max-height: 60vh;
-  overflow-y: auto;
-  padding-right: 6px;
-}
-
-.modal-footer {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-top: 1px solid var(--borda);
-  padding-top: 10px;
-  margin-top: 6px;
-}
-
-.vote-section {
-  display: flex !important;
-  align-items: center !important;
-  gap: 8px !important;
-}
-
-
-.vote-btn {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  cursor: pointer;
-  color: var(--cinza-texto);
-  transition: 0.2s;
-}
-
-.vote-btn:hover {
-  color: var(--rosa-primario);
-  transform: scale(1.15);
-}
-
-.vote-count {
-  font-weight: 600;
-  color: var(--letra);
-  font-size: 1rem;
-}
-
 .modal-vote-box {
   display: flex;
   align-items: center;
@@ -410,14 +277,17 @@
 }
 
 .modal-vote-box .vote-btn {
+  background: none;
+  border: none;
   font-size: 1.4rem;
+  cursor: pointer;
   color: var(--texto);
   transition: 0.2s ease;
 }
 
 .modal-vote-box .vote-btn:hover {
   transform: scale(1.2);
-  color: var(--rosa);
+  color: var(--rosa-primario);
 }
 
 .modal-vote-box .vote-count {
@@ -426,23 +296,7 @@
   color: var(--letra);
 }
 
-:root.dark-theme .modal-vote-box {
-  background: var(--menu-ativado);
-}
-
-:root.dark-theme .vote-count {
-  color: var(--texto);
-}
-
-:root.dark-theme .vote-btn {
-  color: var(--cinza-texto);
-}
-
-.comment-count {
-  color: var(--letra) !important;
-}
-
-/*  ==== COMENTÁRIOS ==== */
+/* ==== COMENTÁRIOS ==== */
 .comments-section {
   margin-top: 18px;
   padding-top: 12px;
@@ -466,12 +320,6 @@
   max-height: 250px;
   overflow-y: auto;
   padding-right: 4px;
-}
-
-.comment-text {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  word-break: break-word;
 }
 
 .comment-item {
@@ -509,6 +357,9 @@
 .comment-text {
   margin-top: 4px;
   color: var(--texto);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
 }
 
 .comment-vote {
@@ -516,6 +367,20 @@
   flex-direction: column;
   gap: 4px;
   align-items: center;
+}
+
+.comment-vote .vote-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--cinza-texto);
+  transition: 0.2s;
+}
+
+.comment-vote .vote-btn:hover {
+  color: var(--rosa-primario);
+  transform: scale(1.15);
 }
 
 .comment-votes {
@@ -531,29 +396,109 @@
   border-radius: 10px;
   resize: none;
   color: var(--texto);
+  margin-bottom: 8px; 
 }
 
 .btn-publish {
   align-self: flex-end;
-  padding: 8px 16px;
+  padding: 10px 20px; 
   background: var(--rosa-primario);
   color: white;
   border-radius: 8px;
   cursor: pointer;
   border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  margin-top: 8px; 
 }
 
-:root.dark-theme .vote-count {
-  color: var(--texto) !important;
+.btn-publish:hover {
+  background: var(--rosa-secundario);
+  transform: translateY(-2px);
 }
 
-:root.dark-theme .vote-btn {
+.comments-section > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+}
+
+.login-prompt {
+  text-align: center;
+  padding: 1rem;
+  background: var(--cinza-menu);
+  border-radius: 8px;
+  border: 1px solid var(--borda);
   color: var(--texto);
+}
+
+:root.dark-theme .profile-container {
+  background: var(--cinza-menu);
+}
+
+:root.dark-theme .profile-card,
+:root.dark-theme .user-post-card {
+  background: var(--branco);
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.03);
+  border-color: var(--borda);
+}
+
+:root.dark-theme .info h2,
+:root.dark-theme .user-post-card .user-post-title {
+  color: var(--letra);
+}
+
+:root.dark-theme .bio,
+:root.dark-theme .user-post-card .user-post-excerpt {
+  color: var(--cinza-texto);
+}
+
+:root.dark-theme .modal-vote-box {
+  background: var(--menu-ativado);
+}
+
+:root.dark-theme .modal-vote-box .vote-count {
+  color: var(--texto);
+}
+
+:root.dark-theme .comment-vote .vote-btn {
+  color: var(--texto);
+}
+
+:root.dark-theme .comment-votes {
+  color: var(--texto);
+}
+
+:root.dark-theme .btn-publish {
+  background: var(--rosa-primario);
+  color: white;
+}
+
+:root.dark-theme .btn-publish:hover {
+  background: var(--rosa-secundario);
+}
+
+.modal-author {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.modal-author:hover {
+  opacity: 0.8;
+}
+
+.comment-meta strong {
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.comment-meta strong:hover {
+  color: var(--rosa-primario);
 }
 
 /* ==== RESPONSIVIDADE ==== */
 @media (max-width: 900px) {
-
   .profile-container {
     display: flex;
     flex-direction: column;
@@ -565,42 +510,16 @@
     width: 100%;
   }
 
-  .modal-body {
-    flex-direction: column;
-    padding: 12px;
-  }
-
-  .modal-left,
-  .modal-right {
-    width: 100%;
-  }
-
-  .modal-image {
-    max-height: 50vh;
-  }
-
-  .modal-avatar {
-    width: 46px;
-    height: 46px;
-  }
-
   .profile-card {
     grid-template-columns: 1fr;
     text-align: center;
-    justify-items: center; 
+    justify-items: center;
   }
 
   .photo img {
-    margin: 0 auto; 
+    margin: 0 auto;
   }
-
-  .profile-buttons {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 12px !important;
-    width: 100% !important;
-  }}
+}
 
 @media (max-width: 520px) {
   .photo img {
@@ -616,9 +535,9 @@
   .posts-grid {
     grid-template-columns: 1fr;
   }
-
-  .btn-logout {
-    width: 100%;
-    justify-content: center;
+  
+  .btn-publish {
+    padding: 8px 16px;
+    font-size: 0.9rem;
   }
 }

@@ -20,7 +20,6 @@ footer p {
     color: var(--cinza-texto);
 }
 
-/* “UNOLINK” maior e com peso */
 footer p:first-child {
     font-size: 1.25rem;
     font-weight: 800;
@@ -28,7 +27,6 @@ footer p:first-child {
     letter-spacing: 0.5px;
 }
 
-/* Ajuste especial para o dark-theme */
 :root.dark-theme footer {
     background: var(--cinza-menu);
     color: var(--texto);

@@ -23,21 +23,23 @@
 
     <h3 class="search-title">Usuários</h3>
 
-    <div *ngIf="searchResults.user.length === 0" class="no-result">
+    @if(searchResults.user.length === 0) {
+    <div class="no-result">
       Nenhum usuário encontrado.
     </div>
-
-    <div class="user-card" *ngFor="let u of searchResults.user" [routerLink]="['/UserProfile', u.id]">
-
-      <img [src]="u.profileImgPath || 'images/user-placeholder.png'" class="user-avatar-small">
+    }
+    @for (u of searchResults.user; track $index) {
+    <div class="user-card" [routerLink]="['/UserProfile', u.id]">
+      <img [src]="u.profileImgPath || 'images/user-placeholder.png'" class="user-card-avatar">
 
       <div class="user-card-info">
-        <h4>{{ u.userName }}</h4>
+        <h4 class="user-card-name">{{ u.name }}</h4>
       </div>
     </div>
+    }
+
 
     <h3 class="search-title" style="margin-top:20px;">Publicações</h3>
-
     <div *ngIf="searchResults.posts.length === 0" class="no-result">
       Nenhum post encontrado.
     </div>
@@ -47,8 +49,8 @@
 
         <div class="post-header">
           <img [src]="post.profileImgPath || 'images/user-placeholder.png'" class="user-avatar">
-          <div class="user-info">
-            <h3>{{ post.userName }}</h3>
+          <div class="user-info" [routerLink]="['/UserProfile', post.userId]" style="cursor:pointer">
+            <h3 class="clickable-user">{{ post.userName }}</h3>
             <p class="post-date">{{ post.createdAt | date:'short' }}</p>
           </div>
         </div>
@@ -88,11 +90,12 @@
       <div class="post-card" (click)="openModal(post.id)">
 
         <div class="post-header">
-          <img [src]="post.profileImgPath || 'images/user-placeholder.png'" class="user-avatar" alt="User">
+          <img [src]="post.profileImgPath || 'images/user-placeholder.png'" class="user-avatar"
+            [routerLink]="['/UserProfile', post.userId]" style="cursor:pointer">
 
-          <div class="user-info">
-            <h3>{{ post.userName }}</h3>
-            <p class="post-date">{{ post.createdAt | date:'short'}}</p>
+          <div class="user-info" [routerLink]="['/UserProfile', post.userId]" style="cursor:pointer">
+            <h3 class="clickable-user">{{ post.userName }}</h3>
+            <p class="post-date">{{ post.createdAt | date:'short' }}</p>
           </div>
         </div>
 
@@ -201,7 +204,7 @@
           <span class="vote-count">{{ selectedPost.votes }}</span>
         </div>
 
-        <!-- ================= COMENTÁRIOS ================= -->
+        <!-- ==== COMENTÁRIOS ==== -->
         <div class="comments-section">
 
           <h3 class="comments-header">Comentários ({{ currentComments.length }})</h3>
@@ -209,7 +212,8 @@
           <div class="comments-list">
             <div class="comment-item" *ngFor="let c of currentComments">
 
-              <img [src]="c.userProfileImgPath || 'images/user-placeholder.png'" class="comment-avatar">
+              <img [src]="c.userProfileImgPath || 'images/user-placeholder.png'" class="comment-avatar"
+                [routerLink]="['/UserProfile', c.userId]" style="cursor:pointer">
 
               <div class="comment-body">
                 <div class="comment-meta">
