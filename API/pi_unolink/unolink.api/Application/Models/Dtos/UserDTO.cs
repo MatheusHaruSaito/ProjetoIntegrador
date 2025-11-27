@@ -19,6 +19,7 @@ namespace unolink.api.Application.Models.Dtos
         public string Cep { get; set; }
         public bool IsActive { get; set; }
         public string CreationDate { get; set; }
+        public string UpdateDate { get; set; }
         public string ProfileImgPath { get; set; }
     }
 }

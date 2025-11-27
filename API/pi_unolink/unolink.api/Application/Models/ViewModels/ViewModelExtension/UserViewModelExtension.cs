@@ -24,6 +24,7 @@ namespace unolink.api.Application.Models.ViewModels.ViewModelExtension
                 IsActive = DTO.IsActive,
                 CreationDate = DTO.CreationDate,
                 ProfileImgPath = DTO.ProfileImgPath,
+                UpdateDate = DTO.UpdateDate
             };
         }
         public static UserProfileViewModel ToProfileViewModel(this UserDTO DTO)

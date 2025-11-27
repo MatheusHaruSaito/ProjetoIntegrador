@@ -15,6 +15,7 @@ namespace unolink.domain.Models
         [MaxLength(8)]
         public string Cep { get; private set; }
         public bool IsActive { get; set; } = true;
+        public DateTime UpdateDate { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
         [AllowNull]
         public string? ProfileImgPath { get; set; }
@@ -30,6 +31,7 @@ namespace unolink.domain.Models
             Description = description;
             Cep = cep;
             IsActive = true;
+            UpdateDate = CreatedAt;
         }
 
         public void Update( string name, string email,string description, string password, string profileImgPath)
@@ -39,12 +41,15 @@ namespace unolink.domain.Models
             Description = description;
             PasswordHash = password;
             ProfileImgPath = profileImgPath;
+            UpdateDate = DateTime.UtcNow;
         }
         public void Edit(string name, string description, string profileImgPath)
         {
             UserName = name;
             Description = description;
             ProfileImgPath = profileImgPath;
+            UpdateDate = DateTime.UtcNow;
+
         }
     }
 }

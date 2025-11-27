@@ -21,6 +21,8 @@ ngOnInit(): void {
       return !isAdmin;
     });
     this.users = [...this.Allusers];
+      console.log(this.Allusers)
+
   });
 }
   TriggerUserActive(id:string) :void{

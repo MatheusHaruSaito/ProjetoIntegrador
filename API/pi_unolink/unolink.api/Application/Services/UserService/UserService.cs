@@ -55,8 +55,11 @@ namespace unolink.api.Application.Services.UserService
                 Description = x.Description,
                 Cep = x.Cep,
                 IsActive = x.IsActive,
-                CreationDate = x.CreatedAt.ToString("dd-MM-yyyy"),
+                CreationDate = x.CreatedAt.ToString("yyyy-MM-dd"),
+                UpdateDate = x.UpdateDate.ToString("yyyy-MM-dd"),
+
                 ProfileImgPath = x.ProfileImgPath,
+                
             }).ToList();
 
             return userDto;
@@ -79,7 +82,7 @@ namespace unolink.api.Application.Services.UserService
                 Description = user.Description,
                 Cep = user.Cep,
                 IsActive = user.IsActive,
-                CreationDate = user.CreatedAt.ToString("dd-MM-yyyy"),
+                CreationDate = user.CreatedAt.ToString("yyyy-MM-dd"),
                 ProfileImgPath = user.ProfileImgPath,
                 UserPosts = user.UserPosts?.Select(p => new UserPostSummaryDTO
                 {
