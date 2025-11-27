@@ -6,6 +6,8 @@ import { PostUserDto } from '../models/PostUserDto';
 import { User } from '../models/user';
 import { UserProfile } from '../models/UserProfile';
 import { UpdateUser } from '../models/UpdateUser';
+import { UserProfileEditRequest } from '../models/UserProfileEditRequest';
+import { ChangeUserPasswordRequest } from '../models/ChangeUserPasswordRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -47,5 +49,11 @@ export class UserService {
   }
   GetProfileInfo(id:String): Observable<UserProfile>{
     return this.http.get<UserProfile>(`${this.ApiUrl}/Profile/${id}`)
+  }
+  EditProfile(request: UserProfileEditRequest): Observable<boolean>{
+    return this.http.put<boolean>(`${this.ApiUrl}/EditProfile`,request)
+  }
+  ChangePassword(request: ChangeUserPasswordRequest): Observable<boolean>{
+    return this.http.put<boolean>(`${this.ApiUrl}/ChangePassword`,request)
   }
 }

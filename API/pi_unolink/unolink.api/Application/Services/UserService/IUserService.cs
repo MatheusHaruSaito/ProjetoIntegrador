@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +16,8 @@ namespace unolink.api.Application.Services.UserService
         Task<UserDTO> GetByEmail(string Email);
         Task<bool> Update(UpdateUserRequest request,string baseUrl);
         Task<bool> UserTriggerActive(Guid id);
+        Task<bool> EditProfile(UserProfileEditRequest request, string baseUrl);
+        Task<(bool ChangedPassword, IEnumerable<string> Errors)> ChangePassword(ChangeUserPasswordRequest request);
+
     }
 }

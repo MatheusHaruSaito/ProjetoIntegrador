@@ -40,5 +40,11 @@ namespace unolink.domain.Models
             PasswordHash = password;
             ProfileImgPath = profileImgPath;
         }
+        public void Edit(string name, string description, string profileImgPath)
+        {
+            UserName = name;
+            Description = description;
+            ProfileImgPath = profileImgPath;
+        }
     }
 }

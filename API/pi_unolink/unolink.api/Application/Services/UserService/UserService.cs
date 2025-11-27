@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using unolink.api.Application.Models.Dtos;
 using unolink.api.Application.Models.Request;
 using unolink.api.Application.Services.ImagesSevice;
@@ -134,11 +135,12 @@ namespace unolink.api.Application.Services.UserService
 
         public async Task<bool> Update(UpdateUserRequest request,string baseUrl)
         {
-            request.ProfileImgPath = await _fileService.AddImage(request.ProfileImg, baseUrl);
 
             var user = await _userRepository.GetById(request.Id);
 
             if (user is null) return false;
+
+            request.ProfileImgPath = await _fileService.AddImage(request.ProfileImg, baseUrl);
             if (user.ProfileImgPath != null)
             {
                 await _fileService.DeleteFile(user.ProfileImgPath);
@@ -153,6 +155,39 @@ namespace unolink.api.Application.Services.UserService
 
         }
 
+        public async Task<bool> EditProfile(UserProfileEditRequest request, string baseUrl)
+        {
+            var user = await _userRepository.GetById(request.Id);
+
+            if (user is null) return false;
+
+            request.ProfileImgPath = await _fileService.AddImage(request.ProfileImg, baseUrl);
+            if (user.ProfileImgPath != null)
+            {
+                await _fileService.DeleteFile(user.ProfileImgPath);
+            }
+
+            user.Edit(request.Name, request.Description, request.ProfileImgPath);
+
+            return await _userRepository.UnitOfWork.SaveEntitiesAsync();
+
+        }
+        public async Task<(bool ChangedPassword, IEnumerable<string> Errors)> ChangePassword(ChangeUserPasswordRequest request)
+        {
+            var user = await _userManager.FindByIdAsync(request.UserId.ToString());
+            if (user is null) return (false, new[] { "Usuário não encontrado" });
+
+            var result = await _userManager.ChangePasswordAsync(user, request.OldPassword, request.NewPassword);
+            
+            if(result.Succeeded)
+            {
+                return (true, Array.Empty<string>());
+            }
+
+            var errors = result.Errors.Select(e => e.Description);
+            return (false, errors);
+        }
+
         public async Task<bool> UserTriggerActive(Guid id)
         {
             var result = await _userRepository.UseTriggerActive(id);
@@ -163,5 +198,6 @@ namespace unolink.api.Application.Services.UserService
 
             return true;
         }
+
     }
 }

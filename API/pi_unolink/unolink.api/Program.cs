@@ -14,13 +14,14 @@ using unolink.api.Application.Services.ImagesSevice;
 using unolink.api.Application.Services.UserPostService;
 using unolink.api.Application.Services.SearchService;
 using unolink.api.Application.Services.EmailService;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 //DefaultConnection
 //FatecConnection
-builder.Services.AddDbContext<ApplicationDataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("FatecConnection")));
+builder.Services.AddDbContext<ApplicationDataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
@@ -44,10 +45,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddIdentity<User, IdentityRole<Guid>>()
+builder.Services.AddIdentity<User, IdentityRole<Guid>>(o =>
+{
+    o.Password.RequireDigit = true;
+    o.Password.RequiredLength = 6;
+    o.Password.RequireNonAlphanumeric = false;
+    o.Password.RequireUppercase = true;
+    o.Password.RequireLowercase = true;
+})
     .AddRoles<IdentityRole<Guid>>()
     .AddEntityFrameworkStores<ApplicationDataContext>()
     .AddDefaultTokenProviders();
+
+
 
 builder.Services.AddAuthentication();
 builder.Services.AddAuthorization();

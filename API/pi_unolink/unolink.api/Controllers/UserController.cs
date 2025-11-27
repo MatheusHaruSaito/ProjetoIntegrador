@@ -65,14 +65,44 @@ namespace unolink.api.Controllers
         public async Task<IActionResult> Update(UpdateUserRequest request)
         {
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
-            
+
             var result = await _userService.Update(request, baseUrl);
-            if (!result) {
-                if(request.ProfileImgPath != null) await _fileService.DeleteFile(request.ProfileImgPath);
+            if (!result)
+            {
+                if (request.ProfileImgPath != null) await _fileService.DeleteFile(request.ProfileImgPath);
                 return BadRequest();
             }
-                return Ok();
+            return Ok();
         }
+        [HttpPut("EditProfile")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> EditProfile(UserProfileEditRequest request)
+        {
+            string baseUrl = $"{Request.Scheme}://{Request.Host}";
+
+            var result = await _userService.EditProfile(request, baseUrl);
+            if (!result)
+            {
+                if (request.ProfileImgPath != null) await _fileService.DeleteFile(request.ProfileImgPath);
+                return BadRequest();
+            }
+            return Ok();
+        }
+
+        [HttpPut("ChangePassword")]
+        [ProducesResponseType((int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task<IActionResult> ChangePassword(ChangeUserPasswordRequest request)
+        {
+            var result = await _userService.ChangePassword(request);
+            if (!result.ChangedPassword)
+            {
+                return BadRequest(result.Errors);
+            }
+            return Ok();
+        }
+
         [HttpPut("{id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
@@ -84,6 +114,7 @@ namespace unolink.api.Controllers
 
             return Ok(result);
         }
+
         [HttpGet("Profile/{Id}")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
