@@ -54,7 +54,7 @@ export class RegisterComponent implements OnInit {
           this.router.navigate(['/Login']);
         },
         error: (err) => {
-          this.popup.show(err.error || 'Erro ao criar conta.');
+          this.popup.show(err.error?.message  || 'Erro ao criar conta.');
         },
       });
     }
