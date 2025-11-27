@@ -2,10 +2,9 @@
     <h3>CONFIGURAÇÕES</h3>
 
     <ul>
-      <li class="active" [routerLink]="['/Profile']"><i class="fa-solid fa-circle-user"></i>Seu Perfil</li>
-      <li><i class="fa-solid fa-lock"></i> Segurança e Privacidade</li>
+      <li [routerLink]="['/Profile']"><i class="fa-solid fa-circle-user"></i>Seu Perfil</li>
+      <li [routerLink]="['/Security']"><i class="fa-solid fa-lock"></i> Segurança</li>
       <li id="toggle-theme" (click)="toggleTheme()"><i class="fa-solid fa-moon"></i> Aparência</li>
-      <li id="historicoBtn" class="btnHistorico"><i class="fa-solid fa-file"></i> Histórico</li>
     </ul>
 
     <button class="btn-logout" (click)="logout()">

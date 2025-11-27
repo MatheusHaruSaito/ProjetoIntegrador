@@ -3,30 +3,19 @@
     <div class="logo-container">
       <img src="images/unolinkicon.png" alt="UNOLINK" class="form-logo">
     </div>
-    <h1>Cadastrar Usuário</h1>
+    <h1>Editar Perfil</h1>
     <form id="form-cadastro" [formGroup]="UpdateForm" (ngSubmit)="Update()">
       <div class="input-group">
         <i class="fas fa-user"></i>
-        <input type="text" id="nome" placeholder="Nome completo" required formControlName="name">
+        <input type="text" id="nome" placeholder="Nome de Usuário" required formControlName="name">
       </div>
 
       <div class="input-group">
         <i class="fas fa-envelope"></i>
-        <input type="email" id="email" placeholder="Email" required formControlName="email">
-      </div>
-
-      <div class="input-group">
-        <i class="fas fa-lock"></i>
-        <input type="password" id="senha" placeholder="Senha" required formControlName="password">
-      </div>
-
-      <div class="input-group">
-        <i class="fas fa-envelope"></i>
-        <input type="text" id="description" placeholder="description" required formControlName="description">
+        <input type="text" id="description" placeholder="Descrição" required formControlName="description">
       </div>
 
       <div class="input-group file-input">
-
         <label for="profile-image" class="file-label">
           <i class="fa-solid fa-image"></i>
           Selecionar Foto
@@ -44,7 +33,7 @@
       </div>
 
       <button type="submit" class="btn btn-primario">
-        <i class="fas fa-user-plus"></i> Editar
+        <i class="fas fa-user-edit"></i> Editar
       </button>
 
       <button type="button" class="btn btn-secundario" [routerLink]="['/Profile']">

@@ -13,6 +13,7 @@ import { HowToHelpComponent } from './Pages/how-to-help/how-to-help.component';
 import { ONGsListComponent } from './Pages/ongs-list/ongs-list.component';
 import { EditProfileComponent } from './Pages/edit-profile/edit-profile.component';
 import { FeedComponent } from './Pages/feed/feed.component';
+import { SecurityComponent } from './Pages/security/security.component';
 
 export const routes: Routes = [
     {path:'Admin-UserList',component: UserListComponent},
@@ -28,5 +29,6 @@ export const routes: Routes = [
     {path:'ONGSList', component: ONGsListComponent},
     {path:'EditProfile', component: EditProfileComponent},
     {path:'Feed', component: FeedComponent},
-    { path:'UserProfile/:id', loadComponent: () => import('./Pages/user-profile/user-profile.component').then(m => m.UserProfileComponent) }
+    {path:'UserProfile/:id', loadComponent: () => import('./Pages/user-profile/user-profile.component').then(m => m.UserProfileComponent) },
+    {path: 'Security', component: SecurityComponent }
 ];
