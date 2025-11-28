@@ -1,6 +1,9 @@
 # ProjetoIntegradorAngular
 
-Unolink é um projeto desenvolvido 
+O Unolink nasceu em 2025, na faculdade Fatec-Taquaritinga, pensando em destacar a praticidade de comunicação para quem quer ajudar e quem precisa de ajuda.
+Observando a dificuldade que muitas ONGs têm em encontrar voluntários e recursos, e ao mesmo tempo percebendo o desejo de muitas pessoas em contribuir com causas sociais, 
+criamos uma plataforma que facilita essas conexões, de usuário para ONG.
+
 
 EXECUTAR O PROJETO NA API:
 1 - Configurar o projeto de inicialização único para a "unolink.api", aplicar e confirmar;
