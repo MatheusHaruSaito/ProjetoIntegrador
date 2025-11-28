@@ -51,7 +51,17 @@ export class UserService {
     return this.http.get<UserProfile>(`${this.ApiUrl}/Profile/${id}`)
   }
   EditProfile(request: UserProfileEditRequest): Observable<boolean> {
-    return this.http.put<boolean>(`${this.ApiUrl}/EditProfile`, request)
+     const formData = new FormData();
+
+  formData.append("Id", request.id.toString());
+  formData.append("Name", request.name);
+  formData.append("Description", request.description);
+  formData.append("Email", request.email);
+
+  if (request.profileImg) {
+    formData.append("ProfileImg", request.profileImg);
+  }
+    return this.http.put<boolean>(`${this.ApiUrl}/EditProfile`, formData)
   }
   ChangePassword(request: ChangeUserPasswordRequest): Observable<boolean> {
     return this.http.put<boolean>(`${this.ApiUrl}/ChangePassword`, request)

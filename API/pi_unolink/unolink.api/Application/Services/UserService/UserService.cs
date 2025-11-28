@@ -163,6 +163,7 @@ namespace unolink.api.Application.Services.UserService
 
             if (user is null) return false;
 
+            
             request.ProfileImgPath = await _fileService.AddImage(request.ProfileImg, baseUrl);
             if (user.ProfileImgPath != null)
             {
@@ -170,8 +171,13 @@ namespace unolink.api.Application.Services.UserService
             }
 
             user.Edit(request.Name, request.Description, request.ProfileImgPath);
+            var result = await _userManager.SetUserNameAsync(user, request.Name);
+            if (!result.Succeeded)
+            {
+                return false;
+            }
 
-            return await _userRepository.UnitOfWork.SaveEntitiesAsync();
+            return true;
 
         }
         public async Task<(bool ChangedPassword, IEnumerable<string> Errors)> ChangePassword(ChangeUserPasswordRequest request)

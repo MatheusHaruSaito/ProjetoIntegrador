@@ -6,6 +6,7 @@ import { AuthService } from '../../Services/auth.service';
 import { UpdateUser } from '../../models/UpdateUser';
 import { PopupService } from '../../Services/popup.service'; 
 import { CommonModule } from '@angular/common';
+import { UserProfileEditRequest } from '../../models/UserProfileEditRequest';
 
 @Component({
   standalone: true,
@@ -57,16 +58,16 @@ export class EditProfileComponent implements OnInit {
 
     this.userService.GetUsersByEmail(userEmail).subscribe({
       next: res => {
-        const updateUser: UpdateUser = {
-          id: res.id,
+        const updateUser: UserProfileEditRequest = {
+          id: this.authService.GetUserFromJwtToken().id,
           name: this.UpdateForm.get("name")?.value,
-          email: res.email, 
+          email: res.email,
           description: this.UpdateForm.get("description")?.value,
-          password: res.password, 
           profileImg: this.selectedFile,
+          profileImgPath: ''
         };
 
-        this.userService.UpdateUser(updateUser).subscribe({
+        this.userService.EditProfile(updateUser).subscribe({
           next: () => {
             this.popupService.show("Perfil atualizado com sucesso!");
             this.authService.RefreshSession(); 
@@ -75,7 +76,7 @@ export class EditProfileComponent implements OnInit {
             }, 600);
           },
           error: (err) => {
-            const errorMessage = err.error?.message || err.error || 'Erro ao atualizar perfil.';
+            const errorMessage = err.error || err.error || 'Erro ao atualizar perfil.';
             this.popupService.show(errorMessage);
           }
         });
