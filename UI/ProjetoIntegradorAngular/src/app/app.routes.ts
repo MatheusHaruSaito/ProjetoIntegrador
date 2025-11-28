@@ -16,19 +16,19 @@ import { FeedComponent } from './Pages/feed/feed.component';
 import { SecurityComponent } from './Pages/security/security.component';
 
 export const routes: Routes = [
-    {path:'Admin-UserList',component: UserListComponent},
-    {path:'Admin-TicketList',component:TicketListComponent},
+    {path:'Admin-UserList',component: UserListComponent, canActivate:[authGuard],data: {roles:['Admin']}},
+    {path:'Admin-TicketList',component:TicketListComponent,canActivate:[authGuard],data: {roles:['Admin']}},
     {path:'',component:HomeComponent},
     {path:'Register',component:RegisterComponent},
-    {path:'OngTicketForm',component:OngTicketFormComponent,},
+    {path:'OngTicketForm',component:OngTicketFormComponent},
     {path:'Login',component:LoginComponent},
     {path:'AboutUs',component:AboutUsComponent},
-    {path:'Profile',component:ProfileComponent},
-    {path:'Feedback', component: FeedbackComponent},
+    {path:'Profile',component:ProfileComponent,canActivate:[authGuard],data: {roles:['Default','Ong','Admin']}},
+    {path:'Feedback', component: FeedbackComponent,canActivate:[authGuard],data: {roles:['Default','Ong','Admin']}},
     {path:'HowToHelp', component: HowToHelpComponent},
-    {path:'ONGSList', component: ONGsListComponent},
-    {path:'EditProfile', component: EditProfileComponent},
-    {path:'Feed', component: FeedComponent},
+    {path:'ONGSList', component: ONGsListComponent,canActivate:[authGuard],data: {roles:['Default','Ong','Admin']}},
+    {path:'EditProfile', component: EditProfileComponent,canActivate:[authGuard],data: {roles:['Default','Ong','Admin']}},
+    {path:'Feed', component: FeedComponent,canActivate:[authGuard],data: {roles:['Default','Ong','Admin']}},
     {path:'UserProfile/:id', loadComponent: () => import('./Pages/user-profile/user-profile.component').then(m => m.UserProfileComponent) },
     {path: 'Security', component: SecurityComponent }
 ];

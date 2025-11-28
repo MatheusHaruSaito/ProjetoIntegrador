@@ -62,35 +62,10 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/Login']);
       },
       error: (err) => {
-        const errorMessage = this.getErrorMessage(err);
-        this.popup.show(errorMessage);
+          this.popup.show(err.error?.message  || 'Erro ao criar conta.');
       },
     });
   }
 
-  private getErrorMessage(err: any): string {
-    if (typeof err.error === 'string') {
-      return err.error;
-    } else if (err.error?.message) {
-      return err.error.message;
-    } else if (err.message) {
-      return err.message;
-    } else {
-<<<<<<< HEAD
-      this.userService.PostUser(this.user).subscribe({
-        next: () => {
-          this.popup.show('Conta criada com sucesso!');
-          this.router.navigate(['/Login']);
-        },
-        error: (err) => {
-          this.popup.show(err.error?.message  || 'Erro ao criar conta.');
-        },
-      });
-=======
-      return 'Erro ao criar conta. Tente novamente.';
->>>>>>> ce1f64a361f954ab3c867a80d9393136fd52fcb1
-    }
-  }
 
-  
 }

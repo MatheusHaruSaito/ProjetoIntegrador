@@ -35,9 +35,10 @@ namespace unolink.api.Application.Services.OngTicketService
             ong.AcceptedOng();
 
             string password = Random.Shared.Next(5125, 99999).ToString();
+            password += "PasSwOrd";
             var user = new User(ong.Name, ong.Email, password, ong.Description, ong.Cep);
             _ongTicketRepository.Update(ong);
-            var userCreated = await _userManager.CreateAsync(user);
+            var userCreated = await _userManager.CreateAsync(user,password);
             if (!userCreated.Succeeded)
             {
                 return false;

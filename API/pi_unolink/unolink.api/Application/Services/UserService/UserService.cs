@@ -33,8 +33,7 @@ namespace unolink.api.Application.Services.UserService
             
             var user = new User(request.Name, request.Email,
             " ", request.Description, request.Cep);
-            user.PasswordHash =  new PasswordHasher<User>().HashPassword(user, request.Password);
-            await _userManager.CreateAsync(user);
+            await _userManager.CreateAsync(user,request.Password);
             await _userManager.AddToRoleAsync(user, "Default");
 
 

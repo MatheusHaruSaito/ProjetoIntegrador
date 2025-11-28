@@ -56,7 +56,5 @@ export class UserService {
   ChangePassword(request: ChangeUserPasswordRequest): Observable<boolean> {
     return this.http.put<boolean>(`${this.ApiUrl}/ChangePassword`, request)
   }
-  UpdatePassword(updateData: { currentPassword: string, newPassword: string }): Observable<boolean> {
-    return this.http.put<boolean>(`${this.ApiUrl}/update-password`, updateData);
-  }
+
 }

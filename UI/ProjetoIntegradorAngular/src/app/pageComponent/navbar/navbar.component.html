@@ -28,6 +28,12 @@
                 'background-image': 'url(' + (UserLogged?.profileImgPath || 'images/user-placeholder.png') + ')'
               }">
           </button>
+            @if(isAdmin){
+                  <button class="" [routerLink]="['/Admin-TicketList']"> Ticket List
+                  </button>  
+                  <button class="" [routerLink]="['/Admin-UserList']"> UserList
+                  </button>  
+            }
           } @else {
           <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
           <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>

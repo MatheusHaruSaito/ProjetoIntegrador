@@ -15,12 +15,14 @@ export class NavbarComponent implements OnInit {
   UserLogged?: User;
   isMenuOpen = false;
   isLogged = false;
-
+  isAdmin = false;
+  UserRoles!: any[] | null
   authService = inject(AuthService);
   userService = inject(UserService);
 
   ngOnInit(): void {
     this.checkLogin();
+    this.UserRoles = this.authService.getUserRoles()
   }
 
   toggleMenu() {
@@ -30,14 +32,25 @@ export class NavbarComponent implements OnInit {
   closeMenu() {
     this.isMenuOpen = false;
   }
-
+  chechkAdmin(){
+    if(this.UserRoles?.some(r => r.includes("Admin"))){
+      this.isAdmin = true
+      console.log(this.UserRoles)
+      return
+    }
+    this.isAdmin = false
+  }
   checkLogin() {
     this.authService.isLoggedIn().subscribe(IsAuth => {
       this.isLogged = IsAuth;
       if (IsAuth) {
         const userId = this.authService.GetUserFromJwtToken().id;
         this.userService.GetUserById(userId).subscribe({
-          next: res => (this.UserLogged = res)
+          next: res => {
+            this.UserLogged = res
+            this.chechkAdmin()
+
+          }
         });
       }
     });

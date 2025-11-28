@@ -5,6 +5,7 @@ import { UserService } from '../../Services/user.service';
 import { AuthService } from '../../Services/auth.service';
 import { PopupService } from '../../Services/popup.service';
 import { CommonModule } from '@angular/common';
+import { ChangeUserPasswordRequest } from '../../models/ChangeUserPasswordRequest';
 
 @Component({
   standalone: true,
@@ -47,12 +48,13 @@ export class SecurityComponent implements OnInit {
       return;
     }
 
-    const updateData = {
-      currentPassword: formValue.currentPassword,
-      newPassword: formValue.newPassword
-    };
+const updateData: ChangeUserPasswordRequest = {
+  userId: this.authService.GetUserFromJwtToken().id, 
+  oldPassword: formValue.currentPassword,
+  newPassword: formValue.newPassword
+};
 
-    this.userService.UpdatePassword(updateData).subscribe({
+    this.userService.ChangePassword(updateData).subscribe({
       next: () => {
         this.popupService.show('Senha alterada com sucesso!');
         this.securityForm.reset();
@@ -61,7 +63,8 @@ export class SecurityComponent implements OnInit {
         }, 1000);
       },
       error: (err) => {
-        const errorMessage = err.error?.message || err.error || 'Erro ao alterar senha. Verifique se a senha atual está correta.';
+        const errorMessage = err.error?.message || 'Erro ao alterar senha. Verifique se a senha atual está correta.';
+        console.log('ERRO RECEBIDO:', err);
         this.popupService.show(errorMessage);
       }
     });

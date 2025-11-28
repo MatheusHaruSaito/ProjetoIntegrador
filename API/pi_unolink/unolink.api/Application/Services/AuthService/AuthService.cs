@@ -7,6 +7,7 @@ using unolink.api.Application.Models.Dtos;
 using unolink.api.Application.Models.Dtos.DtoExtension;
 using unolink.api.Application.Models.Request;
 using unolink.api.Application.Services.UserService;
+using unolink.domain.Core.Interfaces;
 using unolink.domain.Models;
 
 namespace unolink.api.Application.Services.AuthService
@@ -15,8 +16,8 @@ namespace unolink.api.Application.Services.AuthService
     {
         private readonly UserManager<User> _userManager;
         private readonly IConfiguration _config;
-        private readonly IUserService _userService;
-        public AuthService(IConfiguration config, IUserService userService, UserManager<User> userManager)
+        private readonly IUserRepository _userService;
+        public AuthService(IConfiguration config, IUserRepository userService, UserManager<User> userManager)
         {
             _userManager = userManager;
             _config = config;
@@ -26,17 +27,23 @@ namespace unolink.api.Application.Services.AuthService
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_config["Jwt:Key"]);
-            var user = await _userService.GetByEmail(logInRequest.Email);
+            var user = await _userManager.FindByEmailAsync(logInRequest.Email);
 
             if(user is null)
+            {   
+                return null;
+            }
+
+            if(!await _userManager.CheckPasswordAsync(user, logInRequest.Password))
             {
                 return null;
             }
+
             UserClaimDTO userClaims = new()
             {
                 Email = user.Email,
-                Name = user.Name,
-                Role = user.Role,
+                Name = user.UserName,
+                Role = await _userManager.GetRolesAsync(user),
                 Id = user.Id,
                 
             };

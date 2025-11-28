@@ -106,7 +106,11 @@ namespace unolink.api.Controllers
             var result = await _userService.ChangePassword(request);
             if (!result.ChangedPassword)
             {
-                return BadRequest(result.Errors);
+                return BadRequest(new
+                {
+                    message = string.Join(',', result.Errors)
+                });
+
             }
             return Ok();
         }
