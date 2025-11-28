@@ -2,7 +2,7 @@
   <div class="container">
     <div class="header-content">
       <div class="logo">
-        <a routerLink="/">
+        <a routerLink="/" (click)="closeMenu()">
           <img src="/images/unolinkfull.svg" alt="UNOLINK logo completa" class="logo-full" width="320" height="52"
             loading="lazy">
           <img src="/images/unolinkicon.png" alt="UNOLINK ícone" class="logo-icon" loading="lazy">
@@ -15,28 +15,33 @@
 
       <nav class="main-nav" [ngClass]="{ 'active': isMenuOpen }">
         <ul>
-          <li><a [routerLink]="['/']">Início</a></li>
-          <li><a [routerLink]="['/ONGSList']">ONGS</a></li>
-          <li><a [routerLink]="['/HowToHelp']">Como Ajudar</a></li>
-          <li><a [routerLink]="['/AboutUs']">Sobre Nós</a></li>
-          <li><a [routerLink]="['/Feed']">Feed</a></li>
+          <li><a [routerLink]="['/']" (click)="closeMenu()">Início</a></li>
+          <li><a [routerLink]="['/ONGSList']" (click)="closeMenu()">ONGS</a></li>
+          <li><a [routerLink]="['/HowToHelp']" (click)="closeMenu()">Como Ajudar</a></li>
+          <li><a [routerLink]="['/AboutUs']" (click)="closeMenu()">Sobre Nós</a></li>
+          <li><a [routerLink]="['/Feed']" (click)="closeMenu()">Feed</a></li>
         </ul>
 
         <div class="auth-buttons">
           @if(isLogged){
-          <button class="profile-btn" [routerLink]="['/Profile']" [ngStyle]="{
-                'background-image': 'url(' + (UserLogged?.profileImgPath || 'images/user-placeholder.png') + ')'
-              }">
-          </button>
+            <button class="profile-btn" [routerLink]="['/Profile']" (click)="closeMenu()" [ngStyle]="{
+                  'background-image': 'url(' + (UserLogged?.profileImgPath || 'images/user-placeholder.png') + ')'
+                }">
+            </button>
+            
             @if(isAdmin){
-                  <button class="" [routerLink]="['/Admin-TicketList']"> Ticket List
-                  </button>  
-                  <button class="" [routerLink]="['/Admin-UserList']"> UserList
-                  </button>  
+              <div class="admin-buttons">
+                <a [routerLink]="['/Admin-TicketList']" class="btn-admin btn-admin-tickets" (click)="closeMenu()">
+                  <i class="fas fa-ticket-alt"></i> Tickets
+                </a>  
+                <a [routerLink]="['/Admin-UserList']" class="btn-admin btn-admin-users" (click)="closeMenu()">
+                  <i class="fas fa-users"></i> Usuários
+                </a>  
+              </div>
             }
           } @else {
-          <a [routerLink]="['/Login']" class="btn-login btn-login-outline">Entrar</a>
-          <a [routerLink]="['/Register']" class="btn-login btn-login-solid">Cadastrar</a>
+            <a [routerLink]="['/Login']" class="btn-login btn-login-outline" (click)="closeMenu()">Entrar</a>
+            <a [routerLink]="['/Register']" class="btn-login btn-login-solid" (click)="closeMenu()">Cadastrar</a>
           }
         </div>
       </nav>

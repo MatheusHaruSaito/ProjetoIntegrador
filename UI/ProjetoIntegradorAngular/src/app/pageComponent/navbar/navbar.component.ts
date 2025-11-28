@@ -16,13 +16,22 @@ export class NavbarComponent implements OnInit {
   isMenuOpen = false;
   isLogged = false;
   isAdmin = false;
-  UserRoles!: any[] | null
+
   authService = inject(AuthService);
   userService = inject(UserService);
 
   ngOnInit(): void {
     this.checkLogin();
-    this.UserRoles = this.authService.getUserRoles()
+    
+    this.authService.isLoggedIn().subscribe(IsAuth => {
+      this.isLogged = IsAuth;
+      if (IsAuth) {
+        this.loadUserData();
+      } else {
+        this.UserLogged = undefined;
+        this.isAdmin = false;
+      }
+    });
   }
 
   toggleMenu() {
@@ -32,33 +41,37 @@ export class NavbarComponent implements OnInit {
   closeMenu() {
     this.isMenuOpen = false;
   }
-  chechkAdmin(){
-    if(this.UserRoles?.some(r => r.includes("Admin"))){
-      this.isAdmin = true
-      console.log(this.UserRoles)
-      return
-    }
-    this.isAdmin = false
-  }
+
   checkLogin() {
     this.authService.isLoggedIn().subscribe(IsAuth => {
       this.isLogged = IsAuth;
       if (IsAuth) {
-        const userId = this.authService.GetUserFromJwtToken().id;
-        this.userService.GetUserById(userId).subscribe({
-          next: res => {
-            this.UserLogged = res
-            this.chechkAdmin()
-
-          }
-        });
+        this.loadUserData();
       }
     });
   }
 
+  private loadUserData() {
+    const userId = this.authService.GetUserFromJwtToken().id;
+    this.userService.GetUserById(userId).subscribe({
+      next: res => {
+        this.UserLogged = res;
+        this.checkAdmin();
+      }
+    });
+  }
+
+  private checkAdmin() {
+    this.isAdmin = this.UserLogged?.email?.includes('admin') || 
+                   this.UserLogged?.name?.includes('Admin') || 
+                   false;
+  }
+
   logout() {
     this.authService.Logout();
-    alert('Usuário deslogado');
-    window.location.reload();
+    this.isMenuOpen = false;
+    this.isLogged = false;
+    this.isAdmin = false;
+    this.UserLogged = undefined;
   }
 }
