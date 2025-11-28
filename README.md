@@ -1,5 +1,5 @@
 [README.md](https://github.com/user-attachments/files/23813181/README.md)
-# ProjetoIntegradorAngular
+# Unolink - Projeto Integrador
 
 O Unolink nasceu em 2025, na faculdade Fatec-Taquaritinga, pensando em destacar a praticidade de comunicação para quem quer ajudar e quem precisa de ajuda.
 Observando a dificuldade que muitas ONGs têm em encontrar voluntários e recursos, e ao mesmo tempo percebendo o desejo de muitas pessoas em contribuir com causas sociais, 
