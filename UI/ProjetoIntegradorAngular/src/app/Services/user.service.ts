@@ -18,13 +18,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  GetUsers() : Observable<User[]>{
+  GetUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.ApiUrl)
   }
-  GetUsersByEmail(email: string) : Observable<User>{
+  GetUsersByEmail(email: string): Observable<User> {
     return this.http.get<User>(`${this.ApiUrl}/Email/${email}`)
   }
-  UpdateUser(updateUser:UpdateUser): Observable<boolean>{
+  UpdateUser(updateUser: UpdateUser): Observable<boolean> {
     const formData = new FormData();
 
     formData.append('id', updateUser.id)
@@ -36,24 +36,27 @@ export class UserService {
     if (updateUser.profileImg) {
       formData.append('profileImg', updateUser.profileImg); // deve ser um File
     }
-    return this.http.put<boolean>(this.ApiUrl,formData);
+    return this.http.put<boolean>(this.ApiUrl, formData);
   }
-  TriggerUserActive(id:string): Observable<boolean>{
-    return this.http.put<boolean>(`${this.ApiUrl}/${id}`,'');
+  TriggerUserActive(id: string): Observable<boolean> {
+    return this.http.put<boolean>(`${this.ApiUrl}/${id}`, '');
   }
-  PostUser(PostUser:PostUserDto) :Observable <User>{
-    return this.http.post<User>(this.ApiUrl,PostUser);
+  PostUser(PostUser: PostUserDto): Observable<User> {
+    return this.http.post<User>(this.ApiUrl, PostUser);
   }
-  GetUserById(id:string): Observable<User>{
+  GetUserById(id: string): Observable<User> {
     return this.http.get<User>(`${this.ApiUrl}/${id}`)
   }
-  GetProfileInfo(id:String): Observable<UserProfile>{
+  GetProfileInfo(id: String): Observable<UserProfile> {
     return this.http.get<UserProfile>(`${this.ApiUrl}/Profile/${id}`)
   }
-  EditProfile(request: UserProfileEditRequest): Observable<boolean>{
-    return this.http.put<boolean>(`${this.ApiUrl}/EditProfile`,request)
+  EditProfile(request: UserProfileEditRequest): Observable<boolean> {
+    return this.http.put<boolean>(`${this.ApiUrl}/EditProfile`, request)
   }
-  ChangePassword(request: ChangeUserPasswordRequest): Observable<boolean>{
-    return this.http.put<boolean>(`${this.ApiUrl}/ChangePassword`,request)
+  ChangePassword(request: ChangeUserPasswordRequest): Observable<boolean> {
+    return this.http.put<boolean>(`${this.ApiUrl}/ChangePassword`, request)
+  }
+  UpdatePassword(updateData: { currentPassword: string, newPassword: string }): Observable<boolean> {
+    return this.http.put<boolean>(`${this.ApiUrl}/update-password`, updateData);
   }
 }

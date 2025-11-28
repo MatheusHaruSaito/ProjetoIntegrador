@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -25,29 +25,58 @@ export class RegisterComponent implements OnInit {
     private userService: UserService,
     private router: Router,
     private popup: PopupService
-  ) { }
+  ) {}
+
   ngOnInit(): void {
     this.userForm = new FormGroup({
       name: new FormControl('', Validators.required),
-      password: new FormControl('', Validators.required),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
       email: new FormControl('', [Validators.required, Validators.email]),
       ConfirmPassword: new FormControl('', Validators.required),
       description: new FormControl(''),
       cep: new FormControl(''),
     });
   }
+
   Register(): void {
+    if (this.userForm.invalid) {
+      this.popup.show(
+        'Por favor, preencha todos os campos obrigatórios corretamente.'
+      );
+      return;
+    }
+
     this.user = this.userForm.value;
 
-    if (this.user.name == '') {
-      this.popup.show('O nome não pode estar vazio.');
-    } else if (this.user.email == '') {
-      this.popup.show('O email não pode estar vazio.');
-    } else if (this.user.password == '') {
-      this.popup.show('A senha não pode estar vazia.');
-    } else if (this.user.password !== this.user.ConfirmPassword) {
+    if (this.user.password !== this.user.ConfirmPassword) {
       this.popup.show('As senhas não coincidem.');
+      return;
+    }
+
+    this.userService.PostUser(this.user).subscribe({
+      next: () => {
+        this.popup.show('Conta criada com sucesso!');
+        this.router.navigate(['/Login']);
+      },
+      error: (err) => {
+        const errorMessage = this.getErrorMessage(err);
+        this.popup.show(errorMessage);
+      },
+    });
+  }
+
+  private getErrorMessage(err: any): string {
+    if (typeof err.error === 'string') {
+      return err.error;
+    } else if (err.error?.message) {
+      return err.error.message;
+    } else if (err.message) {
+      return err.message;
     } else {
+<<<<<<< HEAD
       this.userService.PostUser(this.user).subscribe({
         next: () => {
           this.popup.show('Conta criada com sucesso!');
@@ -57,6 +86,11 @@ export class RegisterComponent implements OnInit {
           this.popup.show(err.error?.message  || 'Erro ao criar conta.');
         },
       });
+=======
+      return 'Erro ao criar conta. Tente novamente.';
+>>>>>>> ce1f64a361f954ab3c867a80d9393136fd52fcb1
     }
   }
+
+  
 }

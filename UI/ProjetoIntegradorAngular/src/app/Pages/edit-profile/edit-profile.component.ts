@@ -31,9 +31,7 @@ export class EditProfileComponent implements OnInit {
       next: res => {
         this.UpdateForm = new FormGroup({
           name: new FormControl(res.name),
-          email: new FormControl(res.email),
           description: new FormControl(res.description),
-          password: new FormControl(res.password),
         });
 
         this.previewImage = res.profileImgPath;
@@ -62,9 +60,9 @@ export class EditProfileComponent implements OnInit {
         const updateUser: UpdateUser = {
           id: res.id,
           name: this.UpdateForm.get("name")?.value,
-          email: this.UpdateForm.get("email")?.value,
+          email: res.email, 
           description: this.UpdateForm.get("description")?.value,
-          password: this.UpdateForm.get("password")?.value,
+          password: res.password, 
           profileImg: this.selectedFile,
         };
 
@@ -75,6 +73,10 @@ export class EditProfileComponent implements OnInit {
             setTimeout(() => {
               this.route.navigate(["/Profile"]);
             }, 600);
+          },
+          error: (err) => {
+            const errorMessage = err.error?.message || err.error || 'Erro ao atualizar perfil.';
+            this.popupService.show(errorMessage);
           }
         });
       }
