@@ -6,7 +6,8 @@ Observando a dificuldade que muitas ONGs têm em encontrar voluntários e recurs
 criamos uma plataforma que facilita essas conexões, de usuário para ONG.
 
 
-EXECUTAR O PROJETO NA API:
+**EXECUTAR O PROJETO NA API:**
+
 1 - Configurar o projeto de inicialização único para a "unolink.api", aplicar e confirmar;
 
 2 - Ir até para a "Program.cs" e colocar a ConnectionString desejada na 24º linha. Se quiser usar uma conexão própria, basta adicioná-la no "appsettings.json" - Utilizar uma conexão do SQL Server;
@@ -18,7 +19,8 @@ EXECUTAR O PROJETO NA API:
 Se todos os passos forem seguidos corretamente, a API poderá ser executada sem problemas.
 
 
-EXECUTAR O PROJETO NA UI:
+**EXECUTAR O PROJETO NA UI:**
+
 1 - Abra o Terminal e utilize o da sua própria escolha: Git Bash ou Command Prompt;
 
 2 - Execute "npm install" para que os pacotes angular possam ser instalados;
